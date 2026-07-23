@@ -1,12 +1,12 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, ViewStyle } from 'react-native';
+import { Pressable, StyleProp, StyleSheet, Text, ViewStyle } from 'react-native';
 import { colors, radii, spacing, typography } from '../theme';
 
 type Props = {
   label: string;
   onPress?: () => void;
   variant?: 'gold' | 'outline';
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
 };
 
 export default function PillButton({ label, onPress, variant = 'gold', style }: Props) {

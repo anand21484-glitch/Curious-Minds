@@ -1,7 +1,8 @@
+import { router } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { fields } from '../../src/theme';
-import { colors, radii, spacing, typography } from '../../src/theme';
+import { getScientistsByField } from '../../src/data/scientists';
+import { colors, fields, radii, spacing, typography } from '../../src/theme';
 
 const MODERN_FIELD_IDS = [
   'math',
@@ -26,6 +27,40 @@ const SECTIONS = [
 
 export default function ExploreScreen() {
   const [expanded, setExpanded] = useState<string | null>('modern');
+  const [selectedFieldId, setSelectedFieldId] = useState<string | null>(null);
+
+  const selectedField = fields.find((f) => f.id === selectedFieldId);
+  const fieldScientists = selectedFieldId ? getScientistsByField(selectedFieldId) : [];
+
+  if (selectedFieldId) {
+    return (
+      <View style={styles.container}>
+        <View style={styles.scroll}>
+          <Pressable onPress={() => setSelectedFieldId(null)} style={styles.backButton}>
+            <Text style={[styles.backButtonText, { color: selectedField?.color }]}>← Explore</Text>
+          </Pressable>
+          <Text style={styles.title}>{selectedField?.name}</Text>
+        </View>
+        <ScrollView contentContainerStyle={styles.scroll}>
+          {fieldScientists.length === 0 ? (
+            <Text style={styles.emptyText}>Scientist profiles for this field are coming soon.</Text>
+          ) : (
+            fieldScientists.map((s) => (
+              <Pressable
+                key={s.id}
+                style={[styles.scientistCard, { borderColor: selectedField?.color }]}
+                onPress={() => router.push(`/scientist/${s.id}`)}
+              >
+                <Text style={styles.scientistName}>{s.name}</Text>
+                <Text style={styles.scientistMeta}>{s.years}</Text>
+                <Text style={styles.scientistTagline}>{s.tagline}</Text>
+              </Pressable>
+            ))
+          )}
+        </ScrollView>
+      </View>
+    );
+  }
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.scroll}>
@@ -48,12 +83,18 @@ export default function ExploreScreen() {
                 {section.fieldIds.map((fieldId) => {
                   const field = fields.find((f) => f.id === fieldId);
                   if (!field) return null;
+                  const count = getScientistsByField(fieldId).length;
                   return (
-                    <Pressable key={field.id} style={styles.fieldCard}>
+                    <Pressable
+                      key={field.id}
+                      style={styles.fieldCard}
+                      onPress={() => setSelectedFieldId(field.id)}
+                    >
                       <View style={[styles.fieldBadge, { backgroundColor: field.color }]}>
                         <Text style={styles.fieldBadgeText}>{field.mono}</Text>
                       </View>
                       <Text style={styles.fieldName}>{field.name}</Text>
+                      <Text style={styles.fieldCount}>{count} scientists</Text>
                     </Pressable>
                   );
                 })}
@@ -73,6 +114,13 @@ const styles = StyleSheet.create({
   },
   scroll: {
     padding: spacing.lg,
+  },
+  backButton: {
+    marginBottom: spacing.sm,
+  },
+  backButtonText: {
+    fontFamily: typography.fontFamily.headingBold,
+    fontSize: typography.size.body,
   },
   title: {
     fontFamily: typography.fontFamily.headingBold,
@@ -134,5 +182,40 @@ const styles = StyleSheet.create({
     fontSize: typography.size.microLabel,
     color: colors.textOnDark,
     textAlign: 'center',
+  },
+  fieldCount: {
+    fontFamily: typography.fontFamily.bodyRegular,
+    fontSize: 10,
+    color: colors.textSecondary,
+    marginTop: 2,
+  },
+  emptyText: {
+    fontFamily: typography.fontFamily.bodyRegular,
+    fontSize: typography.size.body,
+    color: colors.textSecondary,
+  },
+  scientistCard: {
+    backgroundColor: colors.surface,
+    borderRadius: radii.card,
+    borderWidth: 1,
+    padding: spacing.md,
+    marginBottom: spacing.sm,
+  },
+  scientistName: {
+    fontFamily: typography.fontFamily.headingBold,
+    fontSize: typography.size.body,
+    color: colors.textPrimary,
+  },
+  scientistMeta: {
+    fontFamily: typography.fontFamily.bodySemiBold,
+    fontSize: typography.size.microLabel,
+    color: colors.textSecondary,
+    marginTop: 2,
+    marginBottom: spacing.xs,
+  },
+  scientistTagline: {
+    fontFamily: typography.fontFamily.bodyRegular,
+    fontSize: typography.size.bodySmall,
+    color: colors.textOnDark,
   },
 });

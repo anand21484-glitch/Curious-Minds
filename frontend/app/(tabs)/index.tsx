@@ -1,8 +1,9 @@
+import { router } from 'expo-router';
 import { useState } from 'react';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Card from '../../src/components/Card';
 import PillButton from '../../src/components/PillButton';
-import { factOfTheDay, storyOfTheDay } from '../../src/data/dailyContent';
+import { factOfTheDay, scientistOfTheDay } from '../../src/data/dailyContent';
 import { useAppState } from '../../src/state/AppState';
 import { colors, radii, spacing, typography } from '../../src/theme';
 
@@ -19,8 +20,8 @@ export default function HomeScreen() {
   const { userName, xpTotal, streakDays, streakCelebration, dismissStreakCelebration, addXp } =
     useAppState();
   const [missionTab, setMissionTab] = useState<(typeof MISSION_TABS)[number]>('Learn');
-  const story = storyOfTheDay();
-  const fact = factOfTheDay();
+  const scientist = scientistOfTheDay();
+  const { fact } = factOfTheDay();
 
   return (
     <View style={styles.container}>
@@ -61,10 +62,13 @@ export default function HomeScreen() {
           />
         </Card>
 
-        <Card style={styles.sectionCardSpacing}>
-          <Text style={styles.sectionTitle}>Story of the Day</Text>
-          <Text style={styles.bodyText}>{story.title}</Text>
-        </Card>
+        <Pressable onPress={() => router.push(`/scientist/${scientist.id}`)}>
+          <Card style={styles.sectionCardSpacing}>
+            <Text style={styles.sectionTitle}>Story of the Day</Text>
+            <Text style={styles.storyName}>{scientist.name}</Text>
+            <Text style={styles.bodyText}>{scientist.tagline}</Text>
+          </Card>
+        </Pressable>
 
         <Card style={styles.sectionCardSpacing}>
           <Text style={styles.sectionTitle}>Daily Discovery</Text>
@@ -161,6 +165,12 @@ const styles = StyleSheet.create({
     fontSize: typography.size.body,
     color: colors.textOnDark,
     lineHeight: 20,
+  },
+  storyName: {
+    fontFamily: typography.fontFamily.bodySemiBold,
+    fontSize: typography.size.body,
+    color: colors.gold,
+    marginBottom: 4,
   },
   xpFooter: {
     fontFamily: typography.fontFamily.bodySemiBold,

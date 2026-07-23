@@ -1,6 +1,11 @@
-import { useState } from 'react';
+import { useLocalSearchParams } from 'expo-router';
+import { useEffect, useState } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import Card from '../../src/components/Card';
+import PillButton from '../../src/components/PillButton';
 import { AGE_BANDS, AgeBand, quizzes } from '../../src/data/quizzes';
+import { getQuestionsForScientist } from '../../src/data/quizQuestions';
+import { useAppState } from '../../src/state/AppState';
 import { colors, radii, spacing, typography } from '../../src/theme';
 
 const STATUS_COLOR: Record<string, string> = {
@@ -9,8 +14,32 @@ const STATUS_COLOR: Record<string, string> = {
   Completed: colors.success,
 };
 
+const XP_FOR_DIFFICULTY: Record<string, number> = { easy: 10, medium: 20, hard: 30 };
+
 export default function QuizScreen() {
+  const params = useLocalSearchParams<{ scientistId?: string }>();
   const [ageBand, setAgeBand] = useState<AgeBand>(AGE_BANDS[1]);
+  const [activeScientistId, setActiveScientistId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (params.scientistId) setActiveScientistId(params.scientistId);
+  }, [params.scientistId]);
+
+  if (activeScientistId) {
+    const quiz = quizzes.find((q) => q.scientistId === activeScientistId);
+    if (!quiz) {
+      setActiveScientistId(null);
+      return null;
+    }
+    return (
+      <QuizSession
+        scientistId={activeScientistId}
+        quizName={quiz.name}
+        color={quiz.color}
+        onExit={() => setActiveScientistId(null)}
+      />
+    );
+  }
 
   return (
     <View style={styles.container}>
@@ -38,7 +67,10 @@ export default function QuizScreen() {
         columnWrapperStyle={styles.row}
         contentContainerStyle={styles.list}
         renderItem={({ item }) => (
-          <Pressable style={[styles.card, { borderColor: item.color }]}>
+          <Pressable
+            style={[styles.card, { borderColor: item.color }]}
+            onPress={() => setActiveScientistId(item.scientistId)}
+          >
             <View style={[styles.badge, { backgroundColor: item.color }]} />
             <Text style={styles.cardName}>{item.name}</Text>
             <Text style={styles.cardBadge}>{item.badgeName}</Text>
@@ -51,6 +83,122 @@ export default function QuizScreen() {
           </Pressable>
         )}
       />
+    </View>
+  );
+}
+
+function QuizSession({
+  scientistId,
+  quizName,
+  color,
+  onExit,
+}: {
+  scientistId: string;
+  quizName: string;
+  color: string;
+  onExit: () => void;
+}) {
+  const { addXp } = useAppState();
+  const questions = getQuestionsForScientist(scientistId);
+  const [index, setIndex] = useState(0);
+  const [selected, setSelected] = useState<number | null>(null);
+  const [xpEarned, setXpEarned] = useState(0);
+  const [correctCount, setCorrectCount] = useState(0);
+  const [finished, setFinished] = useState(false);
+
+  if (questions.length === 0) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>{quizName}</Text>
+        <Text style={styles.cardBadge}>No questions available yet for this scientist.</Text>
+        <PillButton label="Back to Quiz Zone" onPress={onExit} style={{ marginTop: spacing.lg }} />
+      </View>
+    );
+  }
+
+  if (finished) {
+    return (
+      <View style={styles.container}>
+        <Card style={styles.resultCard}>
+          <Text style={styles.title}>{quizName} — Done!</Text>
+          <Text style={styles.resultScore}>
+            {correctCount} / {questions.length} correct
+          </Text>
+          <Text style={styles.cardBadge}>You earned {xpEarned} XP this quiz</Text>
+          <PillButton label="Back to Quiz Zone" onPress={onExit} style={{ marginTop: spacing.lg }} />
+        </Card>
+      </View>
+    );
+  }
+
+  const question = questions[index];
+
+  const selectAnswer = (optionIndex: number) => {
+    if (selected !== null) return;
+    setSelected(optionIndex);
+    if (optionIndex === question.correct) {
+      const xp = XP_FOR_DIFFICULTY[question.difficulty] ?? 10;
+      setXpEarned((prev) => prev + xp);
+      setCorrectCount((prev) => prev + 1);
+      addXp(xp);
+    }
+  };
+
+  const next = () => {
+    if (index + 1 < questions.length) {
+      setIndex(index + 1);
+      setSelected(null);
+    } else {
+      setFinished(true);
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <Pressable onPress={onExit} style={styles.backButton}>
+        <Text style={[styles.backButtonText, { color }]}>← Back to Quiz Zone</Text>
+      </Pressable>
+
+      <Card style={[styles.questionCard, { borderColor: color }]}>
+        <View style={styles.questionMetaRow}>
+          <Text style={[styles.difficultyPill, { color }]}>{question.difficulty.toUpperCase()}</Text>
+          <Text style={styles.questionMeta}>
+            +{XP_FOR_DIFFICULTY[question.difficulty] ?? 10} XP
+          </Text>
+          <Text style={styles.questionMeta}>
+            {index + 1} / {questions.length}
+          </Text>
+        </View>
+        <Text style={styles.questionText}>{question.question}</Text>
+
+        {question.options.map((option, i) => {
+          const isSelected = selected === i;
+          const isCorrect = i === question.correct;
+          let backgroundColor: string = colors.background;
+          if (selected !== null && isCorrect) backgroundColor = colors.success;
+          else if (selected !== null && isSelected && !isCorrect) backgroundColor = colors.error;
+
+          return (
+            <Pressable
+              key={i}
+              onPress={() => selectAnswer(i)}
+              style={[styles.option, { backgroundColor }]}
+            >
+              <Text style={styles.optionText}>{option}</Text>
+            </Pressable>
+          );
+        })}
+
+        {selected !== null && <Text style={styles.explanation}>{question.explanation}</Text>}
+      </Card>
+
+      {selected !== null && (
+        <PillButton
+          label={index + 1 < questions.length ? 'Next Question' : 'See Results'}
+          onPress={next}
+          style={styles.nextButton}
+        />
+      )}
     </View>
   );
 }
@@ -137,5 +285,68 @@ const styles = StyleSheet.create({
   cardStatus: {
     fontFamily: typography.fontFamily.bodySemiBold,
     fontSize: typography.size.microLabel,
+  },
+  backButton: {
+    marginBottom: spacing.md,
+  },
+  backButtonText: {
+    fontFamily: typography.fontFamily.headingBold,
+    fontSize: typography.size.body,
+  },
+  questionCard: {
+    borderWidth: 2,
+  },
+  questionMetaRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: spacing.md,
+  },
+  difficultyPill: {
+    fontFamily: typography.fontFamily.headingBold,
+    fontSize: typography.size.microLabel,
+    letterSpacing: typography.microLabelLetterSpacing,
+  },
+  questionMeta: {
+    fontFamily: typography.fontFamily.bodySemiBold,
+    fontSize: typography.size.microLabel,
+    color: colors.textSecondary,
+  },
+  questionText: {
+    fontFamily: typography.fontFamily.headingBold,
+    fontSize: typography.size.cardTitle,
+    color: colors.textPrimary,
+    marginBottom: spacing.md,
+  },
+  option: {
+    borderRadius: radii.cardSmall,
+    padding: spacing.md,
+    marginBottom: spacing.xs,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+  },
+  optionText: {
+    fontFamily: typography.fontFamily.bodyRegular,
+    fontSize: typography.size.body,
+    color: colors.textPrimary,
+  },
+  explanation: {
+    fontFamily: typography.fontFamily.bodyRegular,
+    fontSize: typography.size.bodySmall,
+    color: colors.textOnDark,
+    marginTop: spacing.sm,
+    lineHeight: 19,
+  },
+  nextButton: {
+    marginTop: spacing.lg,
+  },
+  resultCard: {
+    alignItems: 'center',
+  },
+  resultScore: {
+    fontFamily: typography.fontFamily.headingBold,
+    fontSize: typography.size.statSmall,
+    color: colors.gold,
+    marginTop: spacing.sm,
+    marginBottom: spacing.xs,
   },
 });
