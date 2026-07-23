@@ -12,6 +12,7 @@ export const colors = {
   purple: '#8B7BFF',
   purpleGradient: ['#3A1E5C', '#1B1547'] as const,
   purpleBorder: 'rgba(139,123,255,0.35)',
+  parentsGradient: ['#150F3E', '#5B2E8F'] as const,
 
   success: '#2FD9A0',
   error: '#FF5C8A',

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import {
   KeyboardAvoidingView,
   Platform,
+  Pressable,
   StyleSheet,
   Text,
   TextInput,
@@ -54,6 +55,10 @@ export default function OnboardingScreen() {
         />
 
         <PillButton label="Let's Go" onPress={submit} style={styles.button} />
+
+        <Pressable onPress={() => router.push('/parents')} style={styles.parentsLink}>
+          <Text style={styles.parentsLinkText}>Message for Parents</Text>
+        </Pressable>
       </Card>
     </KeyboardAvoidingView>
   );
@@ -98,5 +103,14 @@ const styles = StyleSheet.create({
   },
   button: {
     width: '100%',
+  },
+  parentsLink: {
+    marginTop: spacing.lg,
+  },
+  parentsLinkText: {
+    fontFamily: typography.fontFamily.bodySemiBold,
+    fontSize: typography.size.bodySmall,
+    color: colors.textSecondary,
+    textDecorationLine: 'underline',
   },
 });
