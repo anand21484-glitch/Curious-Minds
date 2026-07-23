@@ -7,7 +7,6 @@
     "icon": "./assets/images/icon.png",
     "scheme": "curiousminds",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.theyounglegends.curiousminds"
@@ -26,6 +25,12 @@
     "plugins": [
       "expo-router",
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "3ca93c9e-1023-4705-9b67-0bc3a5b3d3c5"
+      }
+    }
   }
 }
