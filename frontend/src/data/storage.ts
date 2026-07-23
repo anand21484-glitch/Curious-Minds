@@ -5,7 +5,11 @@ const KEYS = {
   xpTotal: 'curiousMinds.xpTotal',
   streakDays: 'curiousMinds.streakDays',
   lastActiveDate: 'curiousMinds.lastActiveDate',
+  completedQuizzes: 'curiousMinds.completedQuizzes',
 } as const;
+
+export type CompletedQuiz = { correctCount: number; total: number; completedAt: string };
+export type CompletedQuizzes = Record<string, CompletedQuiz>;
 
 export async function getUserName(): Promise<string | null> {
   return AsyncStorage.getItem(KEYS.userName);
@@ -39,4 +43,13 @@ export async function getLastActiveDate(): Promise<string | null> {
 
 export async function setLastActiveDate(isoDate: string): Promise<void> {
   await AsyncStorage.setItem(KEYS.lastActiveDate, isoDate);
+}
+
+export async function getCompletedQuizzes(): Promise<CompletedQuizzes> {
+  const raw = await AsyncStorage.getItem(KEYS.completedQuizzes);
+  return raw ? JSON.parse(raw) : {};
+}
+
+export async function setCompletedQuizzes(quizzes: CompletedQuizzes): Promise<void> {
+  await AsyncStorage.setItem(KEYS.completedQuizzes, JSON.stringify(quizzes));
 }

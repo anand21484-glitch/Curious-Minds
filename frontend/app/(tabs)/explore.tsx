@@ -1,7 +1,8 @@
 import { router } from 'expo-router';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { getScientistsByField } from '../../src/data/scientists';
+import ScientistAvatar from '../../src/components/ScientistAvatar';
+import { getScientistsByField, scientists } from '../../src/data/scientists';
 import { colors, fields, radii, spacing, typography } from '../../src/theme';
 
 const MODERN_FIELD_IDS = [
@@ -25,12 +26,59 @@ const SECTIONS = [
   { id: 'nobel', name: 'Nobel Laureates', fieldIds: ['nobel'] },
 ] as const;
 
+const BROWSE_MODES = ['By Field', 'By State'] as const;
+type BrowseMode = (typeof BROWSE_MODES)[number];
+
+function ScientistRow({ scientistId, borderColor }: { scientistId: string; borderColor?: string }) {
+  const s = scientists.find((x) => x.id === scientistId)!;
+  return (
+    <Pressable
+      style={[styles.scientistCard, { borderColor: borderColor ?? colors.hairline }]}
+      onPress={() => router.push(`/scientist/${s.id}`)}
+    >
+      <ScientistAvatar scientist={s} size={40} />
+      <View style={styles.scientistCardText}>
+        <Text style={styles.scientistName}>{s.name}</Text>
+        <Text style={styles.scientistMeta}>
+          {s.years} · {s.region}
+        </Text>
+        <Text style={styles.scientistTagline}>{s.tagline}</Text>
+      </View>
+    </Pressable>
+  );
+}
+
 export default function ExploreScreen() {
+  const [browseMode, setBrowseMode] = useState<BrowseMode>('By Field');
   const [expanded, setExpanded] = useState<string | null>('modern');
   const [selectedFieldId, setSelectedFieldId] = useState<string | null>(null);
+  const [selectedState, setSelectedState] = useState<string | null>(null);
+
+  const states = useMemo(
+    () => Array.from(new Set(scientists.map((s) => s.region))).sort(),
+    [],
+  );
 
   const selectedField = fields.find((f) => f.id === selectedFieldId);
   const fieldScientists = selectedFieldId ? getScientistsByField(selectedFieldId) : [];
+  const stateScientists = selectedState ? scientists.filter((s) => s.region === selectedState) : [];
+
+  const modeToggle = (
+    <View style={styles.modeToggle}>
+      {BROWSE_MODES.map((mode) => {
+        const active = mode === browseMode;
+        return (
+          <Pressable
+            key={mode}
+            onPress={() => setBrowseMode(mode)}
+            style={[styles.modePill, active && styles.modePillActive]}
+          >
+            <Text style={[styles.modePillText, active && styles.modePillTextActive]}>{mode}</Text>
+          </Pressable>
+        );
+      })}
+    </View>
+  );
 
   if (selectedFieldId) {
     return (
@@ -46,15 +94,7 @@ export default function ExploreScreen() {
             <Text style={styles.emptyText}>Scientist profiles for this field are coming soon.</Text>
           ) : (
             fieldScientists.map((s) => (
-              <Pressable
-                key={s.id}
-                style={[styles.scientistCard, { borderColor: selectedField?.color }]}
-                onPress={() => router.push(`/scientist/${s.id}`)}
-              >
-                <Text style={styles.scientistName}>{s.name}</Text>
-                <Text style={styles.scientistMeta}>{s.years}</Text>
-                <Text style={styles.scientistTagline}>{s.tagline}</Text>
-              </Pressable>
+              <ScientistRow key={s.id} scientistId={s.id} borderColor={selectedField?.color} />
             ))
           )}
         </ScrollView>
@@ -65,44 +105,73 @@ export default function ExploreScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.scroll}>
       <Text style={styles.title}>Explore</Text>
+      {modeToggle}
 
-      {SECTIONS.map((section) => {
-        const isOpen = expanded === section.id;
-        return (
-          <View key={section.id} style={styles.section}>
-            <Pressable
-              onPress={() => setExpanded(isOpen ? null : section.id)}
-              style={styles.sectionHeader}
-            >
-              <Text style={styles.sectionTitle}>{section.name}</Text>
-              <Text style={styles.sectionChevron}>{isOpen ? '−' : '+'}</Text>
-            </Pressable>
+      {browseMode === 'By Field' &&
+        SECTIONS.map((section) => {
+          const isOpen = expanded === section.id;
+          return (
+            <View key={section.id} style={styles.section}>
+              <Pressable
+                onPress={() => setExpanded(isOpen ? null : section.id)}
+                style={styles.sectionHeader}
+              >
+                <Text style={styles.sectionTitle}>{section.name}</Text>
+                <Text style={styles.sectionChevron}>{isOpen ? '−' : '+'}</Text>
+              </Pressable>
 
-            {isOpen && (
-              <View style={styles.grid}>
-                {section.fieldIds.map((fieldId) => {
-                  const field = fields.find((f) => f.id === fieldId);
-                  if (!field) return null;
-                  const count = getScientistsByField(fieldId).length;
-                  return (
-                    <Pressable
-                      key={field.id}
-                      style={styles.fieldCard}
-                      onPress={() => setSelectedFieldId(field.id)}
-                    >
-                      <View style={[styles.fieldBadge, { backgroundColor: field.color }]}>
-                        <Text style={styles.fieldBadgeText}>{field.mono}</Text>
-                      </View>
-                      <Text style={styles.fieldName}>{field.name}</Text>
-                      <Text style={styles.fieldCount}>{count} scientists</Text>
-                    </Pressable>
-                  );
-                })}
-              </View>
-            )}
-          </View>
-        );
-      })}
+              {isOpen && (
+                <View style={styles.grid}>
+                  {section.fieldIds.map((fieldId) => {
+                    const field = fields.find((f) => f.id === fieldId);
+                    if (!field) return null;
+                    const count = getScientistsByField(fieldId).length;
+                    return (
+                      <Pressable
+                        key={field.id}
+                        style={styles.fieldCard}
+                        onPress={() => setSelectedFieldId(field.id)}
+                      >
+                        <View style={[styles.fieldBadge, { backgroundColor: field.color }]}>
+                          <Text style={styles.fieldBadgeText}>{field.mono}</Text>
+                        </View>
+                        <Text style={styles.fieldName}>{field.name}</Text>
+                        <Text style={styles.fieldCount}>{count} scientists</Text>
+                      </Pressable>
+                    );
+                  })}
+                </View>
+              )}
+            </View>
+          );
+        })}
+
+      {browseMode === 'By State' && (
+        <View>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.stateChipRow}>
+            {states.map((state) => {
+              const active = state === selectedState;
+              return (
+                <Pressable
+                  key={state}
+                  onPress={() => setSelectedState(active ? null : state)}
+                  style={[styles.stateChip, active && styles.stateChipActive]}
+                >
+                  <Text style={[styles.stateChipText, active && styles.stateChipTextActive]}>
+                    {state}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </ScrollView>
+
+          {selectedState ? (
+            stateScientists.map((s) => <ScientistRow key={s.id} scientistId={s.id} />)
+          ) : (
+            <Text style={styles.emptyText}>Pick a state above to see its scientists.</Text>
+          )}
+        </View>
+      )}
     </ScrollView>
   );
 }
@@ -126,7 +195,33 @@ const styles = StyleSheet.create({
     fontFamily: typography.fontFamily.headingBold,
     fontSize: typography.size.hero,
     color: colors.textPrimary,
+    marginBottom: spacing.md,
+  },
+  modeToggle: {
+    flexDirection: 'row',
+    gap: spacing.xs,
     marginBottom: spacing.lg,
+  },
+  modePill: {
+    flex: 1,
+    borderRadius: radii.pill,
+    paddingVertical: spacing.xs,
+    alignItems: 'center',
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+  },
+  modePillActive: {
+    backgroundColor: colors.gold,
+    borderColor: colors.gold,
+  },
+  modePillText: {
+    fontFamily: typography.fontFamily.bodySemiBold,
+    fontSize: typography.size.bodySmall,
+    color: colors.textSecondary,
+  },
+  modePillTextActive: {
+    color: colors.onGold,
   },
   section: {
     marginBottom: spacing.lg,
@@ -194,12 +289,42 @@ const styles = StyleSheet.create({
     fontSize: typography.size.body,
     color: colors.textSecondary,
   },
+  stateChipRow: {
+    marginBottom: spacing.md,
+  },
+  stateChip: {
+    borderRadius: radii.pill,
+    paddingVertical: spacing.xs,
+    paddingHorizontal: spacing.md,
+    marginRight: spacing.xs,
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: colors.hairline,
+  },
+  stateChipActive: {
+    backgroundColor: colors.purple,
+    borderColor: colors.purple,
+  },
+  stateChipText: {
+    fontFamily: typography.fontFamily.bodySemiBold,
+    fontSize: typography.size.bodySmall,
+    color: colors.textSecondary,
+  },
+  stateChipTextActive: {
+    color: colors.textPrimary,
+  },
   scientistCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
     backgroundColor: colors.surface,
     borderRadius: radii.card,
     borderWidth: 1,
     padding: spacing.md,
     marginBottom: spacing.sm,
+  },
+  scientistCardText: {
+    flex: 1,
   },
   scientistName: {
     fontFamily: typography.fontFamily.headingBold,

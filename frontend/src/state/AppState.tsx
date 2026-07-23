@@ -1,9 +1,12 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import {
+  CompletedQuizzes,
+  getCompletedQuizzes,
   getLastActiveDate,
   getStreakDays,
   getUserName,
   getXpTotal,
+  setCompletedQuizzes as persistCompletedQuizzes,
   setLastActiveDate,
   setStreakDays as persistStreakDays,
   setUserName as persistUserName,
@@ -28,6 +31,8 @@ type AppStateValue = {
   dismissStreakCelebration: () => void;
   login: (name: string) => Promise<void>;
   addXp: (amount: number) => Promise<void>;
+  completedQuizzes: CompletedQuizzes;
+  recordQuizCompletion: (scientistId: string, correctCount: number, total: number) => Promise<void>;
 };
 
 const AppStateContext = createContext<AppStateValue | undefined>(undefined);
@@ -38,17 +43,20 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
   const [xpTotal, setXpTotalState] = useState(0);
   const [streakDays, setStreakDaysState] = useState(0);
   const [streakCelebration, setStreakCelebration] = useState(false);
+  const [completedQuizzes, setCompletedQuizzesState] = useState<CompletedQuizzes>({});
 
   useEffect(() => {
     (async () => {
-      const [name, xp, lastActive, streak] = await Promise.all([
+      const [name, xp, lastActive, streak, quizzes] = await Promise.all([
         getUserName(),
         getXpTotal(),
         getLastActiveDate(),
         getStreakDays(),
+        getCompletedQuizzes(),
       ]);
       setUserNameState(name);
       setXpTotalState(xp);
+      setCompletedQuizzesState(quizzes);
 
       const today = todayKey();
       let nextStreak = streak;
@@ -99,8 +107,17 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
         setXpTotalState(next);
         await persistXpTotal(next);
       },
+      completedQuizzes,
+      recordQuizCompletion: async (scientistId: string, correctCount: number, total: number) => {
+        const next = {
+          ...completedQuizzes,
+          [scientistId]: { correctCount, total, completedAt: todayKey() },
+        };
+        setCompletedQuizzesState(next);
+        await persistCompletedQuizzes(next);
+      },
     }),
-    [loading, userName, xpTotal, streakDays, streakCelebration],
+    [loading, userName, xpTotal, streakDays, streakCelebration, completedQuizzes],
   );
 
   return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>;

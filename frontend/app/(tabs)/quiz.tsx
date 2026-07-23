@@ -3,8 +3,10 @@ import { useEffect, useState } from 'react';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import Card from '../../src/components/Card';
 import PillButton from '../../src/components/PillButton';
-import { AGE_BANDS, AgeBand, quizzes } from '../../src/data/quizzes';
+import ScientistAvatar from '../../src/components/ScientistAvatar';
+import { AGE_BANDS, AgeBand, DIFFICULTIES_FOR_AGE_BAND, quizzes } from '../../src/data/quizzes';
 import { getQuestionsForScientist } from '../../src/data/quizQuestions';
+import { getScientist } from '../../src/data/scientists';
 import { useAppState } from '../../src/state/AppState';
 import { colors, radii, spacing, typography } from '../../src/theme';
 
@@ -18,7 +20,7 @@ const XP_FOR_DIFFICULTY: Record<string, number> = { easy: 10, medium: 20, hard: 
 
 export default function QuizScreen() {
   const params = useLocalSearchParams<{ scientistId?: string }>();
-  const [ageBand, setAgeBand] = useState<AgeBand>(AGE_BANDS[1]);
+  const [ageBand, setAgeBand] = useState<AgeBand>(AGE_BANDS[2]);
   const [activeScientistId, setActiveScientistId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -36,6 +38,7 @@ export default function QuizScreen() {
         scientistId={activeScientistId}
         quizName={quiz.name}
         color={quiz.color}
+        allowedDifficulties={DIFFICULTIES_FOR_AGE_BAND[ageBand]}
         onExit={() => setActiveScientistId(null)}
       />
     );
@@ -71,7 +74,12 @@ export default function QuizScreen() {
             style={[styles.card, { borderColor: item.color }]}
             onPress={() => setActiveScientistId(item.scientistId)}
           >
-            <View style={[styles.badge, { backgroundColor: item.color }]} />
+            <View style={styles.badge}>
+              {(() => {
+                const scientist = getScientist(item.scientistId);
+                return scientist ? <ScientistAvatar scientist={scientist} size={32} /> : null;
+              })()}
+            </View>
             <Text style={styles.cardName}>{item.name}</Text>
             <Text style={styles.cardBadge}>{item.badgeName}</Text>
             <View style={styles.cardFooter}>
@@ -91,15 +99,19 @@ function QuizSession({
   scientistId,
   quizName,
   color,
+  allowedDifficulties,
   onExit,
 }: {
   scientistId: string;
   quizName: string;
   color: string;
+  allowedDifficulties: string[];
   onExit: () => void;
 }) {
-  const { addXp } = useAppState();
-  const questions = getQuestionsForScientist(scientistId);
+  const { addXp, recordQuizCompletion } = useAppState();
+  const questions = getQuestionsForScientist(scientistId).filter((q) =>
+    allowedDifficulties.includes(q.difficulty),
+  );
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [xpEarned, setXpEarned] = useState(0);
@@ -110,7 +122,7 @@ function QuizSession({
     return (
       <View style={styles.container}>
         <Text style={styles.title}>{quizName}</Text>
-        <Text style={styles.cardBadge}>No questions available yet for this scientist.</Text>
+        <Text style={styles.cardBadge}>No questions at this age level yet — try Science Star.</Text>
         <PillButton label="Back to Quiz Zone" onPress={onExit} style={{ marginTop: spacing.lg }} />
       </View>
     );
@@ -149,6 +161,7 @@ function QuizSession({
       setIndex(index + 1);
       setSelected(null);
     } else {
+      recordQuizCompletion(scientistId, correctCount, questions.length);
       setFinished(true);
     }
   };
@@ -222,8 +235,9 @@ const styles = StyleSheet.create({
   },
   ageBandPill: {
     flex: 1,
-    borderRadius: radii.pill,
+    borderRadius: radii.cardSmall,
     paddingVertical: spacing.xs,
+    paddingHorizontal: 4,
     alignItems: 'center',
     backgroundColor: colors.surface,
     borderWidth: 1,
@@ -235,8 +249,9 @@ const styles = StyleSheet.create({
   },
   ageBandText: {
     fontFamily: typography.fontFamily.bodySemiBold,
-    fontSize: typography.size.bodySmall,
+    fontSize: typography.size.microLabel,
     color: colors.textSecondary,
+    textAlign: 'center',
   },
   ageBandTextActive: {
     color: colors.textPrimary,
@@ -256,9 +271,6 @@ const styles = StyleSheet.create({
     marginBottom: spacing.sm,
   },
   badge: {
-    width: 24,
-    height: 24,
-    borderRadius: radii.pill,
     marginBottom: spacing.xs,
   },
   cardName: {

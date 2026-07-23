@@ -29,5 +29,14 @@ export const quizzes: Quiz[] = scientists.map((s) => ({
   questionCount: getQuestionsForScientist(s.id).length,
 }));
 
-export const AGE_BANDS = ['8–10', '11–14', '15–18'] as const;
+export const AGE_BANDS = ['Little Explorer (6–8)', 'Junior Scientist (9–11)', 'Science Star (12+)'] as const;
 export type AgeBand = (typeof AGE_BANDS)[number];
+
+export type Difficulty = 'easy' | 'medium' | 'hard';
+
+// Which question difficulties are in play for each age band.
+export const DIFFICULTIES_FOR_AGE_BAND: Record<AgeBand, Difficulty[]> = {
+  'Little Explorer (6–8)': ['easy'],
+  'Junior Scientist (9–11)': ['easy', 'medium'],
+  'Science Star (12+)': ['easy', 'medium', 'hard'],
+};

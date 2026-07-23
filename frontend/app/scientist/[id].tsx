@@ -1,8 +1,9 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Card from '../../src/components/Card';
+import ScientistAvatar from '../../src/components/ScientistAvatar';
 import { getScientist } from '../../src/data/scientists';
-import { colors, fields, radii, spacing, typography } from '../../src/theme';
+import { colors, fields, spacing, typography } from '../../src/theme';
 
 export default function ScientistProfileScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -26,15 +27,7 @@ export default function ScientistProfileScreen() {
       </Pressable>
 
       <Card style={[styles.hero, { borderColor: accentColor }]}>
-        <View style={[styles.badge, { backgroundColor: accentColor }]}>
-          <Text style={styles.badgeText}>
-            {scientist.name
-              .split(' ')
-              .map((w) => w[0])
-              .slice(0, 2)
-              .join('')}
-          </Text>
-        </View>
+        <ScientistAvatar scientist={scientist} size={64} />
         <Text style={styles.name}>{scientist.name}</Text>
         <Text style={styles.meta}>
           {scientist.years} · {scientist.region} · {field?.name}
@@ -92,24 +85,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: spacing.lg,
   },
-  badge: {
-    width: 56,
-    height: 56,
-    borderRadius: radii.pill,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: spacing.sm,
-  },
-  badgeText: {
-    fontFamily: typography.fontFamily.headingBold,
-    fontSize: typography.size.sectionTitle,
-    color: colors.onGold,
-  },
   name: {
     fontFamily: typography.fontFamily.headingBold,
     fontSize: typography.size.hero,
     color: colors.textPrimary,
     textAlign: 'center',
+    marginTop: spacing.sm,
   },
   meta: {
     fontFamily: typography.fontFamily.bodySemiBold,

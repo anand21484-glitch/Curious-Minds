@@ -1,5 +1,6 @@
 import { router } from 'expo-router';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import ScientistAvatar from '../../src/components/ScientistAvatar';
 import { scientists } from '../../src/data/scientists';
 import { colors, fields, radii, spacing, typography } from '../../src/theme';
 
@@ -18,9 +19,12 @@ export default function StoriesScreen() {
               style={[styles.card, { borderColor: field?.color ?? colors.hairline }]}
               onPress={() => router.push(`/scientist/${item.id}`)}
             >
-              <Text style={styles.cardTitle}>{item.name}</Text>
-              <Text style={styles.cardMeta}>{item.years}</Text>
-              <Text style={styles.cardTagline}>{item.tagline}</Text>
+              <ScientistAvatar scientist={item} size={40} />
+              <View style={styles.cardText}>
+                <Text style={styles.cardTitle}>{item.name}</Text>
+                <Text style={styles.cardMeta}>{item.years}</Text>
+                <Text style={styles.cardTagline}>{item.tagline}</Text>
+              </View>
             </Pressable>
           );
         }}
@@ -45,11 +49,17 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   card: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
     backgroundColor: colors.surface,
     borderRadius: radii.card,
     padding: spacing.md,
     marginBottom: spacing.sm,
     borderWidth: 1,
+  },
+  cardText: {
+    flex: 1,
   },
   cardTitle: {
     fontFamily: typography.fontFamily.headingBold,
