@@ -1337,7 +1337,7 @@
     "options": [
       "Ancient Indian Scientists",
       "Mathematics",
-      "Engineering",
+      "Medicine",
       "Biotechnology"
     ],
     "correct": 3,
@@ -1744,7 +1744,7 @@
       "The sea keeps its secrets well, but patient study always reveals a little more.",
       "There is no limit at all to the science of medicine, and so it should be studied with diligence.",
       "Nature's plants hold secrets that can heal, if only we take the time to study them.",
-      "Dream is not that which you see while sleeping; it is something that does not let you sleep."
+      "A physician who treats the disease without knowing the patient has not truly practiced medicine."
     ],
     "correct": 1,
     "explanation": "\"There is no limit at all to the science of medicine, and so it should be studied with diligence.\" — Sushruta"
@@ -1800,7 +1800,7 @@
       "Brahmachari was nominated for the Nobel Prize in Medicine several times for his kala-azar treatment, though he never won it.",
       "Before becoming one of the twentieth century's most important mathematicians, Harish-Chandra briefly worked as a research assistant to physicist Paul Dirac.",
       "Asima Chatterjee was the first woman in India to receive a Doctor of Science degree, awarded by Calcutta University in 1944.",
-      "Kalam played the veena, a traditional South Indian string instrument, to relax after long days at the lab."
+      "The Charaka Samhita lists hundreds of medicinal plants and their uses, some of which are still studied by modern researchers today."
     ],
     "correct": 0,
     "explanation": "Brahmachari was nominated for the Nobel Prize in Medicine several times for his kala-azar treatment, though he never won it."
@@ -1814,7 +1814,7 @@
       "Science and music are not so different — both begin with curiosity and end in creation.",
       "The past leaves its story written in stone, if we learn to read it.",
       "A disease that has claimed so many lives deserves our fullest effort to defeat it.",
-      "Ask the right questions, and nature will open the doors to her secrets."
+      "The sky keeps careful records, if only we learn to read them."
     ],
     "correct": 2,
     "explanation": "\"A disease that has claimed so many lives deserves our fullest effort to defeat it.\" — Upendranath Brahmachari"
@@ -1856,7 +1856,7 @@
       "1935–",
       "1923–1983",
       "1963–",
-      "1931–2015"
+      "c. 600 BCE (dates debated)"
     ],
     "correct": 0,
     "explanation": "Gurdev Singh Khush lived from 1935–."
@@ -1870,7 +1870,7 @@
       "Silas researched everything from microscopic plankton to giant whale sharks during his career studying India's marine life.",
       "Rice varieties bred by Khush and his colleagues have been planted across tens of millions of hectares of farmland throughout Asia.",
       "By studying plant fossils hundreds of millions of years old, Sahni helped confirm how India's landmass drifted across the planet over deep geological time.",
-      "Raman got the idea for his most famous discovery while watching the color of the sea on a ship voyage home from England."
+      "Varahamihira described mathematical patterns resembling what is now called Pascal's triangle, centuries before Blaise Pascal."
     ],
     "correct": 1,
     "explanation": "Rice varieties bred by Khush and his colleagues have been planted across tens of millions of hectares of farmland throughout Asia."
@@ -1883,7 +1883,7 @@
     "options": [
       "Chase excellence, and success will follow.",
       "Statistics must have a clear purpose, one that serves the larger goal of human welfare.",
-      "Atomic energy is our greatest asset in solving the problem of adequate power in this country.",
+      "Even metal, purified with patience, can become medicine.",
       "Feeding the world starts with a single seed bred a little better than the last."
     ],
     "correct": 3,
@@ -1897,7 +1897,7 @@
     "options": [
       "Chemistry",
       "Life Sciences",
-      "Engineering",
+      "Medicine",
       "Biotechnology"
     ],
     "correct": 3,
@@ -1926,7 +1926,7 @@
       "1929–2018",
       "1928–2017",
       "1917–2006",
-      "1888–1970"
+      "505–587 CE"
     ],
     "correct": 1,
     "explanation": "Pushpa Mittra Bhargava lived from 1928–2017."
@@ -1940,7 +1940,7 @@
       "Alongside his nuclear physics career, Ramanna was a genuinely skilled Western classical pianist who composed his own music.",
       "The 'Mahalanobis distance' he invented is used today in fields as varied as anthropology, genetics, and facial recognition technology.",
       "Even in his 80s, Bhargava remained one of India's most outspoken voices for scientific integrity, publicly challenging government science policies he disagreed with.",
-      "Besides physics, Bhabha was a gifted painter and a devoted lover of Western classical music and opera."
+      "Nagarjuna's texts describe detailed furnace and distillation techniques for purifying metals, more than a thousand years before the modern chemistry lab."
     ],
     "correct": 2,
     "explanation": "Even in his 80s, Bhargava remained one of India's most outspoken voices for scientific integrity, publicly challenging government science policies he disagreed with."
@@ -1954,7 +1954,7 @@
       "Science must always keep its independence, or it stops being science.",
       "A superstition-free society is a scientifically literate society.",
       "Chemistry is nature's own language, and every molecule has a story to tell.",
-      "We must be second to none in the application of advanced technologies to the real problems of man and society."
+      "Numbers, like the stars, follow patterns waiting patiently to be found."
     ],
     "correct": 0,
     "explanation": "\"Science must always keep its independence, or it stops being science.\" — Pushpa Mittra Bhargava"
@@ -1967,8 +1967,8 @@
     "options": [
       "Mathematics",
       "Space Science",
-      "Physics",
-      "Agriculture"
+      "Biotechnology",
+      "Engineering"
     ],
     "correct": 0,
     "explanation": "Harish-Chandra worked in Mathematics. A physicist who left Dirac's side to chase pure mathematics instead."
@@ -1982,7 +1982,7 @@
       "Led the Central Marine Fisheries Research Institute, advancing India's marine biodiversity research and conservation.",
       "Pioneered representation theory of Lie groups, later foundational to the Langlands program in modern mathematics.",
       "Developed important anti-epileptic and anti-malarial drugs derived from Indian medicinal plants.",
-      "Led India's first satellite launch vehicle (SLV-III) and its missile development programs."
+      "Compiled the Charaka Samhita, one of the foundational texts of Ayurveda and ancient medical science."
     ],
     "correct": 1,
     "explanation": "Harish-Chandra: Pioneered representation theory of Lie groups, later foundational to the Langlands program in modern mathematics."
@@ -1996,7 +1996,7 @@
       "1925–2004",
       "1891–1949",
       "1923–1983",
-      "1909–1966"
+      "c. 2nd century CE (dates debated)"
     ],
     "correct": 2,
     "explanation": "Harish-Chandra lived from 1923–1983."
@@ -2009,7 +2009,7 @@
     "options": [
       "C.N.R. Rao has published more than 1,500 scientific papers over his career, making him one of the most prolific chemists in the world.",
       "Ranganathan designed brand-new molecules in her lab specifically to test whether they could fold and self-assemble the way natural proteins do.",
-      "India's first rocket components were transported to the launch site at Thumba on bicycles and bullock carts.",
+      "Bhaskara II described the idea of gravity pulling objects toward Earth roughly five hundred years before Isaac Newton formalized the laws of gravity.",
       "Before becoming one of the twentieth century's most important mathematicians, Harish-Chandra briefly worked as a research assistant to physicist Paul Dirac."
     ],
     "correct": 3,
@@ -2024,7 +2024,7 @@
       "Structure reveals function — you only need to look carefully enough.",
       "There is an unexplainable feeling of harmony when a difficult piece of mathematics finally falls into place.",
       "Even after everything, I never stopped believing in India's dream to reach space.",
-      "An equation for me has no meaning unless it expresses a thought of God."
+      "A cord, stretched carefully, can reveal the hidden geometry of the world."
     ],
     "correct": 1,
     "explanation": "\"There is an unexplainable feeling of harmony when a difficult piece of mathematics finally falls into place.\" — Harish-Chandra"
@@ -2038,7 +2038,7 @@
       "Biotechnology",
       "Marine Science",
       "Chemistry",
-      "Physics"
+      "Engineering"
     ],
     "correct": 1,
     "explanation": "E.G. Silas worked in Marine Science. From tiny plankton to giant whale sharks, he studied India's seas."
@@ -2052,7 +2052,7 @@
       "Led the scientific team behind India's first nuclear test, Pokhran-I, in 1974.",
       "Founded the field of palaeobotany in India; the Birbal Sahni Institute of Palaeobotany was established in his honor.",
       "Led the Central Marine Fisheries Research Institute, advancing India's marine biodiversity research and conservation.",
-      "Discovered the Raman Effect, explaining how light scatters through matter — earning the 1930 Nobel Prize in Physics."
+      "Compiled the Pancha-Siddhantika, unifying five ancient astronomical systems into a single, more accurate framework."
     ],
     "correct": 2,
     "explanation": "E.G. Silas: Led the Central Marine Fisheries Research Institute, advancing India's marine biodiversity research and conservation."
@@ -2065,7 +2065,7 @@
     "options": [
       "1934–",
       "1893–1972",
-      "1919–1971",
+      "1114–1185 CE",
       "1929–2018"
     ],
     "correct": 3,
@@ -2080,7 +2080,7 @@
       "Silas researched everything from microscopic plankton to giant whale sharks during his career studying India's marine life.",
       "Narlikar wrote popular science fiction stories for children in English and Marathi to make astronomy fun and accessible.",
       "After being wrongly accused and cleared decades later by the Supreme Court, Narayanan's story inspired a major Indian film about perseverance and justice.",
-      "When Hardy visited Ramanujan in a taxi numbered 1729 and called it a dull number, Ramanujan instantly replied it was the smallest number expressible as the sum of two cubes in two different ways."
+      "Baudhayana's ancient altar-building manual states a version of the Pythagorean theorem centuries before Pythagoras was born in Greece."
     ],
     "correct": 0,
     "explanation": "Silas researched everything from microscopic plankton to giant whale sharks during his career studying India's marine life."
@@ -2094,7 +2094,7 @@
       "There is no limit to what you can achieve if you keep working hard and stay focused.",
       "Zero is not nothing — it is the foundation upon which all numbers stand.",
       "The sea keeps its secrets well, but patient study always reveals a little more.",
-      "In the great mansion of nature there is not one solitary lifeless corner."
+      "Nature does not owe us simple answers, only patterns waiting to be understood."
     ],
     "correct": 2,
     "explanation": "\"The sea keeps its secrets well, but patient study always reveals a little more.\" — E.G. Silas"
@@ -2108,7 +2108,7 @@
       "Engineering",
       "Space Science",
       "Physics",
-      "Medicine"
+      "Mathematics"
     ],
     "correct": 2,
     "explanation": "Raja Ramanna worked in Physics. A nuclear physicist who was also a concert-level pianist."
@@ -2121,7 +2121,7 @@
     "options": [
       "Pioneered modern solid-state and materials chemistry research in India, earning the Bharat Ratna in 2014.",
       "Founded the Indian Statistical Institute and developed the Mahalanobis distance, a statistical tool still used worldwide.",
-      "Founded the Tata Institute of Fundamental Research and India's Atomic Energy Commission.",
+      "Pioneered Rasashastra, an early system of chemistry and metallurgy used to prepare mineral-based medicines.",
       "Led the scientific team behind India's first nuclear test, Pokhran-I, in 1974."
     ],
     "correct": 3,
@@ -2136,7 +2136,7 @@
       "1925–2004",
       "1938–",
       "1941–2001",
-      "1887–1920"
+      "c. 800 BCE"
     ],
     "correct": 0,
     "explanation": "Raja Ramanna lived from 1925–2004."
@@ -2150,7 +2150,7 @@
       "The 'Ramachandran plot' he invented in 1963 is still taught in college biology courses worldwide today, over sixty years later.",
       "Alongside his nuclear physics career, Ramanna was a genuinely skilled Western classical pianist who composed his own music.",
       "Brahmagupta was one of the first mathematicians in the world to give clear rules for treating zero as an actual number.",
-      "Bose's crescograph could magnify the movement of a plant ten million times, letting him watch a plant 'flinch' when hurt."
+      "Sudarshan proposed the theoretical concept of tachyons, hypothetical particles that could travel faster than light, sparking decades of physics debate."
     ],
     "correct": 1,
     "explanation": "Alongside his nuclear physics career, Ramanna was a genuinely skilled Western classical pianist who composed his own music."
@@ -2162,8 +2162,8 @@
     "question": "Which of these quotes is attributed to Raja Ramanna?",
     "options": [
       "Nature's plants hold secrets that can heal, if only we take the time to study them.",
-      "Dream is not that which you see while sleeping; it is something that does not let you sleep.",
-      "Education was the one thing my family could give me that could never be taken away.",
+      "A physician who treats the disease without knowing the patient has not truly practiced medicine.",
+      "Industrialize or perish — there is no other path to prosperity.",
       "Science and music are not so different — both begin with curiosity and end in creation."
     ],
     "correct": 3,
@@ -2176,8 +2176,8 @@
     "question": "Which field did C.N.R. Rao work in?",
     "options": [
       "Mathematics",
-      "Medicine",
-      "Physics",
+      "Engineering",
+      "Space Science",
       "Chemistry"
     ],
     "correct": 3,
@@ -2192,7 +2192,7 @@
       "Pioneered modern solid-state and materials chemistry research in India, earning the Bharat Ratna in 2014.",
       "Co-developed the Hoyle-Narlikar theory of gravity and founded India's Inter-University Centre for Astronomy and Astrophysics.",
       "Pioneered biomimetic chemistry research in India, studying how molecules self-assemble like natural proteins.",
-      "Founded ISRO and launched India's first sounding rocket from Thumba."
+      "Wrote the Siddhanta Shiromani, a landmark work spanning arithmetic, algebra, and astronomy that remained influential for centuries."
     ],
     "correct": 0,
     "explanation": "C.N.R. Rao: Pioneered modern solid-state and materials chemistry research in India, earning the Bharat Ratna in 2014."
@@ -2206,7 +2206,7 @@
       "1922–2001",
       "1934–",
       "1941–",
-      "1858–1937"
+      "1931–2018"
     ],
     "correct": 1,
     "explanation": "C.N.R. Rao lived from 1934–."
@@ -2218,9 +2218,9 @@
     "question": "Which of these is a true fact about C.N.R. Rao?",
     "options": [
       "Tessy Thomas earned the nickname 'Missile Woman of India' for leading development of the advanced Agni-V long-range missile.",
-      "Kalam played the veena, a traditional South Indian string instrument, to relax after long days at the lab.",
+      "The Charaka Samhita lists hundreds of medicinal plants and their uses, some of which are still studied by modern researchers today.",
       "C.N.R. Rao has published more than 1,500 scientific papers over his career, making him one of the most prolific chemists in the world.",
-      "Khorana's team built the world's first artificial gene entirely from chemicals in a laboratory in 1970."
+      "India celebrates Engineer's Day every September 15th, Visvesvaraya's birthday, in honor of his contributions to engineering."
     ],
     "correct": 2,
     "explanation": "C.N.R. Rao has published more than 1,500 scientific papers over his career, making him one of the most prolific chemists in the world."
@@ -2233,8 +2233,8 @@
     "options": [
       "Chase excellence, and success will follow.",
       "The past leaves its story written in stone, if we learn to read it.",
-      "Ask the right questions, and nature will open the doors to her secrets.",
-      "The pursuit of science has often been compared to the scaling of mountains, high and not so high."
+      "The sky keeps careful records, if only we learn to read them.",
+      "Science must roll up its sleeves and get to work solving a nation's real problems."
     ],
     "correct": 0,
     "explanation": "\"Chase excellence, and success will follow.\" — C.N.R. Rao"
@@ -2247,7 +2247,7 @@
     "options": [
       "Space Science",
       "Life Sciences",
-      "Engineering",
+      "Medicine",
       "Physics"
     ],
     "correct": 0,
@@ -2262,7 +2262,7 @@
       "Created the Ramachandran plot, a foundational tool in structural biology still used by scientists worldwide today.",
       "Co-developed the Hoyle-Narlikar theory of gravity and founded India's Inter-University Centre for Astronomy and Astrophysics.",
       "Helped develop the Vikas liquid propulsion rocket engine, essential to India's PSLV and GSLV space launch vehicles.",
-      "Produced thousands of original results in number theory and infinite series with almost no formal training."
+      "Recorded an early statement of the Pythagorean theorem and precise geometric construction methods in the Sulba Sutras."
     ],
     "correct": 1,
     "explanation": "Jayant Narlikar: Co-developed the Hoyle-Narlikar theory of gravity and founded India's Inter-University Centre for Astronomy and Astrophysics."
@@ -2276,7 +2276,7 @@
       "1963–",
       "598–668 CE",
       "1938–",
-      "1922–2011"
+      "1860–1962"
     ],
     "correct": 2,
     "explanation": "Jayant Narlikar lived from 1938–."
@@ -2288,8 +2288,8 @@
     "question": "Which of these is a true fact about Jayant Narlikar?",
     "options": [
       "Asima Chatterjee was the first woman in India to receive a Doctor of Science degree, awarded by Calcutta University in 1944.",
-      "Raman got the idea for his most famous discovery while watching the color of the sea on a ship voyage home from England.",
-      "Chandrasekhar worked out his famous limit on stellar mass during a multi-week ship voyage at just 19 years old.",
+      "Varahamihira described mathematical patterns resembling what is now called Pascal's triangle, centuries before Blaise Pascal.",
+      "India's most prestigious science prize for young researchers, the Shanti Swarup Bhatnagar Prize, is named after him and is still awarded every year.",
       "Narlikar wrote popular science fiction stories for children in English and Marathi to make astronomy fun and accessible."
     ],
     "correct": 3,
@@ -2303,8 +2303,8 @@
     "options": [
       "Statistics must have a clear purpose, one that serves the larger goal of human welfare.",
       "A superstition-free society is a scientifically literate society.",
-      "Atomic energy is our greatest asset in solving the problem of adequate power in this country.",
-      "I was not a great mathematician, but I had a great intuition."
+      "Even metal, purified with patience, can become medicine.",
+      "Do not ever try to prove your point with anger — always let your work do the talking."
     ],
     "correct": 1,
     "explanation": "\"A superstition-free society is a scientifically literate society.\" — Jayant Narlikar"
@@ -2317,8 +2317,8 @@
     "options": [
       "Mathematics",
       "Biotechnology",
-      "Physics",
-      "Chemistry"
+      "Engineering",
+      "Physics"
     ],
     "correct": 1,
     "explanation": "G.N. Ramachandran worked in Biotechnology. He drew the map every biology student still uses to study proteins."
@@ -2332,7 +2332,7 @@
       "Became the first woman to lead a missile development project in India, directing the Agni-V program.",
       "Wrote foundational rules for arithmetic with zero and negative numbers in his 628 CE text, the Brahmasphutasiddhanta.",
       "Created the Ramachandran plot, a foundational tool in structural biology still used by scientists worldwide today.",
-      "Proved that plants respond to stimuli like living organisms, and pioneered early wireless signal research."
+      "Co-developed the V-A theory of weak interactions, a foundational piece of the Standard Model of particle physics."
     ],
     "correct": 2,
     "explanation": "G.N. Ramachandran: Created the Ramachandran plot, a foundational tool in structural biology still used by scientists worldwide today."
@@ -2344,8 +2344,8 @@
     "question": "In which years did G.N. Ramachandran live?",
     "options": [
       "1917–2006",
-      "1931–2015",
-      "1910–1995",
+      "c. 600 BCE (dates debated)",
+      "1894–1955",
       "1922–2001"
     ],
     "correct": 3,
@@ -2359,8 +2359,8 @@
     "options": [
       "The 'Ramachandran plot' he invented in 1963 is still taught in college biology courses worldwide today, over sixty years later.",
       "By studying plant fossils hundreds of millions of years old, Sahni helped confirm how India's landmass drifted across the planet over deep geological time.",
-      "Besides physics, Bhabha was a gifted painter and a devoted lover of Western classical music and opera.",
-      "Every particle known as a 'boson' — including the famous Higgs boson — is named after Satyendra Nath Bose."
+      "Nagarjuna's texts describe detailed furnace and distillation techniques for purifying metals, more than a thousand years before the modern chemistry lab.",
+      "Sohonie was initially refused admission to a top research institute for being a woman — after proving herself in one year, the rule was dropped for good."
     ],
     "correct": 0,
     "explanation": "The 'Ramachandran plot' he invented in 1963 is still taught in college biology courses worldwide today, over sixty years later."
@@ -2372,9 +2372,9 @@
     "question": "Which of these quotes is attributed to G.N. Ramachandran?",
     "options": [
       "Chemistry is nature's own language, and every molecule has a story to tell.",
-      "We must be second to none in the application of advanced technologies to the real problems of man and society.",
+      "Numbers, like the stars, follow patterns waiting patiently to be found.",
       "Structure reveals function — you only need to look carefully enough.",
-      "The betterment of humankind is only possible through science."
+      "Being first is not the goal — making sure you are not the last one is."
     ],
     "correct": 2,
     "explanation": "\"Structure reveals function — you only need to look carefully enough.\" — G.N. Ramachandran"
@@ -2388,7 +2388,7 @@
       "Chemistry",
       "Physics",
       "Engineering",
-      "Life Sciences"
+      "Space Science"
     ],
     "correct": 2,
     "explanation": "Tessy Thomas worked in Engineering. The first woman to lead a missile project in India."
@@ -2400,8 +2400,8 @@
     "question": "What is Tessy Thomas best known for?",
     "options": [
       "Developed important anti-epileptic and anti-malarial drugs derived from Indian medicinal plants.",
-      "Led India's first satellite launch vehicle (SLV-III) and its missile development programs.",
-      "Helped decipher the genetic code and synthesized the first artificial gene, sharing the 1968 Nobel Prize.",
+      "Compiled the Charaka Samhita, one of the foundational texts of Ayurveda and ancient medical science.",
+      "Designed automatic floodgate systems for dams still used today, and modernized Mysore state's industry and education as its Diwan.",
       "Became the first woman to lead a missile development project in India, directing the Agni-V program."
     ],
     "correct": 3,
@@ -2415,8 +2415,8 @@
     "options": [
       "1963–",
       "1891–1949",
-      "1888–1970",
-      "1894–1974"
+      "505–587 CE",
+      "1911–1998"
     ],
     "correct": 0,
     "explanation": "Tessy Thomas lived from 1963–."
@@ -2429,8 +2429,8 @@
     "options": [
       "The 'Mahalanobis distance' he invented is used today in fields as varied as anthropology, genetics, and facial recognition technology.",
       "Tessy Thomas earned the nickname 'Missile Woman of India' for leading development of the advanced Agni-V long-range missile.",
-      "India's first rocket components were transported to the launch site at Thumba on bicycles and bullock carts.",
-      "Swaminathan originally trained to become a police officer before switching his path to genetics and farming."
+      "Bhaskara II described the idea of gravity pulling objects toward Earth roughly five hundred years before Isaac Newton formalized the laws of gravity.",
+      "Rajeshwari Chatterjee became Karnataka's first woman engineer and went on to build one of India's earliest microwave engineering research labs."
     ],
     "correct": 1,
     "explanation": "Tessy Thomas earned the nickname 'Missile Woman of India' for leading development of the advanced Agni-V long-range missile."
@@ -2442,8 +2442,8 @@
     "question": "Which of these quotes is attributed to Tessy Thomas?",
     "options": [
       "Even after everything, I never stopped believing in India's dream to reach space.",
-      "An equation for me has no meaning unless it expresses a thought of God.",
-      "The path from dreams to success does exist.",
+      "A cord, stretched carefully, can reveal the hidden geometry of the world.",
+      "A gene's story is written in behavior, if you know how to read it.",
       "There is no limit to what you can achieve if you keep working hard and stay focused."
     ],
     "correct": 3,
@@ -2456,8 +2456,8 @@
     "question": "Which field did Asima Chatterjee work in?",
     "options": [
       "Space Science",
-      "Physics",
       "Mathematics",
+      "Biotechnology",
       "Chemistry"
     ],
     "correct": 3,
@@ -2471,8 +2471,8 @@
     "options": [
       "Developed important anti-epileptic and anti-malarial drugs derived from Indian medicinal plants.",
       "Founded the field of palaeobotany in India; the Birbal Sahni Institute of Palaeobotany was established in his honor.",
-      "Discovered the Raman Effect, explaining how light scatters through matter — earning the 1930 Nobel Prize in Physics.",
-      "Discovered the Chandrasekhar limit, explaining the fate of dying stars — earning the 1983 Nobel Prize in Physics."
+      "Compiled the Pancha-Siddhantika, unifying five ancient astronomical systems into a single, more accurate framework.",
+      "Founded and led India's Council of Scientific and Industrial Research (CSIR), building its national network of research laboratories."
     ],
     "correct": 0,
     "explanation": "Asima Chatterjee: Developed important anti-epileptic and anti-malarial drugs derived from Indian medicinal plants."
@@ -2485,8 +2485,8 @@
     "options": [
       "1893–1972",
       "1917–2006",
-      "1909–1966",
-      "1925–2023"
+      "c. 2nd century CE (dates debated)",
+      "1922–2010"
     ],
     "correct": 1,
     "explanation": "Asima Chatterjee lived from 1917–2006."
@@ -2498,9 +2498,9 @@
     "question": "Which of these is a true fact about Asima Chatterjee?",
     "options": [
       "Ranganathan designed brand-new molecules in her lab specifically to test whether they could fold and self-assemble the way natural proteins do.",
-      "When Hardy visited Ramanujan in a taxi numbered 1729 and called it a dull number, Ramanujan instantly replied it was the smallest number expressible as the sum of two cubes in two different ways.",
+      "Baudhayana's ancient altar-building manual states a version of the Pythagorean theorem centuries before Pythagoras was born in Greece.",
       "Asima Chatterjee was the first woman in India to receive a Doctor of Science degree, awarded by Calcutta University in 1944.",
-      "As a child, Kalpana Chawla loved visiting a local flying club in Karnal just to watch aircraft take off and land."
+      "Siddiqi's research on fruit fly genes and behavior helped establish neurogenetics, the study of how genes shape the nervous system."
     ],
     "correct": 2,
     "explanation": "Asima Chatterjee was the first woman in India to receive a Doctor of Science degree, awarded by Calcutta University in 1944."
@@ -2513,8 +2513,8 @@
     "options": [
       "Nature's plants hold secrets that can heal, if only we take the time to study them.",
       "Zero is not nothing — it is the foundation upon which all numbers stand.",
-      "In the great mansion of nature there is not one solitary lifeless corner.",
-      "No rule written by men could stop me from becoming a doctor."
+      "Nature does not owe us simple answers, only patterns waiting to be understood.",
+      "The best innovation is the one that reaches the person who needs it most, at a price they can afford."
     ],
     "correct": 0,
     "explanation": "\"Nature's plants hold secrets that can heal, if only we take the time to study them.\" — Asima Chatterjee"
@@ -2527,7 +2527,7 @@
     "options": [
       "Life Sciences",
       "Mathematics",
-      "Agriculture",
+      "Engineering",
       "Physics"
     ],
     "correct": 0,
@@ -2541,8 +2541,8 @@
     "options": [
       "Founded the Indian Statistical Institute and developed the Mahalanobis distance, a statistical tool still used worldwide.",
       "Founded the field of palaeobotany in India; the Birbal Sahni Institute of Palaeobotany was established in his honor.",
-      "Founded the Tata Institute of Fundamental Research and India's Atomic Energy Commission.",
-      "Co-developed Bose–Einstein statistics, the foundation for an entire class of particles named after him."
+      "Pioneered Rasashastra, an early system of chemistry and metallurgy used to prepare mineral-based medicines.",
+      "Became the first Indian woman to earn a PhD in science, and developed a nutritious drink to fight malnutrition in poor communities."
     ],
     "correct": 1,
     "explanation": "Birbal Sahni: Founded the field of palaeobotany in India; the Birbal Sahni Institute of Palaeobotany was established in his honor."
@@ -2554,9 +2554,9 @@
     "question": "In which years did Birbal Sahni live?",
     "options": [
       "1941–2001",
-      "1919–1971",
+      "1114–1185 CE",
       "1891–1949",
-      "1962–2003"
+      "1932–2013"
     ],
     "correct": 2,
     "explanation": "Birbal Sahni lived from 1891–1949."
@@ -2568,8 +2568,8 @@
     "question": "Which of these is a true fact about Birbal Sahni?",
     "options": [
       "After being wrongly accused and cleared decades later by the Supreme Court, Narayanan's story inspired a major Indian film about perseverance and justice.",
-      "Bose's crescograph could magnify the movement of a plant ten million times, letting him watch a plant 'flinch' when hurt.",
-      "Kadambini Ganguly had to overcome years of formal objections just to be permitted to sit her medical college entrance exam.",
+      "Sudarshan proposed the theoretical concept of tachyons, hypothetical particles that could travel faster than light, sparking decades of physics debate.",
+      "Mashelkar's mother sold her jewelry so he could stay in school after his father died — a sacrifice he credits for his entire scientific career.",
       "By studying plant fossils hundreds of millions of years old, Sahni helped confirm how India's landmass drifted across the planet over deep geological time."
     ],
     "correct": 3,
@@ -2581,10 +2581,10 @@
     "difficulty": "hard",
     "question": "Which of these quotes is attributed to Birbal Sahni?",
     "options": [
-      "Dream is not that which you see while sleeping; it is something that does not let you sleep.",
+      "A physician who treats the disease without knowing the patient has not truly practiced medicine.",
       "The past leaves its story written in stone, if we learn to read it.",
-      "Education was the one thing my family could give me that could never be taken away.",
-      "Science is not just about discoveries; it is about serving society."
+      "Industrialize or perish — there is no other path to prosperity.",
+      "Careful teamwork, not luck, is what gets a spacecraft safely to another planet."
     ],
     "correct": 1,
     "explanation": "\"The past leaves its story written in stone, if we learn to read it.\" — Birbal Sahni"
@@ -2595,10 +2595,10 @@
     "difficulty": "easy",
     "question": "Which field did P.C. Mahalanobis work in?",
     "options": [
-      "Engineering",
+      "Medicine",
       "Mathematics",
-      "Life Sciences",
-      "Space Science"
+      "Physics",
+      "Biotechnology"
     ],
     "correct": 1,
     "explanation": "P.C. Mahalanobis worked in Mathematics. He built the science of statistics that still shapes how India plans its future."
@@ -2610,9 +2610,9 @@
     "question": "What is P.C. Mahalanobis best known for?",
     "options": [
       "Pioneered biomimetic chemistry research in India, studying how molecules self-assemble like natural proteins.",
-      "Founded ISRO and launched India's first sounding rocket from Thumba.",
+      "Wrote the Siddhanta Shiromani, a landmark work spanning arithmetic, algebra, and astronomy that remained influential for centuries.",
       "Founded the Indian Statistical Institute and developed the Mahalanobis distance, a statistical tool still used worldwide.",
-      "Led India's Green Revolution, transforming the country from food scarcity to self-sufficiency."
+      "Pioneered microwave engineering and antenna research in India, and wrote textbooks used by engineering students for decades."
     ],
     "correct": 2,
     "explanation": "P.C. Mahalanobis: Founded the Indian Statistical Institute and developed the Mahalanobis distance, a statistical tool still used worldwide."
@@ -2624,8 +2624,8 @@
     "question": "In which years did P.C. Mahalanobis live?",
     "options": [
       "1941–",
-      "1887–1920",
-      "1861–1923",
+      "c. 800 BCE",
+      "1943–",
       "1893–1972"
     ],
     "correct": 3,
@@ -2639,8 +2639,8 @@
     "options": [
       "The 'Mahalanobis distance' he invented is used today in fields as varied as anthropology, genetics, and facial recognition technology.",
       "Brahmagupta was one of the first mathematicians in the world to give clear rules for treating zero as an actual number.",
-      "Khorana's team built the world's first artificial gene entirely from chemicals in a laboratory in 1970.",
-      "Saha's 1920 equation is still used today by astronomers to calculate the temperature of stars from their light."
+      "India celebrates Engineer's Day every September 15th, Visvesvaraya's birthday, in honor of his contributions to engineering.",
+      "Under Radhakrishnan, India's Mars mission succeeded on its very first attempt — the only country ever to do so — and at a remarkably low cost."
     ],
     "correct": 0,
     "explanation": "The 'Mahalanobis distance' he invented is used today in fields as varied as anthropology, genetics, and facial recognition technology."
@@ -2651,10 +2651,10 @@
     "difficulty": "hard",
     "question": "Which of these quotes is attributed to P.C. Mahalanobis?",
     "options": [
-      "Ask the right questions, and nature will open the doors to her secrets.",
-      "The pursuit of science has often been compared to the scaling of mountains, high and not so high.",
+      "The sky keeps careful records, if only we learn to read them.",
+      "Science must roll up its sleeves and get to work solving a nation's real problems.",
       "Statistics must have a clear purpose, one that serves the larger goal of human welfare.",
-      "Service to mankind is the best form of worship."
+      "Science loses something valuable every time a talented mind is discouraged from pursuing it."
     ],
     "correct": 2,
     "explanation": "\"Statistics must have a clear purpose, one that serves the larger goal of human welfare.\" — P.C. Mahalanobis"
@@ -2665,10 +2665,10 @@
     "difficulty": "easy",
     "question": "Which field did Darshan Ranganathan work in?",
     "options": [
-      "Physics",
-      "Medicine",
+      "Mathematics",
+      "Engineering",
       "Chemistry",
-      "Engineering"
+      "Physics"
     ],
     "correct": 2,
     "explanation": "Darshan Ranganathan worked in Chemistry. She tried to recreate, in a test tube, the tricks nature uses to build proteins."
@@ -2680,8 +2680,8 @@
     "question": "What is Darshan Ranganathan best known for?",
     "options": [
       "Helped develop the Vikas liquid propulsion rocket engine, essential to India's PSLV and GSLV space launch vehicles.",
-      "Produced thousands of original results in number theory and infinite series with almost no formal training.",
-      "Became the first woman of Indian origin to travel to space, flying two Space Shuttle missions.",
+      "Recorded an early statement of the Pythagorean theorem and precise geometric construction methods in the Sulba Sutras.",
+      "Founded the National Centre for Biological Sciences and pioneered neurogenetics research in India using fruit flies.",
       "Pioneered biomimetic chemistry research in India, studying how molecules self-assemble like natural proteins."
     ],
     "correct": 3,
@@ -2695,8 +2695,8 @@
     "options": [
       "1941–2001",
       "598–668 CE",
-      "1858–1937",
-      "1893–1956"
+      "1931–2018",
+      "1949–"
     ],
     "correct": 0,
     "explanation": "Darshan Ranganathan lived from 1941–2001."
@@ -2707,10 +2707,10 @@
     "difficulty": "medium",
     "question": "Which of these is a true fact about Darshan Ranganathan?",
     "options": [
-      "Kalam played the veena, a traditional South Indian string instrument, to relax after long days at the lab.",
+      "The Charaka Samhita lists hundreds of medicinal plants and their uses, some of which are still studied by modern researchers today.",
       "Ranganathan designed brand-new molecules in her lab specifically to test whether they could fold and self-assemble the way natural proteins do.",
-      "Chandrasekhar worked out his famous limit on stellar mass during a multi-week ship voyage at just 19 years old.",
-      "Despite becoming famous and successful, Ray lived simply his whole life and gave away almost all his earnings to support poor students."
+      "India's most prestigious science prize for young researchers, the Shanti Swarup Bhatnagar Prize, is named after him and is still awarded every year.",
+      "Godbole's theoretical work helped guide the international search that confirmed the Higgs boson particle's existence in 2012."
     ],
     "correct": 1,
     "explanation": "Ranganathan designed brand-new molecules in her lab specifically to test whether they could fold and self-assemble the way natural proteins do."
@@ -2721,9 +2721,9 @@
     "difficulty": "hard",
     "question": "Which of these quotes is attributed to Darshan Ranganathan?",
     "options": [
-      "Atomic energy is our greatest asset in solving the problem of adequate power in this country.",
-      "I was not a great mathematician, but I had a great intuition.",
-      "Birds are among the best indicators of the health of our environment.",
+      "Even metal, purified with patience, can become medicine.",
+      "Do not ever try to prove your point with anger — always let your work do the talking.",
+      "Light, once you learn to bend it, can carry anything — even the whole world's conversations.",
       "Chemistry is nature's own language, and every molecule has a story to tell."
     ],
     "correct": 3,
@@ -2735,9 +2735,9 @@
     "difficulty": "easy",
     "question": "Which field did Nambi Narayanan work in?",
     "options": [
-      "Physics",
-      "Biotechnology",
-      "Pharmaceutical Science",
+      "Chemistry",
+      "Mathematics",
+      "Life Sciences",
       "Space Science"
     ],
     "correct": 3,
@@ -2751,8 +2751,8 @@
     "options": [
       "Helped develop the Vikas liquid propulsion rocket engine, essential to India's PSLV and GSLV space launch vehicles.",
       "Wrote foundational rules for arithmetic with zero and negative numbers in his 628 CE text, the Brahmasphutasiddhanta.",
-      "Proved that plants respond to stimuli like living organisms, and pioneered early wireless signal research.",
-      "Became one of the first women in India to qualify and practice as a physician."
+      "Co-developed the V-A theory of weak interactions, a foundational piece of the Standard Model of particle physics.",
+      "Led India's CSIR laboratory network and became a global champion of frugal, affordable innovation for the poor."
     ],
     "correct": 0,
     "explanation": "Nambi Narayanan: Helped develop the Vikas liquid propulsion rocket engine, essential to India's PSLV and GSLV space launch vehicles."
@@ -2763,10 +2763,10 @@
     "difficulty": "medium",
     "question": "In which years did Nambi Narayanan live?",
     "options": [
-      "1931–2015",
+      "c. 600 BCE (dates debated)",
       "1941–",
-      "1922–2011",
-      "1861–1944"
+      "1860–1962",
+      "1952–2024"
     ],
     "correct": 1,
     "explanation": "Nambi Narayanan lived from 1941–."
@@ -2777,10 +2777,10 @@
     "difficulty": "medium",
     "question": "Which of these is a true fact about Nambi Narayanan?",
     "options": [
-      "Raman got the idea for his most famous discovery while watching the color of the sea on a ship voyage home from England.",
-      "Every particle known as a 'boson' — including the famous Higgs boson — is named after Satyendra Nath Bose.",
+      "Varahamihira described mathematical patterns resembling what is now called Pascal's triangle, centuries before Blaise Pascal.",
+      "Sohonie was initially refused admission to a top research institute for being a woman — after proving herself in one year, the rule was dropped for good.",
       "After being wrongly accused and cleared decades later by the Supreme Court, Narayanan's story inspired a major Indian film about perseverance and justice.",
-      "Salim Ali's lifelong passion for birds began the day he examined a sparrow he had shot with a toy air gun as a boy."
+      "Kapany personally coined the term 'fiber optics' in 1960 — the technology that now carries most of the world's internet traffic."
     ],
     "correct": 2,
     "explanation": "After being wrongly accused and cleared decades later by the Supreme Court, Narayanan's story inspired a major Indian film about perseverance and justice."
@@ -2792,9 +2792,9 @@
     "question": "Which of these quotes is attributed to Nambi Narayanan?",
     "options": [
       "Even after everything, I never stopped believing in India's dream to reach space.",
-      "We must be second to none in the application of advanced technologies to the real problems of man and society.",
-      "The betterment of humankind is only possible through science.",
-      "Numbers have life; they are not just symbols on paper."
+      "Numbers, like the stars, follow patterns waiting patiently to be found.",
+      "Being first is not the goal — making sure you are not the last one is.",
+      "True energy security means building your future on the fuel you already have in abundance."
     ],
     "correct": 0,
     "explanation": "\"Even after everything, I never stopped believing in India's dream to reach space.\" — Nambi Narayanan"
@@ -2806,9 +2806,9 @@
     "question": "Which field did Brahmagupta work in?",
     "options": [
       "Mathematics",
-      "Space Science",
+      "Biotechnology",
       "Physics",
-      "Chemistry"
+      "Life Sciences"
     ],
     "correct": 0,
     "explanation": "Brahmagupta worked in Mathematics. He gave the world rules for zero, over a thousand years before Europe caught on."
@@ -2819,10 +2819,10 @@
     "difficulty": "easy",
     "question": "What is Brahmagupta best known for?",
     "options": [
-      "Led India's first satellite launch vehicle (SLV-III) and its missile development programs.",
+      "Compiled the Charaka Samhita, one of the foundational texts of Ayurveda and ancient medical science.",
       "Wrote foundational rules for arithmetic with zero and negative numbers in his 628 CE text, the Brahmasphutasiddhanta.",
-      "Helped decipher the genetic code and synthesized the first artificial gene, sharing the 1968 Nobel Prize.",
-      "Developed the Saha ionization equation, a foundational tool of modern astrophysics."
+      "Designed automatic floodgate systems for dams still used today, and modernized Mysore state's industry and education as its Diwan.",
+      "Led ISRO through the Mars Orbiter Mission (Mangalyaan), making India the first nation to reach Mars orbit on its first attempt."
     ],
     "correct": 1,
     "explanation": "Brahmagupta: Wrote foundational rules for arithmetic with zero and negative numbers in his 628 CE text, the Brahmasphutasiddhanta."
@@ -2833,10 +2833,10 @@
     "difficulty": "medium",
     "question": "In which years did Brahmagupta live?",
     "options": [
-      "1888–1970",
-      "1910–1995",
+      "505–587 CE",
+      "1894–1955",
       "598–668 CE",
-      "1896–1987"
+      "1926–2020"
     ],
     "correct": 2,
     "explanation": "Brahmagupta lived from 598–668 CE."
@@ -2847,9 +2847,9 @@
     "difficulty": "medium",
     "question": "Which of these is a true fact about Brahmagupta?",
     "options": [
-      "Besides physics, Bhabha was a gifted painter and a devoted lover of Western classical music and opera.",
-      "Swaminathan originally trained to become a police officer before switching his path to genetics and farming.",
-      "In 1980, Shakuntala Devi multiplied two 13-digit numbers in her head in just 28 seconds, faster than many computers of that era.",
+      "Nagarjuna's texts describe detailed furnace and distillation techniques for purifying metals, more than a thousand years before the modern chemistry lab.",
+      "Rajeshwari Chatterjee became Karnataka's first woman engineer and went on to build one of India's earliest microwave engineering research labs.",
+      "Kakodkar champions using thorium, which India has in huge supply, as a nuclear fuel — a technology that could power India for centuries.",
       "Brahmagupta was one of the first mathematicians in the world to give clear rules for treating zero as an actual number."
     ],
     "correct": 3,
@@ -2861,12 +2861,1132 @@
     "difficulty": "hard",
     "question": "Which of these quotes is attributed to Brahmagupta?",
     "options": [
-      "An equation for me has no meaning unless it expresses a thought of God.",
+      "A cord, stretched carefully, can reveal the hidden geometry of the world.",
       "Zero is not nothing — it is the foundation upon which all numbers stand.",
+      "A gene's story is written in behavior, if you know how to read it.",
+      "Dream is not that which you see while sleeping; it is something that does not let you sleep."
+    ],
+    "correct": 1,
+    "explanation": "\"Zero is not nothing — it is the foundation upon which all numbers stand.\" — Brahmagupta"
+  },
+  {
+    "id": "charaka_q1",
+    "scientist_id": "charaka",
+    "difficulty": "easy",
+    "question": "Which field did Charaka work in?",
+    "options": [
+      "Mathematics",
+      "Medicine",
+      "Engineering",
+      "Physics"
+    ],
+    "correct": 1,
+    "explanation": "Charaka worked in Medicine. The father of medicine who mapped the human body."
+  },
+  {
+    "id": "charaka_q2",
+    "scientist_id": "charaka",
+    "difficulty": "easy",
+    "question": "What is Charaka best known for?",
+    "options": [
+      "Compiled the Pancha-Siddhantika, unifying five ancient astronomical systems into a single, more accurate framework.",
+      "Founded and led India's Council of Scientific and Industrial Research (CSIR), building its national network of research laboratories.",
+      "Compiled the Charaka Samhita, one of the foundational texts of Ayurveda and ancient medical science.",
+      "Contributed key theoretical work supporting the discovery of the Higgs boson, and championed women in Indian science."
+    ],
+    "correct": 2,
+    "explanation": "Charaka: Compiled the Charaka Samhita, one of the foundational texts of Ayurveda and ancient medical science."
+  },
+  {
+    "id": "charaka_q3",
+    "scientist_id": "charaka",
+    "difficulty": "medium",
+    "question": "In which years did Charaka live?",
+    "options": [
+      "c. 2nd century CE (dates debated)",
+      "1911–1998",
+      "1943–",
+      "c. 600 BCE (dates debated)"
+    ],
+    "correct": 3,
+    "explanation": "Charaka lived from c. 600 BCE (dates debated)."
+  },
+  {
+    "id": "charaka_q4",
+    "scientist_id": "charaka",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about Charaka?",
+    "options": [
+      "The Charaka Samhita lists hundreds of medicinal plants and their uses, some of which are still studied by modern researchers today.",
+      "Bhaskara II described the idea of gravity pulling objects toward Earth roughly five hundred years before Isaac Newton formalized the laws of gravity.",
+      "Siddiqi's research on fruit fly genes and behavior helped establish neurogenetics, the study of how genes shape the nervous system.",
+      "Kalam played the veena, a traditional South Indian string instrument, to relax after long days at the lab."
+    ],
+    "correct": 0,
+    "explanation": "The Charaka Samhita lists hundreds of medicinal plants and their uses, some of which are still studied by modern researchers today."
+  },
+  {
+    "id": "charaka_q5",
+    "scientist_id": "charaka",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to Charaka?",
+    "options": [
+      "Nature does not owe us simple answers, only patterns waiting to be understood.",
+      "The best innovation is the one that reaches the person who needs it most, at a price they can afford.",
+      "A physician who treats the disease without knowing the patient has not truly practiced medicine.",
+      "Ask the right questions, and nature will open the doors to her secrets."
+    ],
+    "correct": 2,
+    "explanation": "\"A physician who treats the disease without knowing the patient has not truly practiced medicine.\" — Charaka"
+  },
+  {
+    "id": "varahamihira_q1",
+    "scientist_id": "varahamihira",
+    "difficulty": "easy",
+    "question": "Which field did Varahamihira work in?",
+    "options": [
+      "Physics",
+      "Biotechnology",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "correct": 2,
+    "explanation": "Varahamihira worked in Mathematics. The astronomer who charted the sky and the seasons."
+  },
+  {
+    "id": "varahamihira_q2",
+    "scientist_id": "varahamihira",
+    "difficulty": "easy",
+    "question": "What is Varahamihira best known for?",
+    "options": [
+      "Pioneered Rasashastra, an early system of chemistry and metallurgy used to prepare mineral-based medicines.",
+      "Became the first Indian woman to earn a PhD in science, and developed a nutritious drink to fight malnutrition in poor communities.",
+      "Pioneered fiber optic technology, laying the foundation for global internet and telecommunications infrastructure.",
+      "Compiled the Pancha-Siddhantika, unifying five ancient astronomical systems into a single, more accurate framework."
+    ],
+    "correct": 3,
+    "explanation": "Varahamihira: Compiled the Pancha-Siddhantika, unifying five ancient astronomical systems into a single, more accurate framework."
+  },
+  {
+    "id": "varahamihira_q3",
+    "scientist_id": "varahamihira",
+    "difficulty": "medium",
+    "question": "In which years did Varahamihira live?",
+    "options": [
+      "505–587 CE",
+      "1114–1185 CE",
+      "1922–2010",
+      "1931–2015"
+    ],
+    "correct": 0,
+    "explanation": "Varahamihira lived from 505–587 CE."
+  },
+  {
+    "id": "varahamihira_q4",
+    "scientist_id": "varahamihira",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about Varahamihira?",
+    "options": [
+      "Baudhayana's ancient altar-building manual states a version of the Pythagorean theorem centuries before Pythagoras was born in Greece.",
+      "Varahamihira described mathematical patterns resembling what is now called Pascal's triangle, centuries before Blaise Pascal.",
+      "Mashelkar's mother sold her jewelry so he could stay in school after his father died — a sacrifice he credits for his entire scientific career.",
+      "Raman got the idea for his most famous discovery while watching the color of the sea on a ship voyage home from England."
+    ],
+    "correct": 1,
+    "explanation": "Varahamihira described mathematical patterns resembling what is now called Pascal's triangle, centuries before Blaise Pascal."
+  },
+  {
+    "id": "varahamihira_q5",
+    "scientist_id": "varahamihira",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to Varahamihira?",
+    "options": [
+      "Industrialize or perish — there is no other path to prosperity.",
+      "Careful teamwork, not luck, is what gets a spacecraft safely to another planet.",
+      "Atomic energy is our greatest asset in solving the problem of adequate power in this country.",
+      "The sky keeps careful records, if only we learn to read them."
+    ],
+    "correct": 3,
+    "explanation": "\"The sky keeps careful records, if only we learn to read them.\" — Varahamihira"
+  },
+  {
+    "id": "nagarjuna_q1",
+    "scientist_id": "nagarjuna",
+    "difficulty": "easy",
+    "question": "Which field did Nagarjuna work in?",
+    "options": [
+      "Engineering",
+      "Physics",
+      "Agriculture",
+      "Chemistry"
+    ],
+    "correct": 3,
+    "explanation": "Nagarjuna worked in Chemistry. The ancient chemist who turned metals into medicine."
+  },
+  {
+    "id": "nagarjuna_q2",
+    "scientist_id": "nagarjuna",
+    "difficulty": "easy",
+    "question": "What is Nagarjuna best known for?",
+    "options": [
+      "Pioneered Rasashastra, an early system of chemistry and metallurgy used to prepare mineral-based medicines.",
+      "Wrote the Siddhanta Shiromani, a landmark work spanning arithmetic, algebra, and astronomy that remained influential for centuries.",
+      "Pioneered microwave engineering and antenna research in India, and wrote textbooks used by engineering students for decades.",
+      "Led India's nuclear engineering efforts including the 1998 Pokhran-II tests, and championed thorium-based nuclear power for energy self-reliance."
+    ],
+    "correct": 0,
+    "explanation": "Nagarjuna: Pioneered Rasashastra, an early system of chemistry and metallurgy used to prepare mineral-based medicines."
+  },
+  {
+    "id": "nagarjuna_q3",
+    "scientist_id": "nagarjuna",
+    "difficulty": "medium",
+    "question": "In which years did Nagarjuna live?",
+    "options": [
+      "c. 800 BCE",
+      "c. 2nd century CE (dates debated)",
+      "1932–2013",
+      "1888–1970"
+    ],
+    "correct": 1,
+    "explanation": "Nagarjuna lived from c. 2nd century CE (dates debated)."
+  },
+  {
+    "id": "nagarjuna_q4",
+    "scientist_id": "nagarjuna",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about Nagarjuna?",
+    "options": [
+      "Sudarshan proposed the theoretical concept of tachyons, hypothetical particles that could travel faster than light, sparking decades of physics debate.",
+      "Under Radhakrishnan, India's Mars mission succeeded on its very first attempt — the only country ever to do so — and at a remarkably low cost.",
+      "Nagarjuna's texts describe detailed furnace and distillation techniques for purifying metals, more than a thousand years before the modern chemistry lab.",
+      "Besides physics, Bhabha was a gifted painter and a devoted lover of Western classical music and opera."
+    ],
+    "correct": 2,
+    "explanation": "Nagarjuna's texts describe detailed furnace and distillation techniques for purifying metals, more than a thousand years before the modern chemistry lab."
+  },
+  {
+    "id": "nagarjuna_q5",
+    "scientist_id": "nagarjuna",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to Nagarjuna?",
+    "options": [
+      "Even metal, purified with patience, can become medicine.",
+      "Science must roll up its sleeves and get to work solving a nation's real problems.",
+      "Science loses something valuable every time a talented mind is discouraged from pursuing it.",
+      "We must be second to none in the application of advanced technologies to the real problems of man and society."
+    ],
+    "correct": 0,
+    "explanation": "\"Even metal, purified with patience, can become medicine.\" — Nagarjuna"
+  },
+  {
+    "id": "bhaskaraii_q1",
+    "scientist_id": "bhaskaraii",
+    "difficulty": "easy",
+    "question": "Which field did Bhaskara II work in?",
+    "options": [
+      "Mathematics",
+      "Chemistry",
+      "Space Science",
+      "Physics"
+    ],
+    "correct": 0,
+    "explanation": "Bhaskara II worked in Mathematics. He wrote about gravity centuries before Newton was born."
+  },
+  {
+    "id": "bhaskaraii_q2",
+    "scientist_id": "bhaskaraii",
+    "difficulty": "easy",
+    "question": "What is Bhaskara II best known for?",
+    "options": [
+      "Recorded an early statement of the Pythagorean theorem and precise geometric construction methods in the Sulba Sutras.",
+      "Wrote the Siddhanta Shiromani, a landmark work spanning arithmetic, algebra, and astronomy that remained influential for centuries.",
+      "Founded the National Centre for Biological Sciences and pioneered neurogenetics research in India using fruit flies.",
+      "Led India's first satellite launch vehicle (SLV-III) and its missile development programs."
+    ],
+    "correct": 1,
+    "explanation": "Bhaskara II: Wrote the Siddhanta Shiromani, a landmark work spanning arithmetic, algebra, and astronomy that remained influential for centuries."
+  },
+  {
+    "id": "bhaskaraii_q3",
+    "scientist_id": "bhaskaraii",
+    "difficulty": "medium",
+    "question": "In which years did Bhaskara II live?",
+    "options": [
+      "1931–2018",
+      "1943–",
+      "1114–1185 CE",
+      "1909–1966"
+    ],
+    "correct": 2,
+    "explanation": "Bhaskara II lived from 1114–1185 CE."
+  },
+  {
+    "id": "bhaskaraii_q4",
+    "scientist_id": "bhaskaraii",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about Bhaskara II?",
+    "options": [
+      "India celebrates Engineer's Day every September 15th, Visvesvaraya's birthday, in honor of his contributions to engineering.",
+      "Godbole's theoretical work helped guide the international search that confirmed the Higgs boson particle's existence in 2012.",
+      "India's first rocket components were transported to the launch site at Thumba on bicycles and bullock carts.",
+      "Bhaskara II described the idea of gravity pulling objects toward Earth roughly five hundred years before Isaac Newton formalized the laws of gravity."
+    ],
+    "correct": 3,
+    "explanation": "Bhaskara II described the idea of gravity pulling objects toward Earth roughly five hundred years before Isaac Newton formalized the laws of gravity."
+  },
+  {
+    "id": "bhaskaraii_q5",
+    "scientist_id": "bhaskaraii",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to Bhaskara II?",
+    "options": [
+      "Do not ever try to prove your point with anger — always let your work do the talking.",
+      "Numbers, like the stars, follow patterns waiting patiently to be found.",
+      "Light, once you learn to bend it, can carry anything — even the whole world's conversations.",
+      "An equation for me has no meaning unless it expresses a thought of God."
+    ],
+    "correct": 1,
+    "explanation": "\"Numbers, like the stars, follow patterns waiting patiently to be found.\" — Bhaskara II"
+  },
+  {
+    "id": "baudhayana_q1",
+    "scientist_id": "baudhayana",
+    "difficulty": "easy",
+    "question": "Which field did Baudhayana work in?",
+    "options": [
+      "Biotechnology",
+      "Mathematics",
+      "Physics",
+      "Agriculture"
+    ],
+    "correct": 1,
+    "explanation": "Baudhayana worked in Mathematics. He described the Pythagorean theorem before Pythagoras was born."
+  },
+  {
+    "id": "baudhayana_q2",
+    "scientist_id": "baudhayana",
+    "difficulty": "easy",
+    "question": "What is Baudhayana best known for?",
+    "options": [
+      "Co-developed the V-A theory of weak interactions, a foundational piece of the Standard Model of particle physics.",
+      "Led India's CSIR laboratory network and became a global champion of frugal, affordable innovation for the poor.",
+      "Recorded an early statement of the Pythagorean theorem and precise geometric construction methods in the Sulba Sutras.",
+      "Discovered the Raman Effect, explaining how light scatters through matter — earning the 1930 Nobel Prize in Physics."
+    ],
+    "correct": 2,
+    "explanation": "Baudhayana: Recorded an early statement of the Pythagorean theorem and precise geometric construction methods in the Sulba Sutras."
+  },
+  {
+    "id": "baudhayana_q3",
+    "scientist_id": "baudhayana",
+    "difficulty": "medium",
+    "question": "In which years did Baudhayana live?",
+    "options": [
+      "1860–1962",
+      "1949–",
+      "1919–1971",
+      "c. 800 BCE"
+    ],
+    "correct": 3,
+    "explanation": "Baudhayana lived from c. 800 BCE."
+  },
+  {
+    "id": "baudhayana_q4",
+    "scientist_id": "baudhayana",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about Baudhayana?",
+    "options": [
+      "Baudhayana's ancient altar-building manual states a version of the Pythagorean theorem centuries before Pythagoras was born in Greece.",
+      "India's most prestigious science prize for young researchers, the Shanti Swarup Bhatnagar Prize, is named after him and is still awarded every year.",
+      "Kapany personally coined the term 'fiber optics' in 1960 — the technology that now carries most of the world's internet traffic.",
+      "When Hardy visited Ramanujan in a taxi numbered 1729 and called it a dull number, Ramanujan instantly replied it was the smallest number expressible as the sum of two cubes in two different ways."
+    ],
+    "correct": 0,
+    "explanation": "Baudhayana's ancient altar-building manual states a version of the Pythagorean theorem centuries before Pythagoras was born in Greece."
+  },
+  {
+    "id": "baudhayana_q5",
+    "scientist_id": "baudhayana",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to Baudhayana?",
+    "options": [
+      "Being first is not the goal — making sure you are not the last one is.",
+      "True energy security means building your future on the fuel you already have in abundance.",
+      "A cord, stretched carefully, can reveal the hidden geometry of the world.",
+      "In the great mansion of nature there is not one solitary lifeless corner."
+    ],
+    "correct": 2,
+    "explanation": "\"A cord, stretched carefully, can reveal the hidden geometry of the world.\" — Baudhayana"
+  },
+  {
+    "id": "sudarshan_q1",
+    "scientist_id": "sudarshan",
+    "difficulty": "easy",
+    "question": "Which field did E.C.G. Sudarshan work in?",
+    "options": [
+      "Engineering",
+      "Space Science",
+      "Physics",
+      "Medicine"
+    ],
+    "correct": 2,
+    "explanation": "E.C.G. Sudarshan worked in Physics. A physicist whose Nobel-worthy ideas were, famously, never awarded one."
+  },
+  {
+    "id": "sudarshan_q2",
+    "scientist_id": "sudarshan",
+    "difficulty": "easy",
+    "question": "What is E.C.G. Sudarshan best known for?",
+    "options": [
+      "Designed automatic floodgate systems for dams still used today, and modernized Mysore state's industry and education as its Diwan.",
+      "Led ISRO through the Mars Orbiter Mission (Mangalyaan), making India the first nation to reach Mars orbit on its first attempt.",
+      "Founded the Tata Institute of Fundamental Research and India's Atomic Energy Commission.",
+      "Co-developed the V-A theory of weak interactions, a foundational piece of the Standard Model of particle physics."
+    ],
+    "correct": 3,
+    "explanation": "E.C.G. Sudarshan: Co-developed the V-A theory of weak interactions, a foundational piece of the Standard Model of particle physics."
+  },
+  {
+    "id": "sudarshan_q3",
+    "scientist_id": "sudarshan",
+    "difficulty": "medium",
+    "question": "In which years did E.C.G. Sudarshan live?",
+    "options": [
+      "1931–2018",
+      "1894–1955",
+      "1952–2024",
+      "1887–1920"
+    ],
+    "correct": 0,
+    "explanation": "E.C.G. Sudarshan lived from 1931–2018."
+  },
+  {
+    "id": "sudarshan_q4",
+    "scientist_id": "sudarshan",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about E.C.G. Sudarshan?",
+    "options": [
+      "Sohonie was initially refused admission to a top research institute for being a woman — after proving herself in one year, the rule was dropped for good.",
+      "Sudarshan proposed the theoretical concept of tachyons, hypothetical particles that could travel faster than light, sparking decades of physics debate.",
+      "Kakodkar champions using thorium, which India has in huge supply, as a nuclear fuel — a technology that could power India for centuries.",
+      "Bose's crescograph could magnify the movement of a plant ten million times, letting him watch a plant 'flinch' when hurt."
+    ],
+    "correct": 1,
+    "explanation": "Sudarshan proposed the theoretical concept of tachyons, hypothetical particles that could travel faster than light, sparking decades of physics debate."
+  },
+  {
+    "id": "sudarshan_q5",
+    "scientist_id": "sudarshan",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to E.C.G. Sudarshan?",
+    "options": [
+      "A gene's story is written in behavior, if you know how to read it.",
+      "Dream is not that which you see while sleeping; it is something that does not let you sleep.",
+      "Education was the one thing my family could give me that could never be taken away.",
+      "Nature does not owe us simple answers, only patterns waiting to be understood."
+    ],
+    "correct": 3,
+    "explanation": "\"Nature does not owe us simple answers, only patterns waiting to be understood.\" — E.C.G. Sudarshan"
+  },
+  {
+    "id": "visvesvaraya_q1",
+    "scientist_id": "visvesvaraya",
+    "difficulty": "easy",
+    "question": "Which field did M. Visvesvaraya work in?",
+    "options": [
+      "Biotechnology",
+      "Physics",
+      "Mathematics",
+      "Engineering"
+    ],
+    "correct": 3,
+    "explanation": "M. Visvesvaraya worked in Engineering. The engineer whose dam gates still protect cities from floods."
+  },
+  {
+    "id": "visvesvaraya_q2",
+    "scientist_id": "visvesvaraya",
+    "difficulty": "easy",
+    "question": "What is M. Visvesvaraya best known for?",
+    "options": [
+      "Designed automatic floodgate systems for dams still used today, and modernized Mysore state's industry and education as its Diwan.",
+      "Founded and led India's Council of Scientific and Industrial Research (CSIR), building its national network of research laboratories.",
+      "Contributed key theoretical work supporting the discovery of the Higgs boson, and championed women in Indian science.",
+      "Founded ISRO and launched India's first sounding rocket from Thumba."
+    ],
+    "correct": 0,
+    "explanation": "M. Visvesvaraya: Designed automatic floodgate systems for dams still used today, and modernized Mysore state's industry and education as its Diwan."
+  },
+  {
+    "id": "visvesvaraya_q3",
+    "scientist_id": "visvesvaraya",
+    "difficulty": "medium",
+    "question": "In which years did M. Visvesvaraya live?",
+    "options": [
+      "1911–1998",
+      "1860–1962",
+      "1926–2020",
+      "1858–1937"
+    ],
+    "correct": 1,
+    "explanation": "M. Visvesvaraya lived from 1860–1962."
+  },
+  {
+    "id": "visvesvaraya_q4",
+    "scientist_id": "visvesvaraya",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about M. Visvesvaraya?",
+    "options": [
+      "Rajeshwari Chatterjee became Karnataka's first woman engineer and went on to build one of India's earliest microwave engineering research labs.",
+      "Kalam played the veena, a traditional South Indian string instrument, to relax after long days at the lab.",
+      "India celebrates Engineer's Day every September 15th, Visvesvaraya's birthday, in honor of his contributions to engineering.",
+      "Khorana's team built the world's first artificial gene entirely from chemicals in a laboratory in 1970."
+    ],
+    "correct": 2,
+    "explanation": "India celebrates Engineer's Day every September 15th, Visvesvaraya's birthday, in honor of his contributions to engineering."
+  },
+  {
+    "id": "visvesvaraya_q5",
+    "scientist_id": "visvesvaraya",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to M. Visvesvaraya?",
+    "options": [
+      "Industrialize or perish — there is no other path to prosperity.",
+      "The best innovation is the one that reaches the person who needs it most, at a price they can afford.",
+      "Ask the right questions, and nature will open the doors to her secrets.",
+      "The pursuit of science has often been compared to the scaling of mountains, high and not so high."
+    ],
+    "correct": 0,
+    "explanation": "\"Industrialize or perish — there is no other path to prosperity.\" — M. Visvesvaraya"
+  },
+  {
+    "id": "bhatnagar_q1",
+    "scientist_id": "bhatnagar",
+    "difficulty": "easy",
+    "question": "Which field did Shanti Swarup Bhatnagar work in?",
+    "options": [
+      "Chemistry",
+      "Engineering",
+      "Life Sciences",
+      "Physics"
+    ],
+    "correct": 0,
+    "explanation": "Shanti Swarup Bhatnagar worked in Chemistry. He built the network of labs where modern Indian science happens."
+  },
+  {
+    "id": "bhatnagar_q2",
+    "scientist_id": "bhatnagar",
+    "difficulty": "easy",
+    "question": "What is Shanti Swarup Bhatnagar best known for?",
+    "options": [
+      "Became the first Indian woman to earn a PhD in science, and developed a nutritious drink to fight malnutrition in poor communities.",
+      "Founded and led India's Council of Scientific and Industrial Research (CSIR), building its national network of research laboratories.",
+      "Pioneered fiber optic technology, laying the foundation for global internet and telecommunications infrastructure.",
+      "Produced thousands of original results in number theory and infinite series with almost no formal training."
+    ],
+    "correct": 1,
+    "explanation": "Shanti Swarup Bhatnagar: Founded and led India's Council of Scientific and Industrial Research (CSIR), building its national network of research laboratories."
+  },
+  {
+    "id": "bhatnagar_q3",
+    "scientist_id": "bhatnagar",
+    "difficulty": "medium",
+    "question": "In which years did Shanti Swarup Bhatnagar live?",
+    "options": [
+      "1922–2010",
+      "1943–",
+      "1894–1955",
+      "1922–2011"
+    ],
+    "correct": 2,
+    "explanation": "Shanti Swarup Bhatnagar lived from 1894–1955."
+  },
+  {
+    "id": "bhatnagar_q4",
+    "scientist_id": "bhatnagar",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about Shanti Swarup Bhatnagar?",
+    "options": [
+      "Siddiqi's research on fruit fly genes and behavior helped establish neurogenetics, the study of how genes shape the nervous system.",
+      "Raman got the idea for his most famous discovery while watching the color of the sea on a ship voyage home from England.",
+      "Chandrasekhar worked out his famous limit on stellar mass during a multi-week ship voyage at just 19 years old.",
+      "India's most prestigious science prize for young researchers, the Shanti Swarup Bhatnagar Prize, is named after him and is still awarded every year."
+    ],
+    "correct": 3,
+    "explanation": "India's most prestigious science prize for young researchers, the Shanti Swarup Bhatnagar Prize, is named after him and is still awarded every year."
+  },
+  {
+    "id": "bhatnagar_q5",
+    "scientist_id": "bhatnagar",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to Shanti Swarup Bhatnagar?",
+    "options": [
+      "Careful teamwork, not luck, is what gets a spacecraft safely to another planet.",
+      "Science must roll up its sleeves and get to work solving a nation's real problems.",
+      "Atomic energy is our greatest asset in solving the problem of adequate power in this country.",
+      "I was not a great mathematician, but I had a great intuition."
+    ],
+    "correct": 1,
+    "explanation": "\"Science must roll up its sleeves and get to work solving a nation's real problems.\" — Shanti Swarup Bhatnagar"
+  },
+  {
+    "id": "sohonie_q1",
+    "scientist_id": "sohonie",
+    "difficulty": "easy",
+    "question": "Which field did Kamala Sohonie work in?",
+    "options": [
+      "Space Science",
+      "Biotechnology",
+      "Physics",
+      "Chemistry"
+    ],
+    "correct": 1,
+    "explanation": "Kamala Sohonie worked in Biotechnology. She had to fight just to be allowed to become India's first woman science PhD."
+  },
+  {
+    "id": "sohonie_q2",
+    "scientist_id": "sohonie",
+    "difficulty": "easy",
+    "question": "What is Kamala Sohonie best known for?",
+    "options": [
+      "Pioneered microwave engineering and antenna research in India, and wrote textbooks used by engineering students for decades.",
+      "Led India's nuclear engineering efforts including the 1998 Pokhran-II tests, and championed thorium-based nuclear power for energy self-reliance.",
+      "Became the first Indian woman to earn a PhD in science, and developed a nutritious drink to fight malnutrition in poor communities.",
+      "Proved that plants respond to stimuli like living organisms, and pioneered early wireless signal research."
+    ],
+    "correct": 2,
+    "explanation": "Kamala Sohonie: Became the first Indian woman to earn a PhD in science, and developed a nutritious drink to fight malnutrition in poor communities."
+  },
+  {
+    "id": "sohonie_q3",
+    "scientist_id": "sohonie",
+    "difficulty": "medium",
+    "question": "In which years did Kamala Sohonie live?",
+    "options": [
+      "1932–2013",
+      "1931–2015",
+      "1910–1995",
+      "1911–1998"
+    ],
+    "correct": 3,
+    "explanation": "Kamala Sohonie lived from 1911–1998."
+  },
+  {
+    "id": "sohonie_q4",
+    "scientist_id": "sohonie",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about Kamala Sohonie?",
+    "options": [
+      "Sohonie was initially refused admission to a top research institute for being a woman — after proving herself in one year, the rule was dropped for good.",
+      "Mashelkar's mother sold her jewelry so he could stay in school after his father died — a sacrifice he credits for his entire scientific career.",
+      "Besides physics, Bhabha was a gifted painter and a devoted lover of Western classical music and opera.",
+      "Every particle known as a 'boson' — including the famous Higgs boson — is named after Satyendra Nath Bose."
+    ],
+    "correct": 0,
+    "explanation": "Sohonie was initially refused admission to a top research institute for being a woman — after proving herself in one year, the rule was dropped for good."
+  },
+  {
+    "id": "sohonie_q5",
+    "scientist_id": "sohonie",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to Kamala Sohonie?",
+    "options": [
+      "Science loses something valuable every time a talented mind is discouraged from pursuing it.",
+      "We must be second to none in the application of advanced technologies to the real problems of man and society.",
+      "Do not ever try to prove your point with anger — always let your work do the talking.",
+      "The betterment of humankind is only possible through science."
+    ],
+    "correct": 2,
+    "explanation": "\"Do not ever try to prove your point with anger — always let your work do the talking.\" — Kamala Sohonie"
+  },
+  {
+    "id": "rajeshwarichatterjee_q1",
+    "scientist_id": "rajeshwarichatterjee",
+    "difficulty": "easy",
+    "question": "Which field did Rajeshwari Chatterjee work in?",
+    "options": [
+      "Physics",
+      "Life Sciences",
+      "Engineering",
+      "Mathematics"
+    ],
+    "correct": 2,
+    "explanation": "Rajeshwari Chatterjee worked in Engineering. Karnataka's first woman engineer helped India learn to talk over microwaves."
+  },
+  {
+    "id": "rajeshwarichatterjee_q2",
+    "scientist_id": "rajeshwarichatterjee",
+    "difficulty": "easy",
+    "question": "What is Rajeshwari Chatterjee best known for?",
+    "options": [
+      "Founded the National Centre for Biological Sciences and pioneered neurogenetics research in India using fruit flies.",
+      "Led India's first satellite launch vehicle (SLV-III) and its missile development programs.",
+      "Helped decipher the genetic code and synthesized the first artificial gene, sharing the 1968 Nobel Prize.",
+      "Pioneered microwave engineering and antenna research in India, and wrote textbooks used by engineering students for decades."
+    ],
+    "correct": 3,
+    "explanation": "Rajeshwari Chatterjee: Pioneered microwave engineering and antenna research in India, and wrote textbooks used by engineering students for decades."
+  },
+  {
+    "id": "rajeshwarichatterjee_q3",
+    "scientist_id": "rajeshwarichatterjee",
+    "difficulty": "medium",
+    "question": "In which years did Rajeshwari Chatterjee live?",
+    "options": [
+      "1922–2010",
+      "1943–",
+      "1888–1970",
+      "1894–1974"
+    ],
+    "correct": 0,
+    "explanation": "Rajeshwari Chatterjee lived from 1922–2010."
+  },
+  {
+    "id": "rajeshwarichatterjee_q4",
+    "scientist_id": "rajeshwarichatterjee",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about Rajeshwari Chatterjee?",
+    "options": [
+      "Under Radhakrishnan, India's Mars mission succeeded on its very first attempt — the only country ever to do so — and at a remarkably low cost.",
+      "Rajeshwari Chatterjee became Karnataka's first woman engineer and went on to build one of India's earliest microwave engineering research labs.",
+      "India's first rocket components were transported to the launch site at Thumba on bicycles and bullock carts.",
+      "Swaminathan originally trained to become a police officer before switching his path to genetics and farming."
+    ],
+    "correct": 1,
+    "explanation": "Rajeshwari Chatterjee became Karnataka's first woman engineer and went on to build one of India's earliest microwave engineering research labs."
+  },
+  {
+    "id": "rajeshwarichatterjee_q5",
+    "scientist_id": "rajeshwarichatterjee",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to Rajeshwari Chatterjee?",
+    "options": [
+      "Light, once you learn to bend it, can carry anything — even the whole world's conversations.",
+      "An equation for me has no meaning unless it expresses a thought of God.",
+      "The path from dreams to success does exist.",
+      "Being first is not the goal — making sure you are not the last one is."
+    ],
+    "correct": 3,
+    "explanation": "\"Being first is not the goal — making sure you are not the last one is.\" — Rajeshwari Chatterjee"
+  },
+  {
+    "id": "siddiqi_q1",
+    "scientist_id": "siddiqi",
+    "difficulty": "easy",
+    "question": "Which field did Obaid Siddiqi work in?",
+    "options": [
+      "Physics",
+      "Space Science",
+      "Mathematics",
+      "Biotechnology"
+    ],
+    "correct": 3,
+    "explanation": "Obaid Siddiqi worked in Biotechnology. He taught India's scientists to read the genes behind behavior."
+  },
+  {
+    "id": "siddiqi_q2",
+    "scientist_id": "siddiqi",
+    "difficulty": "easy",
+    "question": "What is Obaid Siddiqi best known for?",
+    "options": [
+      "Founded the National Centre for Biological Sciences and pioneered neurogenetics research in India using fruit flies.",
+      "Led India's CSIR laboratory network and became a global champion of frugal, affordable innovation for the poor.",
+      "Discovered the Raman Effect, explaining how light scatters through matter — earning the 1930 Nobel Prize in Physics.",
+      "Discovered the Chandrasekhar limit, explaining the fate of dying stars — earning the 1983 Nobel Prize in Physics."
+    ],
+    "correct": 0,
+    "explanation": "Obaid Siddiqi: Founded the National Centre for Biological Sciences and pioneered neurogenetics research in India using fruit flies."
+  },
+  {
+    "id": "siddiqi_q3",
+    "scientist_id": "siddiqi",
+    "difficulty": "medium",
+    "question": "In which years did Obaid Siddiqi live?",
+    "options": [
+      "1949–",
+      "1932–2013",
+      "1909–1966",
+      "1925–2023"
+    ],
+    "correct": 1,
+    "explanation": "Obaid Siddiqi lived from 1932–2013."
+  },
+  {
+    "id": "siddiqi_q4",
+    "scientist_id": "siddiqi",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about Obaid Siddiqi?",
+    "options": [
+      "Godbole's theoretical work helped guide the international search that confirmed the Higgs boson particle's existence in 2012.",
+      "When Hardy visited Ramanujan in a taxi numbered 1729 and called it a dull number, Ramanujan instantly replied it was the smallest number expressible as the sum of two cubes in two different ways.",
+      "Siddiqi's research on fruit fly genes and behavior helped establish neurogenetics, the study of how genes shape the nervous system.",
+      "As a child, Kalpana Chawla loved visiting a local flying club in Karnal just to watch aircraft take off and land."
+    ],
+    "correct": 2,
+    "explanation": "Siddiqi's research on fruit fly genes and behavior helped establish neurogenetics, the study of how genes shape the nervous system."
+  },
+  {
+    "id": "siddiqi_q5",
+    "scientist_id": "siddiqi",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to Obaid Siddiqi?",
+    "options": [
+      "A gene's story is written in behavior, if you know how to read it.",
+      "True energy security means building your future on the fuel you already have in abundance.",
+      "In the great mansion of nature there is not one solitary lifeless corner.",
+      "No rule written by men could stop me from becoming a doctor."
+    ],
+    "correct": 0,
+    "explanation": "\"A gene's story is written in behavior, if you know how to read it.\" — Obaid Siddiqi"
+  },
+  {
+    "id": "mashelkar_q1",
+    "scientist_id": "mashelkar",
+    "difficulty": "easy",
+    "question": "Which field did Raghunath Mashelkar work in?",
+    "options": [
+      "Engineering",
+      "Physics",
+      "Mathematics",
+      "Agriculture"
+    ],
+    "correct": 0,
+    "explanation": "Raghunath Mashelkar worked in Engineering. A boy who nearly dropped out of school now fights for science that serves the poor."
+  },
+  {
+    "id": "mashelkar_q2",
+    "scientist_id": "mashelkar",
+    "difficulty": "easy",
+    "question": "What is Raghunath Mashelkar best known for?",
+    "options": [
+      "Led ISRO through the Mars Orbiter Mission (Mangalyaan), making India the first nation to reach Mars orbit on its first attempt.",
+      "Led India's CSIR laboratory network and became a global champion of frugal, affordable innovation for the poor.",
+      "Founded the Tata Institute of Fundamental Research and India's Atomic Energy Commission.",
+      "Co-developed Bose–Einstein statistics, the foundation for an entire class of particles named after him."
+    ],
+    "correct": 1,
+    "explanation": "Raghunath Mashelkar: Led India's CSIR laboratory network and became a global champion of frugal, affordable innovation for the poor."
+  },
+  {
+    "id": "mashelkar_q3",
+    "scientist_id": "mashelkar",
+    "difficulty": "medium",
+    "question": "In which years did Raghunath Mashelkar live?",
+    "options": [
+      "1952–2024",
+      "1919–1971",
+      "1943–",
+      "1962–2003"
+    ],
+    "correct": 2,
+    "explanation": "Raghunath Mashelkar lived from 1943–."
+  },
+  {
+    "id": "mashelkar_q4",
+    "scientist_id": "mashelkar",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about Raghunath Mashelkar?",
+    "options": [
+      "Kapany personally coined the term 'fiber optics' in 1960 — the technology that now carries most of the world's internet traffic.",
+      "Bose's crescograph could magnify the movement of a plant ten million times, letting him watch a plant 'flinch' when hurt.",
+      "Kadambini Ganguly had to overcome years of formal objections just to be permitted to sit her medical college entrance exam.",
+      "Mashelkar's mother sold her jewelry so he could stay in school after his father died — a sacrifice he credits for his entire scientific career."
+    ],
+    "correct": 3,
+    "explanation": "Mashelkar's mother sold her jewelry so he could stay in school after his father died — a sacrifice he credits for his entire scientific career."
+  },
+  {
+    "id": "mashelkar_q5",
+    "scientist_id": "mashelkar",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to Raghunath Mashelkar?",
+    "options": [
+      "Dream is not that which you see while sleeping; it is something that does not let you sleep.",
+      "The best innovation is the one that reaches the person who needs it most, at a price they can afford.",
+      "Education was the one thing my family could give me that could never be taken away.",
+      "Science is not just about discoveries; it is about serving society."
+    ],
+    "correct": 1,
+    "explanation": "\"The best innovation is the one that reaches the person who needs it most, at a price they can afford.\" — Raghunath Mashelkar"
+  },
+  {
+    "id": "radhakrishnan_q1",
+    "scientist_id": "radhakrishnan",
+    "difficulty": "easy",
+    "question": "Which field did K. Radhakrishnan work in?",
+    "options": [
+      "Engineering",
+      "Space Science",
+      "Life Sciences",
+      "Biotechnology"
+    ],
+    "correct": 1,
+    "explanation": "K. Radhakrishnan worked in Space Science. He led the team that sent India to Mars on the very first try."
+  },
+  {
+    "id": "radhakrishnan_q2",
+    "scientist_id": "radhakrishnan",
+    "difficulty": "easy",
+    "question": "What is K. Radhakrishnan best known for?",
+    "options": [
+      "Contributed key theoretical work supporting the discovery of the Higgs boson, and championed women in Indian science.",
+      "Founded ISRO and launched India's first sounding rocket from Thumba.",
+      "Led ISRO through the Mars Orbiter Mission (Mangalyaan), making India the first nation to reach Mars orbit on its first attempt.",
+      "Led India's Green Revolution, transforming the country from food scarcity to self-sufficiency."
+    ],
+    "correct": 2,
+    "explanation": "K. Radhakrishnan: Led ISRO through the Mars Orbiter Mission (Mangalyaan), making India the first nation to reach Mars orbit on its first attempt."
+  },
+  {
+    "id": "radhakrishnan_q3",
+    "scientist_id": "radhakrishnan",
+    "difficulty": "medium",
+    "question": "In which years did K. Radhakrishnan live?",
+    "options": [
+      "1926–2020",
+      "1887–1920",
+      "1861–1923",
+      "1949–"
+    ],
+    "correct": 3,
+    "explanation": "K. Radhakrishnan lived from 1949–."
+  },
+  {
+    "id": "radhakrishnan_q4",
+    "scientist_id": "radhakrishnan",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about K. Radhakrishnan?",
+    "options": [
+      "Under Radhakrishnan, India's Mars mission succeeded on its very first attempt — the only country ever to do so — and at a remarkably low cost.",
+      "Kakodkar champions using thorium, which India has in huge supply, as a nuclear fuel — a technology that could power India for centuries.",
+      "Khorana's team built the world's first artificial gene entirely from chemicals in a laboratory in 1970.",
+      "Saha's 1920 equation is still used today by astronomers to calculate the temperature of stars from their light."
+    ],
+    "correct": 0,
+    "explanation": "Under Radhakrishnan, India's Mars mission succeeded on its very first attempt — the only country ever to do so — and at a remarkably low cost."
+  },
+  {
+    "id": "radhakrishnan_q5",
+    "scientist_id": "radhakrishnan",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to K. Radhakrishnan?",
+    "options": [
+      "Ask the right questions, and nature will open the doors to her secrets.",
+      "The pursuit of science has often been compared to the scaling of mountains, high and not so high.",
+      "Careful teamwork, not luck, is what gets a spacecraft safely to another planet.",
+      "Service to mankind is the best form of worship."
+    ],
+    "correct": 2,
+    "explanation": "\"Careful teamwork, not luck, is what gets a spacecraft safely to another planet.\" — K. Radhakrishnan"
+  },
+  {
+    "id": "godbole_q1",
+    "scientist_id": "godbole",
+    "difficulty": "easy",
+    "question": "Which field did Rohini Godbole work in?",
+    "options": [
+      "Chemistry",
+      "Medicine",
+      "Physics",
+      "Engineering"
+    ],
+    "correct": 2,
+    "explanation": "Rohini Godbole worked in Physics. She studied the tiniest particles in the universe, and championed the women who study them."
+  },
+  {
+    "id": "godbole_q2",
+    "scientist_id": "godbole",
+    "difficulty": "easy",
+    "question": "What is Rohini Godbole best known for?",
+    "options": [
+      "Pioneered fiber optic technology, laying the foundation for global internet and telecommunications infrastructure.",
+      "Produced thousands of original results in number theory and infinite series with almost no formal training.",
+      "Became the first woman of Indian origin to travel to space, flying two Space Shuttle missions.",
+      "Contributed key theoretical work supporting the discovery of the Higgs boson, and championed women in Indian science."
+    ],
+    "correct": 3,
+    "explanation": "Rohini Godbole: Contributed key theoretical work supporting the discovery of the Higgs boson, and championed women in Indian science."
+  },
+  {
+    "id": "godbole_q3",
+    "scientist_id": "godbole",
+    "difficulty": "medium",
+    "question": "In which years did Rohini Godbole live?",
+    "options": [
+      "1952–2024",
+      "1943–",
+      "1858–1937",
+      "1893–1956"
+    ],
+    "correct": 0,
+    "explanation": "Rohini Godbole lived from 1952–2024."
+  },
+  {
+    "id": "godbole_q4",
+    "scientist_id": "godbole",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about Rohini Godbole?",
+    "options": [
+      "Kalam played the veena, a traditional South Indian string instrument, to relax after long days at the lab.",
+      "Godbole's theoretical work helped guide the international search that confirmed the Higgs boson particle's existence in 2012.",
+      "Chandrasekhar worked out his famous limit on stellar mass during a multi-week ship voyage at just 19 years old.",
+      "Despite becoming famous and successful, Ray lived simply his whole life and gave away almost all his earnings to support poor students."
+    ],
+    "correct": 1,
+    "explanation": "Godbole's theoretical work helped guide the international search that confirmed the Higgs boson particle's existence in 2012."
+  },
+  {
+    "id": "godbole_q5",
+    "scientist_id": "godbole",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to Rohini Godbole?",
+    "options": [
+      "Atomic energy is our greatest asset in solving the problem of adequate power in this country.",
+      "I was not a great mathematician, but I had a great intuition.",
+      "Birds are among the best indicators of the health of our environment.",
+      "Science loses something valuable every time a talented mind is discouraged from pursuing it."
+    ],
+    "correct": 3,
+    "explanation": "\"Science loses something valuable every time a talented mind is discouraged from pursuing it.\" — Rohini Godbole"
+  },
+  {
+    "id": "kapany_q1",
+    "scientist_id": "kapany",
+    "difficulty": "easy",
+    "question": "Which field did Narinder Singh Kapany work in?",
+    "options": [
+      "Biotechnology",
+      "Pharmaceutical Science",
+      "Environmental Science",
+      "Physics"
+    ],
+    "correct": 3,
+    "explanation": "Narinder Singh Kapany worked in Physics. He coined the term 'fiber optics' — and helped connect the world with light."
+  },
+  {
+    "id": "kapany_q2",
+    "scientist_id": "kapany",
+    "difficulty": "easy",
+    "question": "What is Narinder Singh Kapany best known for?",
+    "options": [
+      "Pioneered fiber optic technology, laying the foundation for global internet and telecommunications infrastructure.",
+      "Led India's nuclear engineering efforts including the 1998 Pokhran-II tests, and championed thorium-based nuclear power for energy self-reliance.",
+      "Proved that plants respond to stimuli like living organisms, and pioneered early wireless signal research.",
+      "Became one of the first women in India to qualify and practice as a physician."
+    ],
+    "correct": 0,
+    "explanation": "Narinder Singh Kapany: Pioneered fiber optic technology, laying the foundation for global internet and telecommunications infrastructure."
+  },
+  {
+    "id": "kapany_q3",
+    "scientist_id": "kapany",
+    "difficulty": "medium",
+    "question": "In which years did Narinder Singh Kapany live?",
+    "options": [
+      "1931–2015",
+      "1926–2020",
+      "1922–2011",
+      "1861–1944"
+    ],
+    "correct": 1,
+    "explanation": "Narinder Singh Kapany lived from 1926–2020."
+  },
+  {
+    "id": "kapany_q4",
+    "scientist_id": "kapany",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about Narinder Singh Kapany?",
+    "options": [
+      "Raman got the idea for his most famous discovery while watching the color of the sea on a ship voyage home from England.",
+      "Every particle known as a 'boson' — including the famous Higgs boson — is named after Satyendra Nath Bose.",
+      "Kapany personally coined the term 'fiber optics' in 1960 — the technology that now carries most of the world's internet traffic.",
+      "Salim Ali's lifelong passion for birds began the day he examined a sparrow he had shot with a toy air gun as a boy."
+    ],
+    "correct": 2,
+    "explanation": "Kapany personally coined the term 'fiber optics' in 1960 — the technology that now carries most of the world's internet traffic."
+  },
+  {
+    "id": "kapany_q5",
+    "scientist_id": "kapany",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to Narinder Singh Kapany?",
+    "options": [
+      "Light, once you learn to bend it, can carry anything — even the whole world's conversations.",
+      "We must be second to none in the application of advanced technologies to the real problems of man and society.",
+      "The betterment of humankind is only possible through science.",
+      "Numbers have life; they are not just symbols on paper."
+    ],
+    "correct": 0,
+    "explanation": "\"Light, once you learn to bend it, can carry anything — even the whole world's conversations.\" — Narinder Singh Kapany"
+  },
+  {
+    "id": "kakodkar_q1",
+    "scientist_id": "kakodkar",
+    "difficulty": "easy",
+    "question": "Which field did Anil Kakodkar work in?",
+    "options": [
+      "Physics",
+      "Space Science",
+      "Chemistry",
+      "Pharmaceutical Science"
+    ],
+    "correct": 0,
+    "explanation": "Anil Kakodkar worked in Physics. He wants India's nuclear power to run on its own homegrown fuel."
+  },
+  {
+    "id": "kakodkar_q2",
+    "scientist_id": "kakodkar",
+    "difficulty": "easy",
+    "question": "What is Anil Kakodkar best known for?",
+    "options": [
+      "Led India's first satellite launch vehicle (SLV-III) and its missile development programs.",
+      "Led India's nuclear engineering efforts including the 1998 Pokhran-II tests, and championed thorium-based nuclear power for energy self-reliance.",
+      "Helped decipher the genetic code and synthesized the first artificial gene, sharing the 1968 Nobel Prize.",
+      "Developed the Saha ionization equation, a foundational tool of modern astrophysics."
+    ],
+    "correct": 1,
+    "explanation": "Anil Kakodkar: Led India's nuclear engineering efforts including the 1998 Pokhran-II tests, and championed thorium-based nuclear power for energy self-reliance."
+  },
+  {
+    "id": "kakodkar_q3",
+    "scientist_id": "kakodkar",
+    "difficulty": "medium",
+    "question": "In which years did Anil Kakodkar live?",
+    "options": [
+      "1888–1970",
+      "1910–1995",
+      "1943–",
+      "1896–1987"
+    ],
+    "correct": 2,
+    "explanation": "Anil Kakodkar lived from 1943–."
+  },
+  {
+    "id": "kakodkar_q4",
+    "scientist_id": "kakodkar",
+    "difficulty": "medium",
+    "question": "Which of these is a true fact about Anil Kakodkar?",
+    "options": [
+      "Besides physics, Bhabha was a gifted painter and a devoted lover of Western classical music and opera.",
+      "Swaminathan originally trained to become a police officer before switching his path to genetics and farming.",
+      "In 1980, Shakuntala Devi multiplied two 13-digit numbers in her head in just 28 seconds, faster than many computers of that era.",
+      "Kakodkar champions using thorium, which India has in huge supply, as a nuclear fuel — a technology that could power India for centuries."
+    ],
+    "correct": 3,
+    "explanation": "Kakodkar champions using thorium, which India has in huge supply, as a nuclear fuel — a technology that could power India for centuries."
+  },
+  {
+    "id": "kakodkar_q5",
+    "scientist_id": "kakodkar",
+    "difficulty": "hard",
+    "question": "Which of these quotes is attributed to Anil Kakodkar?",
+    "options": [
+      "An equation for me has no meaning unless it expresses a thought of God.",
+      "True energy security means building your future on the fuel you already have in abundance.",
       "The path from dreams to success does exist.",
       "I would rather have a good book than jewelry."
     ],
     "correct": 1,
-    "explanation": "\"Zero is not nothing — it is the foundation upon which all numbers stand.\" — Brahmagupta"
+    "explanation": "\"True energy security means building your future on the fuel you already have in abundance.\" — Anil Kakodkar"
   }
 ]
