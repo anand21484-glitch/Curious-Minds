@@ -1,4 +1,4 @@
-import { CompletedQuizzes } from './storage';
+import { CompletedQuizzes, TfStats } from './storage';
 import { fields } from '../theme';
 import { getScientistsByField, scientists } from './scientists';
 import { quizzes } from './quizzes';
@@ -8,6 +8,7 @@ export type FieldMastery = { id: string; name: string; color: string; stars: str
 type Inputs = {
   completedQuizzes: CompletedQuizzes;
   streakDays: number;
+  tfStats?: TfStats;
 };
 
 const fieldsWithScientists = fields.filter((f) => getScientistsByField(f.id).length > 0);
@@ -16,11 +17,15 @@ function starString(starCount: number): string {
   return '⭐'.repeat(starCount) + '☆'.repeat(5 - starCount);
 }
 
-export function computeCuriosityStats({ completedQuizzes, streakDays }: Inputs) {
+export function computeCuriosityStats({ completedQuizzes, streakDays, tfStats }: Inputs) {
   const completedIds = Object.keys(completedQuizzes);
   const questionsAttempted = completedIds.reduce((sum, id) => sum + completedQuizzes[id].total, 0);
   const questionsSolved = completedIds.reduce((sum, id) => sum + completedQuizzes[id].correctCount, 0);
   const accuracyLabel = questionsAttempted > 0 ? `${Math.round((questionsSolved / questionsAttempted) * 100)}%` : '—';
+  const fastThinkerLabel =
+    tfStats && tfStats.allTimeCorrectCount > 0
+      ? `${(tfStats.allTimeTimeSum / tfStats.allTimeCorrectCount).toFixed(1)}s`
+      : '—';
 
   const scientistsTotal = scientists.length;
   const scientistsDiscovered = completedIds.length;
@@ -71,6 +76,7 @@ export function computeCuriosityStats({ completedQuizzes, streakDays }: Inputs) 
     questionsAttempted,
     questionsSolved,
     accuracyLabel,
+    fastThinkerLabel,
     scientistsTotal,
     scientistsDiscovered,
     scientistsDiscoveredPct,

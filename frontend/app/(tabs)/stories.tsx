@@ -2,24 +2,7 @@ import { router } from 'expo-router';
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import ScreenHeader from '../../src/components/ScreenHeader';
 import { scientists } from '../../src/data/scientists';
-import { colors, fields, radii, softColor, spacing, typography } from '../../src/theme';
-
-const FIELD_EMOJI: Record<string, string> = {
-  math: '🔢',
-  physics: '⚛️',
-  space: '🚀',
-  medicine: '🩺',
-  life: '🌿',
-  engineering: '⚙️',
-  chemistry: '⚗️',
-  biotechnology: '🧬',
-  pharma: '💊',
-  environment: '🌍',
-  agriculture: '🌾',
-  marine: '🌊',
-  ancient: '🏛️',
-  nobel: '🏆',
-};
+import { colors, fieldEmoji, fields, radii, softColor, spacing, typography } from '../../src/theme';
 
 export default function StoriesScreen() {
   return (
@@ -38,7 +21,7 @@ export default function StoriesScreen() {
             >
               <View style={styles.cardHeader}>
                 <Text style={[styles.episode, { color: field?.color }]}>EPISODE {index + 1}</Text>
-                <Text style={styles.emoji}>{FIELD_EMOJI[item.field] ?? '📖'}</Text>
+                <Text style={styles.emoji}>{fieldEmoji[item.field] ?? '📖'}</Text>
               </View>
               <Text style={styles.title}>{item.name}</Text>
               <Text style={styles.subtitle}>{item.tagline}</Text>

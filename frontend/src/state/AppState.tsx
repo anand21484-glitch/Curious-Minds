@@ -2,19 +2,24 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from '
 import {
   CompletedQuizzes,
   Friend,
+  TfStats,
   getCompletedQuizzes,
   getFriends,
   getLastActiveDate,
   getStreakDays,
+  getTfStats,
   getUserName,
   getXpTotal,
   setCompletedQuizzes as persistCompletedQuizzes,
   setFriends as persistFriends,
   setLastActiveDate,
   setStreakDays as persistStreakDays,
+  setTfStats as persistTfStats,
   setUserName as persistUserName,
   setXpTotal as persistXpTotal,
 } from '../data/storage';
+
+const DEFAULT_TF_STATS: TfStats = { challengesPlayed: 0, allTimeTimeSum: 0, allTimeCorrectCount: 0 };
 
 function todayKey(): string {
   return new Date().toISOString().slice(0, 10);
@@ -39,6 +44,8 @@ type AppStateValue = {
   friends: Friend[];
   inviteFriend: (name: string) => Promise<void>;
   removeFriend: (id: string) => Promise<void>;
+  tfStats: TfStats;
+  recordTfChallenge: (xpEarned: number, timeSum: number, correctCount: number) => Promise<void>;
 };
 
 const AppStateContext = createContext<AppStateValue | undefined>(undefined);
@@ -51,21 +58,24 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
   const [streakCelebration, setStreakCelebration] = useState(false);
   const [completedQuizzes, setCompletedQuizzesState] = useState<CompletedQuizzes>({});
   const [friends, setFriendsState] = useState<Friend[]>([]);
+  const [tfStats, setTfStatsState] = useState<TfStats>(DEFAULT_TF_STATS);
 
   useEffect(() => {
     (async () => {
-      const [name, xp, lastActive, streak, quizzes, friendsList] = await Promise.all([
+      const [name, xp, lastActive, streak, quizzes, friendsList, tf] = await Promise.all([
         getUserName(),
         getXpTotal(),
         getLastActiveDate(),
         getStreakDays(),
         getCompletedQuizzes(),
         getFriends(),
+        getTfStats(),
       ]);
       setUserNameState(name);
       setXpTotalState(xp);
       setCompletedQuizzesState(quizzes);
       setFriendsState(friendsList);
+      setTfStatsState(tf);
 
       const today = todayKey();
       let nextStreak = streak;
@@ -136,8 +146,21 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
         setFriendsState(next);
         await persistFriends(next);
       },
+      tfStats,
+      recordTfChallenge: async (xpEarned: number, timeSum: number, correctCount: number) => {
+        const nextXp = xpTotal + xpEarned;
+        setXpTotalState(nextXp);
+        await persistXpTotal(nextXp);
+        const nextTf: TfStats = {
+          challengesPlayed: tfStats.challengesPlayed + 1,
+          allTimeTimeSum: tfStats.allTimeTimeSum + timeSum,
+          allTimeCorrectCount: tfStats.allTimeCorrectCount + correctCount,
+        };
+        setTfStatsState(nextTf);
+        await persistTfStats(nextTf);
+      },
     }),
-    [loading, userName, xpTotal, streakDays, streakCelebration, completedQuizzes, friends],
+    [loading, userName, xpTotal, streakDays, streakCelebration, completedQuizzes, friends, tfStats],
   );
 
   return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>;

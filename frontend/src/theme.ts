@@ -58,6 +58,25 @@ export const fields = [
   { id: 'nobel', name: 'Nobel Laureates', mono: 'Nb', color: '#7CD9FF', rgb: '124,217,255' },
 ] as const;
 
+// Decorative emoji per field, used by Stories and Think Fast Challenge (the
+// design uses actual emoji here, not the mono badge).
+export const fieldEmoji: Record<string, string> = {
+  math: '🔢',
+  physics: '⚛️',
+  space: '🚀',
+  medicine: '🩺',
+  life: '🌿',
+  engineering: '⚙️',
+  chemistry: '⚗️',
+  biotechnology: '🧬',
+  pharma: '💊',
+  environment: '🌍',
+  agriculture: '🌾',
+  marine: '🌊',
+  ancient: '🏛️',
+  nobel: '🏆',
+};
+
 // Soft (tinted) badge background at the exact design opacities: 0.18 for
 // Explore/field-list rows, 0.16 for the Profile hero, 0.25 for Home's decorative circle.
 export function softColor(rgb: string, opacity: number = 0.18): string {

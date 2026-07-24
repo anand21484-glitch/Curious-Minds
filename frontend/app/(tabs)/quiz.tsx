@@ -1,7 +1,7 @@
 import { LinearGradient } from 'expo-linear-gradient';
-import { useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Alert, FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import PillButton from '../../src/components/PillButton';
 import ScreenHeader from '../../src/components/ScreenHeader';
 import { computeBadges } from '../../src/data/badges';
@@ -16,7 +16,7 @@ const XP_FOR_DIFFICULTY: Record<string, number> = { easy: 10, medium: 20, hard: 
 
 export default function QuizScreen() {
   const params = useLocalSearchParams<{ scientistId?: string }>();
-  const { completedQuizzes, xpTotal, streakDays } = useAppState();
+  const { completedQuizzes, xpTotal, streakDays, tfStats } = useAppState();
   const [ageBand, setAgeBand] = useState<AgeBand>(AGE_BANDS[2]);
   const [activeScientistId, setActiveScientistId] = useState<string | null>(null);
 
@@ -42,7 +42,7 @@ export default function QuizScreen() {
     );
   }
 
-  const badges = computeBadges({ completedQuizzes, streakDays });
+  const badges = computeBadges({ completedQuizzes, streakDays, tfChallengesPlayed: tfStats.challengesPlayed });
   const nonFieldBadges = badges.filter((b) => !b.id.startsWith('field_master_'));
   const badgesEarnedCount = nonFieldBadges.filter((b) => b.unlocked).length;
   const grandMasterUnlocked = quizzes.every((q) => Boolean(completedQuizzes[q.scientistId]));
@@ -128,12 +128,7 @@ export default function QuizScreen() {
               </View>
             </View>
 
-            <Pressable
-              style={styles.tfBanner}
-              onPress={() =>
-                Alert.alert('Think Fast Challenge', 'Live multiplayer challenges are coming soon!')
-              }
-            >
+            <Pressable style={styles.tfBanner} onPress={() => router.push('/think-fast')}>
               <LinearGradient colors={colors.purpleGradient} style={StyleSheet.absoluteFill} />
               <Text style={styles.bannerEmoji}>⚡</Text>
               <View style={styles.themeText}>

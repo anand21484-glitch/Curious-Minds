@@ -13,11 +13,12 @@ export type Badge = {
 type BadgeInputs = {
   completedQuizzes: CompletedQuizzes;
   streakDays: number;
+  tfChallengesPlayed?: number;
 };
 
 const fieldsWithScientists = fields.filter((f) => getScientistsByField(f.id).length > 0);
 
-export function computeBadges({ completedQuizzes, streakDays }: BadgeInputs): Badge[] {
+export function computeBadges({ completedQuizzes, streakDays, tfChallengesPlayed = 0 }: BadgeInputs): Badge[] {
   const completedIds = Object.keys(completedQuizzes);
   const hasPerfectScore = completedIds.some((id) => {
     const q = completedQuizzes[id];
@@ -59,6 +60,13 @@ export function computeBadges({ completedQuizzes, streakDays }: BadgeInputs): Ba
       emoji: '🔥🔥🔥',
       description: 'Visit Curious Minds 30 days in a row.',
       unlocked: streakDays >= 30,
+    },
+    {
+      id: 'speedster',
+      name: 'Quick Thinker',
+      emoji: '⚡',
+      description: 'Complete a Think Fast Challenge.',
+      unlocked: tfChallengesPlayed >= 1,
     },
   ];
 

@@ -21,12 +21,12 @@ function Eyebrow({ children }: { children: string }) {
 }
 
 export default function RankScreen() {
-  const { xpTotal, streakDays, completedQuizzes, friends, inviteFriend, removeFriend } = useAppState();
+  const { xpTotal, streakDays, completedQuizzes, friends, inviteFriend, removeFriend, tfStats } = useAppState();
   const [inviteName, setInviteName] = useState('');
 
   const { current, stars, next, progress } = levelForXp(xpTotal);
-  const stats = computeCuriosityStats({ completedQuizzes, streakDays });
-  const badges = computeBadges({ completedQuizzes, streakDays });
+  const stats = computeCuriosityStats({ completedQuizzes, streakDays, tfStats });
+  const badges = computeBadges({ completedQuizzes, streakDays, tfChallengesPlayed: tfStats.challengesPlayed });
 
   const leaderboard = [
     { id: 'you', name: 'You', points: xpTotal, isYou: true },
@@ -215,7 +215,7 @@ export default function RankScreen() {
         {/* 7 & 8. Fast Thinker + Accuracy */}
         <View style={styles.duoRow}>
           <View style={styles.duoCard}>
-            <Text style={[styles.duoValue, { color: colors.purple }]}>⚡ —</Text>
+            <Text style={[styles.duoValue, { color: colors.purple }]}>⚡ {stats.fastThinkerLabel}</Text>
             <Text style={styles.duoLabel}>Fast Thinker Score</Text>
           </View>
           <View style={styles.duoCard}>
