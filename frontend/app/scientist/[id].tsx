@@ -17,17 +17,26 @@ function paginateStory(text: string, targetPanels = 4): string[] {
   return panels.length > 0 ? panels : [text];
 }
 
-function timelineFor(name: string, years: string) {
+function timelineFor(name: string, years: string, era: 'ancient' | 'modern') {
   const parts = years.split(/[–-]/).map((p) => p.trim());
   const born = parts[0];
   const rest = parts[1];
-  const entries = [{ year: born, text: `${name} is born.` }];
   if (rest) {
-    entries.push({ year: rest, text: `${name} passes away.` });
-  } else {
-    entries.push({ year: 'Today', text: `${name} is still active today.` });
+    return [
+      { year: born, text: `${name} is born.` },
+      { year: rest, text: `${name} passes away.` },
+    ];
   }
-  return entries;
+  if (era === 'modern') {
+    // No death year given (e.g. "1943–") means the person is still living.
+    return [
+      { year: born, text: `${name} is born.` },
+      { year: 'Today', text: `${name} is still active today.` },
+    ];
+  }
+  // A single approximate ancient date (e.g. "c. 400 BCE") with no range at
+  // all — don't claim they're "still active today".
+  return [{ year: born, text: `${name} lived around this time.` }];
 }
 
 export default function ScientistProfileScreen() {
@@ -49,7 +58,7 @@ export default function ScientistProfileScreen() {
   const accentColor = field?.color ?? colors.gold;
   const softBg = softColor(field?.rgb ?? '231,185,60', 0.22);
   const panels = paginateStory(scientist.story);
-  const timeline = timelineFor(scientist.name, scientist.years);
+  const timeline = timelineFor(scientist.name, scientist.years, scientist.era);
 
   return (
     <View style={styles.container}>
