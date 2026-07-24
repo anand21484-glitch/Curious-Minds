@@ -6,10 +6,13 @@ const KEYS = {
   streakDays: 'curiousMinds.streakDays',
   lastActiveDate: 'curiousMinds.lastActiveDate',
   completedQuizzes: 'curiousMinds.completedQuizzes',
+  friends: 'curiousMinds.friends',
 } as const;
 
 export type CompletedQuiz = { correctCount: number; total: number; completedAt: string };
 export type CompletedQuizzes = Record<string, CompletedQuiz>;
+
+export type Friend = { id: string; name: string; joinedAt: number };
 
 export async function getUserName(): Promise<string | null> {
   return AsyncStorage.getItem(KEYS.userName);
@@ -52,4 +55,13 @@ export async function getCompletedQuizzes(): Promise<CompletedQuizzes> {
 
 export async function setCompletedQuizzes(quizzes: CompletedQuizzes): Promise<void> {
   await AsyncStorage.setItem(KEYS.completedQuizzes, JSON.stringify(quizzes));
+}
+
+export async function getFriends(): Promise<Friend[]> {
+  const raw = await AsyncStorage.getItem(KEYS.friends);
+  return raw ? JSON.parse(raw) : [];
+}
+
+export async function setFriends(friends: Friend[]): Promise<void> {
+  await AsyncStorage.setItem(KEYS.friends, JSON.stringify(friends));
 }

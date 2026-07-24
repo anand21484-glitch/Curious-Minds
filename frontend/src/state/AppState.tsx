@@ -1,12 +1,15 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import {
   CompletedQuizzes,
+  Friend,
   getCompletedQuizzes,
+  getFriends,
   getLastActiveDate,
   getStreakDays,
   getUserName,
   getXpTotal,
   setCompletedQuizzes as persistCompletedQuizzes,
+  setFriends as persistFriends,
   setLastActiveDate,
   setStreakDays as persistStreakDays,
   setUserName as persistUserName,
@@ -33,6 +36,9 @@ type AppStateValue = {
   addXp: (amount: number) => Promise<void>;
   completedQuizzes: CompletedQuizzes;
   recordQuizCompletion: (scientistId: string, correctCount: number, total: number) => Promise<void>;
+  friends: Friend[];
+  inviteFriend: (name: string) => Promise<void>;
+  removeFriend: (id: string) => Promise<void>;
 };
 
 const AppStateContext = createContext<AppStateValue | undefined>(undefined);
@@ -44,19 +50,22 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
   const [streakDays, setStreakDaysState] = useState(0);
   const [streakCelebration, setStreakCelebration] = useState(false);
   const [completedQuizzes, setCompletedQuizzesState] = useState<CompletedQuizzes>({});
+  const [friends, setFriendsState] = useState<Friend[]>([]);
 
   useEffect(() => {
     (async () => {
-      const [name, xp, lastActive, streak, quizzes] = await Promise.all([
+      const [name, xp, lastActive, streak, quizzes, friendsList] = await Promise.all([
         getUserName(),
         getXpTotal(),
         getLastActiveDate(),
         getStreakDays(),
         getCompletedQuizzes(),
+        getFriends(),
       ]);
       setUserNameState(name);
       setXpTotalState(xp);
       setCompletedQuizzesState(quizzes);
+      setFriendsState(friendsList);
 
       const today = todayKey();
       let nextStreak = streak;
@@ -116,8 +125,19 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
         setCompletedQuizzesState(next);
         await persistCompletedQuizzes(next);
       },
+      friends,
+      inviteFriend: async (name: string) => {
+        const next = [...friends, { id: `${Date.now()}`, name, joinedAt: Date.now() }];
+        setFriendsState(next);
+        await persistFriends(next);
+      },
+      removeFriend: async (id: string) => {
+        const next = friends.filter((f) => f.id !== id);
+        setFriendsState(next);
+        await persistFriends(next);
+      },
     }),
-    [loading, userName, xpTotal, streakDays, streakCelebration, completedQuizzes],
+    [loading, userName, xpTotal, streakDays, streakCelebration, completedQuizzes, friends],
   );
 
   return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>;

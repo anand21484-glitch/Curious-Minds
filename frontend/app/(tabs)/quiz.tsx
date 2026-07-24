@@ -1,25 +1,22 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
-import Card from '../../src/components/Card';
+import { Alert, FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
 import PillButton from '../../src/components/PillButton';
-import ScientistAvatar from '../../src/components/ScientistAvatar';
+import ScreenHeader from '../../src/components/ScreenHeader';
+import { computeBadges } from '../../src/data/badges';
 import { AGE_BANDS, AgeBand, DIFFICULTIES_FOR_AGE_BAND, quizzes } from '../../src/data/quizzes';
 import { getQuestionsForScientist } from '../../src/data/quizQuestions';
 import { getScientist } from '../../src/data/scientists';
 import { useAppState } from '../../src/state/AppState';
 import { colors, radii, spacing, typography } from '../../src/theme';
 
-const STATUS_COLOR: Record<string, string> = {
-  'Not started': colors.textSecondary,
-  'In progress': colors.gold,
-  Completed: colors.success,
-};
-
+const TIME_FOR_DIFFICULTY: Record<string, number> = { easy: 15, medium: 25, hard: 35 };
 const XP_FOR_DIFFICULTY: Record<string, number> = { easy: 10, medium: 20, hard: 30 };
 
 export default function QuizScreen() {
   const params = useLocalSearchParams<{ scientistId?: string }>();
+  const { completedQuizzes, xpTotal, streakDays } = useAppState();
   const [ageBand, setAgeBand] = useState<AgeBand>(AGE_BANDS[2]);
   const [activeScientistId, setActiveScientistId] = useState<string | null>(null);
 
@@ -37,6 +34,7 @@ export default function QuizScreen() {
       <QuizSession
         scientistId={activeScientistId}
         quizName={quiz.name}
+        badgeName={quiz.badgeName}
         color={quiz.color}
         allowedDifficulties={DIFFICULTIES_FOR_AGE_BAND[ageBand]}
         onExit={() => setActiveScientistId(null)}
@@ -44,52 +42,110 @@ export default function QuizScreen() {
     );
   }
 
+  const badges = computeBadges({ completedQuizzes, streakDays });
+  const nonFieldBadges = badges.filter((b) => !b.id.startsWith('field_master_'));
+  const badgesEarnedCount = nonFieldBadges.filter((b) => b.unlocked).length;
+  const grandMasterUnlocked = quizzes.every((q) => Boolean(completedQuizzes[q.scientistId]));
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Quiz Zone</Text>
-
-      <View style={styles.ageBandRow}>
-        {AGE_BANDS.map((band) => {
-          const active = band === ageBand;
-          return (
-            <Pressable
-              key={band}
-              onPress={() => setAgeBand(band)}
-              style={[styles.ageBandPill, active && styles.ageBandPillActive]}
-            >
-              <Text style={[styles.ageBandText, active && styles.ageBandTextActive]}>{band}</Text>
-            </Pressable>
-          );
-        })}
-      </View>
-
+      <ScreenHeader title="Quiz Zone" />
       <FlatList
+        contentContainerStyle={styles.scroll}
         data={quizzes}
         keyExtractor={(item) => item.id}
-        numColumns={2}
-        columnWrapperStyle={styles.row}
-        contentContainerStyle={styles.list}
-        renderItem={({ item }) => (
-          <Pressable
-            style={[styles.card, { borderColor: item.color }]}
-            onPress={() => setActiveScientistId(item.scientistId)}
-          >
-            <View style={styles.badge}>
-              {(() => {
-                const scientist = getScientist(item.scientistId);
-                return scientist ? <ScientistAvatar scientist={scientist} size={32} /> : null;
-              })()}
+        ListHeaderComponent={
+          <View>
+            <View style={styles.xpCard}>
+              <LinearGradient colors={colors.heroGradient} style={StyleSheet.absoluteFill} />
+              <View>
+                <Text style={styles.eyebrow}>Total XP</Text>
+                <Text style={[styles.xpCardValue, { color: colors.goldText }]}>{xpTotal} XP</Text>
+              </View>
+              <View style={{ alignItems: 'flex-end' }}>
+                <Text style={styles.eyebrow}>Badges</Text>
+                <Text style={styles.xpCardValue}>
+                  {badgesEarnedCount}/{nonFieldBadges.length}
+                </Text>
+              </View>
             </View>
-            <Text style={styles.cardName}>{item.name}</Text>
-            <Text style={styles.cardBadge}>{item.badgeName}</Text>
-            <View style={styles.cardFooter}>
-              <Text style={styles.cardTime}>~{item.estimatedTime}</Text>
-              <Text style={[styles.cardStatus, { color: STATUS_COLOR[item.status] }]}>
-                {item.status}
+
+            <Text style={styles.eyebrow}>Choose your age group</Text>
+            <View style={styles.ageBandRow}>
+              {AGE_BANDS.map((band) => {
+                const active = band === ageBand;
+                return (
+                  <Pressable
+                    key={band}
+                    onPress={() => setAgeBand(band)}
+                    style={[styles.ageBandPill, active && styles.ageBandPillActive]}
+                  >
+                    <Text style={[styles.ageBandText, active && styles.ageBandTextActive]}>{band}</Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+
+            <Text style={styles.eyebrow}>Quiz themes</Text>
+          </View>
+        }
+        renderItem={({ item }) => {
+          const done = Boolean(completedQuizzes[item.scientistId]);
+          return (
+            <Pressable style={styles.themeRow} onPress={() => setActiveScientistId(item.scientistId)}>
+              <View style={styles.themeIcon}>
+                <Text style={[styles.themeIconText, { color: item.color }]}>{item.mono}</Text>
+              </View>
+              <View style={styles.themeText}>
+                <Text style={styles.themeName}>{item.name}</Text>
+                <Text style={styles.themeSub}>
+                  {item.badgeName} · ~{item.estimatedTime}
+                </Text>
+              </View>
+              <Text style={[styles.themeStatus, { color: done ? colors.success : colors.goldText }]}>
+                {done ? 'Completed ✓' : 'Start →'}
               </Text>
+            </Pressable>
+          );
+        }}
+        ListFooterComponent={
+          <View>
+            <View
+              style={[
+                styles.bannerRow,
+                { backgroundColor: grandMasterUnlocked ? 'rgba(231,185,60,0.14)' : colors.surface,
+                  borderColor: grandMasterUnlocked ? 'rgba(231,185,60,0.4)' : colors.hairline },
+              ]}
+            >
+              <Text style={styles.bannerEmoji}>👑</Text>
+              <View style={styles.themeText}>
+                <Text style={styles.themeName}>Curious Minds Champion</Text>
+                <Text style={styles.themeSub}>
+                  {grandMasterUnlocked
+                    ? "Unlocked! You've mastered every theme."
+                    : `Complete all ${quizzes.length} themes to unlock.`}
+                </Text>
+              </View>
             </View>
-          </Pressable>
-        )}
+
+            <Pressable
+              style={styles.tfBanner}
+              onPress={() =>
+                Alert.alert('Think Fast Challenge', 'Live multiplayer challenges are coming soon!')
+              }
+            >
+              <LinearGradient colors={colors.purpleGradient} style={StyleSheet.absoluteFill} />
+              <Text style={styles.bannerEmoji}>⚡</Text>
+              <View style={styles.themeText}>
+                <Text style={styles.themeName}>Think Fast Challenge</Text>
+                <Text style={styles.themeSub}>
+                  Live Curious Challenge - Learn Together. Think Faster. Discover More
+                </Text>
+              </View>
+              <Text style={styles.tfChevron}>›</Text>
+            </Pressable>
+          </View>
+        }
       />
     </View>
   );
@@ -98,17 +154,20 @@ export default function QuizScreen() {
 function QuizSession({
   scientistId,
   quizName,
+  badgeName,
   color,
   allowedDifficulties,
   onExit,
 }: {
   scientistId: string;
   quizName: string;
+  badgeName: string;
   color: string;
   allowedDifficulties: string[];
   onExit: () => void;
 }) {
   const { addXp, recordQuizCompletion } = useAppState();
+  const scientist = getScientist(scientistId);
   const questions = getQuestionsForScientist(scientistId).filter((q) =>
     allowedDifficulties.includes(q.difficulty),
   );
@@ -121,29 +180,57 @@ function QuizSession({
   if (questions.length === 0) {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>{quizName}</Text>
-        <Text style={styles.cardBadge}>No questions at this age level yet — try Science Star.</Text>
-        <PillButton label="Back to Quiz Zone" onPress={onExit} style={{ marginTop: spacing.lg }} />
+        <ScreenHeader title={quizName} onBack={onExit} />
+        <View style={styles.scroll}>
+          <Text style={styles.themeSub}>No questions at this age level yet — try Science Star.</Text>
+        </View>
       </View>
     );
   }
 
   if (finished) {
+    const resultMessage =
+      correctCount === questions.length
+        ? 'Perfect score! Truly curious mind.'
+        : correctCount >= questions.length * 0.6
+          ? 'Great work — keep exploring!'
+          : 'Nice try — replay to learn more.';
+
+    const restart = () => {
+      setIndex(0);
+      setSelected(null);
+      setXpEarned(0);
+      setCorrectCount(0);
+      setFinished(false);
+    };
+
     return (
       <View style={styles.container}>
-        <Card style={styles.resultCard}>
-          <Text style={styles.title}>{quizName} — Done!</Text>
-          <Text style={styles.resultScore}>
-            {correctCount} / {questions.length} correct
-          </Text>
-          <Text style={styles.cardBadge}>You earned {xpEarned} XP this quiz</Text>
-          <PillButton label="Back to Quiz Zone" onPress={onExit} style={{ marginTop: spacing.lg }} />
-        </Card>
+        <ScreenHeader title="Quiz Complete" />
+        <View style={[styles.scroll, styles.resultContainer]}>
+          <View style={styles.resultBadge}>
+            <LinearGradient colors={colors.goldIconGradient} style={StyleSheet.absoluteFill} />
+            <Text style={styles.resultBadgeText}>
+              {correctCount}/{questions.length}
+            </Text>
+          </View>
+          <Text style={styles.resultMessage}>{resultMessage}</Text>
+          <Text style={styles.resultXp}>You earned {xpEarned} XP this quiz.</Text>
+          <View style={styles.resultBadgePill}>
+            <Text style={styles.resultBadgeEmoji}>🎓</Text>
+            <Text style={styles.resultBadgePillText}>Badge unlocked: {badgeName}</Text>
+          </View>
+          <PillButton label="Try again" onPress={restart} style={styles.tryAgainButton} />
+          <Pressable onPress={onExit}>
+            <Text style={styles.backToHubLink}>Back to Quiz Zone</Text>
+          </Pressable>
+        </View>
       </View>
     );
   }
 
   const question = questions[index];
+  const progressPct = ((index + 1) / questions.length) * 100;
 
   const selectAnswer = (optionIndex: number) => {
     if (selected !== null) return;
@@ -168,50 +255,102 @@ function QuizSession({
 
   return (
     <View style={styles.container}>
-      <Pressable onPress={onExit} style={styles.backButton}>
-        <Text style={[styles.backButtonText, { color }]}>← Back to Quiz Zone</Text>
-      </Pressable>
-
-      <Card style={[styles.questionCard, { borderColor: color }]}>
-        <View style={styles.questionMetaRow}>
-          <Text style={[styles.difficultyPill, { color }]}>{question.difficulty.toUpperCase()}</Text>
-          <Text style={styles.questionMeta}>
-            +{XP_FOR_DIFFICULTY[question.difficulty] ?? 10} XP
+      <ScreenHeader
+        title={quizName}
+        titleSize={typography.size.headerXs}
+        onBack={onExit}
+        right={
+          <Text style={styles.headerProgress}>
+            {index + 1}/{questions.length}
           </Text>
-          <Text style={styles.questionMeta}>
-            {index + 1} / {questions.length}
-          </Text>
+        }
+      />
+      <View style={styles.scroll}>
+        <View style={styles.progressTrack}>
+          <View style={[styles.progressFill, { width: `${progressPct}%` }]} />
         </View>
+
+        <View style={styles.pillRow}>
+          <View style={styles.diffPill}>
+            <Text style={styles.diffPillText}>
+              {question.difficulty.charAt(0).toUpperCase() + question.difficulty.slice(1)}
+            </Text>
+          </View>
+          <View style={styles.metaPill}>
+            <Text style={styles.metaPillText}>Multiple Choice</Text>
+          </View>
+          <View style={styles.metaPill}>
+            <Text style={styles.metaPillText}>+{XP_FOR_DIFFICULTY[question.difficulty] ?? 10} XP</Text>
+          </View>
+          <View style={styles.metaPill}>
+            <Text style={styles.metaPillText}>~{TIME_FOR_DIFFICULTY[question.difficulty] ?? 20}s</Text>
+          </View>
+        </View>
+
         <Text style={styles.questionText}>{question.question}</Text>
 
-        {question.options.map((option, i) => {
-          const isSelected = selected === i;
-          const isCorrect = i === question.correct;
-          let backgroundColor: string = colors.background;
-          if (selected !== null && isCorrect) backgroundColor = colors.success;
-          else if (selected !== null && isSelected && !isCorrect) backgroundColor = colors.error;
+        <View style={{ gap: spacing.sm }}>
+          {question.options.map((option, i) => {
+            const isSelected = selected === i;
+            const isCorrect = i === question.correct;
+            let bg: string = colors.surface;
+            let border: string = colors.hairlineStrong;
+            let dotBg = 'transparent';
+            let dotBorder = 'rgba(255,255,255,0.3)';
+            let mark = '';
+            let textColor: string = colors.textPrimary;
+            if (selected !== null) {
+              if (isCorrect) {
+                bg = 'rgba(231,185,60,0.16)';
+                border = 'rgba(231,185,60,0.5)';
+                dotBg = colors.gold;
+                dotBorder = colors.gold;
+                mark = '✓';
+              } else if (isSelected) {
+                bg = 'rgba(225,85,107,0.14)';
+                border = 'rgba(225,85,107,0.5)';
+                dotBg = colors.errorAlt;
+                dotBorder = colors.errorAlt;
+                mark = '✕';
+                textColor = '#F3AEB8';
+              }
+            }
 
-          return (
-            <Pressable
-              key={i}
-              onPress={() => selectAnswer(i)}
-              style={[styles.option, { backgroundColor }]}
-            >
-              <Text style={styles.optionText}>{option}</Text>
-            </Pressable>
-          );
-        })}
+            return (
+              <Pressable
+                key={i}
+                onPress={() => selectAnswer(i)}
+                style={[styles.option, { backgroundColor: bg, borderColor: border }]}
+              >
+                <View style={[styles.optionDot, { backgroundColor: dotBg, borderColor: dotBorder }]}>
+                  <Text style={styles.optionMark}>{mark}</Text>
+                </View>
+                <Text style={[styles.optionText, { color: textColor }]}>{option}</Text>
+              </Pressable>
+            );
+          })}
+        </View>
 
-        {selected !== null && <Text style={styles.explanation}>{question.explanation}</Text>}
-      </Card>
-
-      {selected !== null && (
-        <PillButton
-          label={index + 1 < questions.length ? 'Next Question' : 'See Results'}
-          onPress={next}
-          style={styles.nextButton}
-        />
-      )}
+        {selected !== null && (
+          <View style={{ gap: spacing.sm, marginTop: spacing.md }}>
+            <View style={styles.explanationCard}>
+              <Text style={styles.explanationText}>{question.explanation}</Text>
+            </View>
+            {scientist && (
+              <View style={styles.factCard}>
+                <Text style={styles.factTitle}>💡 Did You Know?</Text>
+                <Text style={styles.factText}>{scientist.fun_fact}</Text>
+              </View>
+            )}
+            <Text style={styles.goalText}>Learning objective: Learn about {quizName}</Text>
+            <PillButton
+              label={index + 1 < questions.length ? 'Next Question' : 'See Results'}
+              onPress={next}
+              style={{ width: '100%' }}
+            />
+          </View>
+        )}
+      </View>
     </View>
   );
 }
@@ -220,13 +359,33 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background,
-    padding: spacing.lg,
   },
-  title: {
+  scroll: {
+    padding: spacing.lg,
+    gap: spacing.md,
+  },
+  eyebrow: {
+    fontFamily: typography.fontFamily.bodyBold,
+    fontSize: typography.size.micro,
+    color: colors.textSecondary,
+    textTransform: 'uppercase',
+    letterSpacing: typography.microLabelLetterSpacing,
+    marginBottom: spacing.sm,
+  },
+  xpCard: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderRadius: radii.card + 2,
+    padding: spacing.md,
+    overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: 'rgba(231,185,60,0.3)',
+    marginBottom: spacing.lg,
+  },
+  xpCardValue: {
     fontFamily: typography.fontFamily.headingBold,
-    fontSize: typography.size.hero,
+    fontSize: typography.size.statMed,
     color: colors.textPrimary,
-    marginBottom: spacing.md,
   },
   ageBandRow: {
     flexDirection: 'row',
@@ -235,130 +394,268 @@ const styles = StyleSheet.create({
   },
   ageBandPill: {
     flex: 1,
-    borderRadius: radii.cardSmall,
-    paddingVertical: spacing.xs,
+    borderRadius: radii.cardTiny,
+    paddingVertical: spacing.sm,
     paddingHorizontal: 4,
     alignItems: 'center',
     backgroundColor: colors.surface,
     borderWidth: 1,
-    borderColor: colors.hairline,
+    borderColor: colors.hairlineStrong,
   },
   ageBandPillActive: {
-    backgroundColor: colors.purple,
-    borderColor: colors.purple,
+    backgroundColor: 'rgba(231,185,60,0.18)',
+    borderColor: 'rgba(231,185,60,0.4)',
   },
   ageBandText: {
-    fontFamily: typography.fontFamily.bodySemiBold,
+    fontFamily: typography.fontFamily.bodyBold,
     fontSize: typography.size.microLabel,
-    color: colors.textSecondary,
+    color: colors.textOnDark,
     textAlign: 'center',
   },
   ageBandTextActive: {
-    color: colors.textPrimary,
+    color: colors.goldText,
   },
-  list: {
-    paddingBottom: spacing.lg,
-  },
-  row: {
+  themeRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
     gap: spacing.sm,
-  },
-  card: {
-    flex: 1,
     backgroundColor: colors.surface,
-    borderRadius: radii.card,
     borderWidth: 1,
+    borderColor: colors.hairline,
+    borderRadius: radii.cardSmall,
     padding: spacing.md,
     marginBottom: spacing.sm,
   },
-  badge: {
-    marginBottom: spacing.xs,
+  themeIcon: {
+    width: 44,
+    height: 44,
+    borderRadius: radii.cardTiny,
+    backgroundColor: 'rgba(231,185,60,0.14)',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  cardName: {
-    fontFamily: typography.fontFamily.headingBold,
-    fontSize: typography.size.body,
+  themeIconText: {
+    fontFamily: typography.fontFamily.bodyBold,
+    fontSize: typography.size.bodySmall,
+  },
+  themeText: {
+    flex: 1,
+    minWidth: 0,
+  },
+  themeName: {
+    fontFamily: typography.fontFamily.headingRegular,
+    fontSize: typography.size.cardTitleSm,
     color: colors.textPrimary,
-    marginBottom: 2,
   },
-  cardBadge: {
+  themeSub: {
     fontFamily: typography.fontFamily.bodyRegular,
-    fontSize: typography.size.microLabel,
+    fontSize: typography.size.micro,
     color: colors.textSecondary,
+  },
+  themeStatus: {
+    fontFamily: typography.fontFamily.bodyBold,
+    fontSize: typography.size.micro,
+  },
+  bannerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    borderWidth: 1,
+    borderRadius: radii.cardSmall + 2,
+    padding: spacing.md,
+    marginTop: spacing.sm,
     marginBottom: spacing.sm,
   },
-  cardFooter: {
+  tfBanner: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    alignItems: 'center',
+    gap: spacing.sm,
+    borderWidth: 1,
+    borderColor: colors.purpleBorder,
+    borderRadius: radii.cardSmall + 2,
+    padding: spacing.md,
+    overflow: 'hidden',
   },
-  cardTime: {
+  bannerEmoji: {
+    fontSize: 26,
+  },
+  tfChevron: {
     fontFamily: typography.fontFamily.bodySemiBold,
-    fontSize: typography.size.microLabel,
+    fontSize: 18,
+    color: colors.purple,
+  },
+  headerProgress: {
+    fontFamily: typography.fontFamily.bodyBold,
+    fontSize: typography.size.micro,
     color: colors.textSecondary,
+    width: 50,
+    textAlign: 'right',
   },
-  cardStatus: {
-    fontFamily: typography.fontFamily.bodySemiBold,
-    fontSize: typography.size.microLabel,
+  progressTrack: {
+    height: 5,
+    borderRadius: radii.pill,
+    backgroundColor: 'rgba(255,255,255,0.08)',
+    overflow: 'hidden',
   },
-  backButton: {
-    marginBottom: spacing.md,
+  progressFill: {
+    height: '100%',
+    backgroundColor: colors.gold,
   },
-  backButtonText: {
-    fontFamily: typography.fontFamily.headingBold,
-    fontSize: typography.size.body,
-  },
-  questionCard: {
-    borderWidth: 2,
-  },
-  questionMetaRow: {
+  pillRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: spacing.md,
+    flexWrap: 'wrap',
+    gap: spacing.xs,
   },
-  difficultyPill: {
-    fontFamily: typography.fontFamily.headingBold,
+  diffPill: {
+    backgroundColor: 'rgba(231,185,60,0.14)',
+    borderWidth: 1,
+    borderColor: 'rgba(231,185,60,0.3)',
+    borderRadius: radii.pill,
+    paddingVertical: 4,
+    paddingHorizontal: spacing.sm,
+  },
+  diffPillText: {
+    fontFamily: typography.fontFamily.bodyBold,
     fontSize: typography.size.microLabel,
-    letterSpacing: typography.microLabelLetterSpacing,
+    color: colors.goldText,
   },
-  questionMeta: {
-    fontFamily: typography.fontFamily.bodySemiBold,
+  metaPill: {
+    backgroundColor: 'rgba(255,255,255,0.06)',
+    borderRadius: radii.pill,
+    paddingVertical: 4,
+    paddingHorizontal: spacing.sm,
+  },
+  metaPillText: {
+    fontFamily: typography.fontFamily.bodyBold,
     fontSize: typography.size.microLabel,
     color: colors.textSecondary,
   },
   questionText: {
-    fontFamily: typography.fontFamily.headingBold,
-    fontSize: typography.size.cardTitle,
+    fontFamily: typography.fontFamily.headingRegular,
+    fontSize: typography.size.sectionTitle - 2,
     color: colors.textPrimary,
-    marginBottom: spacing.md,
+    lineHeight: 27,
   },
   option: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    borderWidth: 1,
     borderRadius: radii.cardSmall,
     padding: spacing.md,
-    marginBottom: spacing.xs,
-    borderWidth: 1,
-    borderColor: colors.hairline,
+  },
+  optionDot: {
+    width: 24,
+    height: 24,
+    borderRadius: radii.pill,
+    borderWidth: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  optionMark: {
+    fontFamily: typography.fontFamily.bodyBold,
+    fontSize: typography.size.microLabel,
+    color: colors.onGold,
   },
   optionText: {
-    fontFamily: typography.fontFamily.bodyRegular,
+    flex: 1,
+    fontFamily: typography.fontFamily.bodySemiBold,
     fontSize: typography.size.body,
-    color: colors.textPrimary,
+    lineHeight: 20,
   },
-  explanation: {
+  explanationCard: {
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: colors.hairlineStrong,
+    borderRadius: radii.cardSmall,
+    padding: spacing.md,
+  },
+  explanationText: {
     fontFamily: typography.fontFamily.bodyRegular,
     fontSize: typography.size.bodySmall,
     color: colors.textOnDark,
-    marginTop: spacing.sm,
-    lineHeight: 19,
+    lineHeight: 21,
   },
-  nextButton: {
-    marginTop: spacing.lg,
+  factCard: {
+    backgroundColor: 'rgba(231,185,60,0.1)',
+    borderWidth: 1,
+    borderColor: 'rgba(231,185,60,0.3)',
+    borderRadius: radii.cardSmall,
+    padding: spacing.md,
+    gap: 4,
   },
-  resultCard: {
+  factTitle: {
+    fontFamily: typography.fontFamily.bodyBold,
+    fontSize: typography.size.micro,
+    color: colors.goldText,
+  },
+  factText: {
+    fontFamily: typography.fontFamily.bodyRegular,
+    fontSize: typography.size.bodySmall,
+    color: colors.textOnDark,
+    lineHeight: 21,
+  },
+  goalText: {
+    fontFamily: typography.fontFamily.bodySemiBold,
+    fontSize: typography.size.micro,
+    color: colors.textTertiary,
+  },
+  resultContainer: {
     alignItems: 'center',
+    gap: spacing.md,
+    paddingTop: spacing.xl,
   },
-  resultScore: {
+  resultBadge: {
+    width: 88,
+    height: 88,
+    borderRadius: 44,
+    alignItems: 'center',
+    justifyContent: 'center',
+    overflow: 'hidden',
+  },
+  resultBadgeText: {
     fontFamily: typography.fontFamily.headingBold,
-    fontSize: typography.size.statSmall,
-    color: colors.gold,
-    marginTop: spacing.sm,
-    marginBottom: spacing.xs,
+    fontSize: typography.size.statSmall + 4,
+    color: colors.onGold,
+  },
+  resultMessage: {
+    fontFamily: typography.fontFamily.headingRegular,
+    fontSize: typography.size.headerLg + 1,
+    color: colors.textPrimary,
+    textAlign: 'center',
+  },
+  resultXp: {
+    fontFamily: typography.fontFamily.bodyRegular,
+    fontSize: typography.size.bodySmall,
+    color: colors.textSecondary,
+    textAlign: 'center',
+  },
+  resultBadgePill: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: 'rgba(231,185,60,0.3)',
+    borderRadius: radii.pill,
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.lg,
+  },
+  resultBadgeEmoji: {
+    fontSize: 20,
+  },
+  resultBadgePillText: {
+    fontFamily: typography.fontFamily.bodyBold,
+    fontSize: typography.size.bodySmall,
+    color: colors.goldText,
+  },
+  tryAgainButton: {
+    paddingHorizontal: spacing.xl,
+  },
+  backToHubLink: {
+    fontFamily: typography.fontFamily.bodySemiBold,
+    fontSize: typography.size.bodySmall,
+    color: colors.textOnDark,
+    textDecorationLine: 'underline',
   },
 });

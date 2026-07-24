@@ -12,6 +12,7 @@ export type Scientist = {
   achievement: string;
   quote: string;
   difficulty: 'easy' | 'medium' | 'hard';
+  nobel?: boolean;
 };
 
 export const scientists = raw as Scientist[];
@@ -22,4 +23,8 @@ export function getScientist(id: string): Scientist | undefined {
 
 export function getScientistsByField(fieldId: string): Scientist[] {
   return scientists.filter((s) => s.field === fieldId);
+}
+
+export function getNobelLaureates(): Scientist[] {
+  return scientists.filter((s) => s.nobel);
 }

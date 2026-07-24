@@ -23,7 +23,8 @@
     "fun_fact": "Raman got the idea for his most famous discovery while watching the color of the sea on a ship voyage home from England.",
     "achievement": "Discovered the Raman Effect, explaining how light scatters through matter — earning the 1930 Nobel Prize in Physics.",
     "quote": "Ask the right questions, and nature will open the doors to her secrets.",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "nobel": true
   },
   {
     "id": "bhabha",
@@ -88,7 +89,8 @@
     "fun_fact": "Khorana's team built the world's first artificial gene entirely from chemicals in a laboratory in 1970.",
     "achievement": "Helped decipher the genetic code and synthesized the first artificial gene, sharing the 1968 Nobel Prize.",
     "quote": "Education was the one thing my family could give me that could never be taken away.",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "nobel": true
   },
   {
     "id": "chandrasekhar",
@@ -101,7 +103,8 @@
     "fun_fact": "Chandrasekhar worked out his famous limit on stellar mass during a multi-week ship voyage at just 19 years old.",
     "achievement": "Discovered the Chandrasekhar limit, explaining the fate of dying stars — earning the 1983 Nobel Prize in Physics.",
     "quote": "The pursuit of science has often been compared to the scaling of mountains, high and not so high.",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "nobel": true
   },
   {
     "id": "snbose",
@@ -257,7 +260,8 @@
     "fun_fact": "Ramakrishnan switched fields from physics to biology mid-career, retraining himself to study the molecular machinery of life.",
     "achievement": "Determined the atomic structure of the ribosome, sharing the 2009 Nobel Prize in Chemistry.",
     "quote": "Curiosity, not ambition, is what drives good science.",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "nobel": true
   },
   {
     "id": "subbarow",

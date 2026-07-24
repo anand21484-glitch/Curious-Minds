@@ -11,14 +11,18 @@ export const cqLevels: CqLevel[] = [
 
 export function levelForXp(xp: number) {
   let current = cqLevels[0];
+  let levelIdx = 0;
   let next: CqLevel | null = null;
   for (let i = 0; i < cqLevels.length; i++) {
-    if (xp >= cqLevels[i].min) current = cqLevels[i];
-    else {
+    if (xp >= cqLevels[i].min) {
+      current = cqLevels[i];
+      levelIdx = i;
+    } else {
       next = cqLevels[i];
       break;
     }
   }
   const progress = next ? (xp - current.min) / (next.min - current.min) : 1;
-  return { current, next, progress: Math.max(0, Math.min(1, progress)) };
+  const stars = '⭐'.repeat(Math.min(5, levelIdx + 1)) + '☆'.repeat(Math.max(0, 4 - levelIdx));
+  return { current, next, progress: Math.max(0, Math.min(1, progress)), stars };
 }

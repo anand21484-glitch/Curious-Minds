@@ -2,20 +2,20 @@ import { fields } from '../theme';
 import { getQuestionsForScientist } from './quizQuestions';
 import { scientists } from './scientists';
 
-export type QuizStatus = 'Not started' | 'In progress' | 'Completed';
-
 export type Quiz = {
   id: string;
   scientistId: string;
   name: string;
   badgeName: string;
   estimatedTime: string;
-  status: QuizStatus;
   color: string;
+  mono: string;
   questionCount: number;
 };
 
-const colorByField: Record<string, string> = Object.fromEntries(fields.map((f) => [f.id, f.color]));
+const fieldById: Record<string, (typeof fields)[number]> = Object.fromEntries(
+  fields.map((f) => [f.id, f]),
+);
 
 // One quiz per scientist profile (5 questions each), matching quiz_questions.json.
 export const quizzes: Quiz[] = scientists.map((s) => ({
@@ -24,8 +24,8 @@ export const quizzes: Quiz[] = scientists.map((s) => ({
   name: s.name,
   badgeName: `${s.name.split(' ').slice(-1)[0]} Explorer`,
   estimatedTime: `${getQuestionsForScientist(s.id).length * 2} min`,
-  status: 'Not started',
-  color: colorByField[s.field] ?? '#8B7BFF',
+  color: fieldById[s.field]?.color ?? '#8B7BFF',
+  mono: fieldById[s.field]?.mono ?? '??',
   questionCount: getQuestionsForScientist(s.id).length,
 }));
 
