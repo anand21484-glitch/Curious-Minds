@@ -3,7 +3,12 @@ import { useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import ScientistAvatar from '../../src/components/ScientistAvatar';
 import ScreenHeader from '../../src/components/ScreenHeader';
-import { getNobelLaureates, getScientistsByField, scientists } from '../../src/data/scientists';
+import {
+  getAncientScientists,
+  getModernScientistsByField,
+  getNobelLaureates,
+  scientists,
+} from '../../src/data/scientists';
 import { colors, fields, radii, softColor, spacing, typography } from '../../src/theme';
 
 const MODERN_FIELD_IDS: string[] = fields
@@ -43,8 +48,8 @@ export default function ExploreScreen() {
   const states = useMemo(() => Array.from(new Set(scientists.map((s) => s.region))).sort(), []);
   const stateScientists = selectedState ? scientists.filter((s) => s.region === selectedState) : [];
 
-  const modernCount = MODERN_FIELD_IDS.reduce((sum, id) => sum + getScientistsByField(id).length, 0);
-  const ancientCount = getScientistsByField('ancient').length;
+  const modernCount = MODERN_FIELD_IDS.reduce((sum, id) => sum + getModernScientistsByField(id).length, 0);
+  const ancientCount = getAncientScientists().length;
   const nobelCount = getNobelLaureates().length;
   const bannerCount = (id: string) => (id === 'modern' ? modernCount : id === 'nobel' ? nobelCount : ancientCount);
 
@@ -57,7 +62,7 @@ export default function ExploreScreen() {
           <View style={styles.grid}>
             {MODERN_FIELD_IDS.map((fieldId) => {
               const field = fields.find((f) => f.id === fieldId)!;
-              const count = getScientistsByField(fieldId).length;
+              const count = getModernScientistsByField(fieldId).length;
               return (
                 <Pressable
                   key={fieldId}
@@ -81,7 +86,12 @@ export default function ExploreScreen() {
   // ── Field / Nobel scientist list ──
   if (drill.type === 'field' || drill.type === 'nobel') {
     const field = drill.type === 'field' ? fields.find((f) => f.id === drill.fieldId) : undefined;
-    const list = drill.type === 'nobel' ? getNobelLaureates() : getScientistsByField(drill.fieldId);
+    const list =
+      drill.type === 'nobel'
+        ? getNobelLaureates()
+        : drill.fieldId === 'ancient'
+          ? getAncientScientists()
+          : getModernScientistsByField(drill.fieldId);
     const title = drill.type === 'nobel' ? 'Nobel Laureates' : field?.name ?? '';
     const goBack = () =>
       drill.type === 'field' && drill.fieldId !== 'ancient' && MODERN_FIELD_IDS.includes(drill.fieldId)

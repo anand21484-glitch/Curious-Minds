@@ -10,7 +10,8 @@
     "fun_fact": "Kalam played the veena, a traditional South Indian string instrument, to relax after long days at the lab.",
     "achievement": "Led India's first satellite launch vehicle (SLV-III) and its missile development programs.",
     "quote": "Dream is not that which you see while sleeping; it is something that does not let you sleep.",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "era": "modern"
   },
   {
     "id": "raman",
@@ -24,7 +25,8 @@
     "achievement": "Discovered the Raman Effect, explaining how light scatters through matter — earning the 1930 Nobel Prize in Physics.",
     "quote": "Ask the right questions, and nature will open the doors to her secrets.",
     "difficulty": "easy",
-    "nobel": true
+    "nobel": true,
+    "era": "modern"
   },
   {
     "id": "bhabha",
@@ -37,7 +39,8 @@
     "fun_fact": "Besides physics, Bhabha was a gifted painter and a devoted lover of Western classical music and opera.",
     "achievement": "Founded the Tata Institute of Fundamental Research and India's Atomic Energy Commission.",
     "quote": "Atomic energy is our greatest asset in solving the problem of adequate power in this country.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "era": "modern"
   },
   {
     "id": "sarabhai",
@@ -50,7 +53,8 @@
     "fun_fact": "India's first rocket components were transported to the launch site at Thumba on bicycles and bullock carts.",
     "achievement": "Founded ISRO and launched India's first sounding rocket from Thumba.",
     "quote": "We must be second to none in the application of advanced technologies to the real problems of man and society.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "era": "modern"
   },
   {
     "id": "ramanujan",
@@ -63,7 +67,8 @@
     "fun_fact": "When Hardy visited Ramanujan in a taxi numbered 1729 and called it a dull number, Ramanujan instantly replied it was the smallest number expressible as the sum of two cubes in two different ways.",
     "achievement": "Produced thousands of original results in number theory and infinite series with almost no formal training.",
     "quote": "An equation for me has no meaning unless it expresses a thought of God.",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "era": "modern"
   },
   {
     "id": "jcbose",
@@ -76,7 +81,8 @@
     "fun_fact": "Bose's crescograph could magnify the movement of a plant ten million times, letting him watch a plant 'flinch' when hurt.",
     "achievement": "Proved that plants respond to stimuli like living organisms, and pioneered early wireless signal research.",
     "quote": "In the great mansion of nature there is not one solitary lifeless corner.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "era": "modern"
   },
   {
     "id": "khorana",
@@ -90,7 +96,8 @@
     "achievement": "Helped decipher the genetic code and synthesized the first artificial gene, sharing the 1968 Nobel Prize.",
     "quote": "Education was the one thing my family could give me that could never be taken away.",
     "difficulty": "hard",
-    "nobel": true
+    "nobel": true,
+    "era": "modern"
   },
   {
     "id": "chandrasekhar",
@@ -104,7 +111,8 @@
     "achievement": "Discovered the Chandrasekhar limit, explaining the fate of dying stars — earning the 1983 Nobel Prize in Physics.",
     "quote": "The pursuit of science has often been compared to the scaling of mountains, high and not so high.",
     "difficulty": "hard",
-    "nobel": true
+    "nobel": true,
+    "era": "modern"
   },
   {
     "id": "snbose",
@@ -117,7 +125,8 @@
     "fun_fact": "Every particle known as a 'boson' — including the famous Higgs boson — is named after Satyendra Nath Bose.",
     "achievement": "Co-developed Bose–Einstein statistics, the foundation for an entire class of particles named after him.",
     "quote": "I was not a great mathematician, but I had a great intuition.",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "era": "modern"
   },
   {
     "id": "swaminathan",
@@ -130,7 +139,8 @@
     "fun_fact": "Swaminathan originally trained to become a police officer before switching his path to genetics and farming.",
     "achievement": "Led India's Green Revolution, transforming the country from food scarcity to self-sufficiency.",
     "quote": "The betterment of humankind is only possible through science.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "era": "modern"
   },
   {
     "id": "kalpana",
@@ -143,7 +153,8 @@
     "fun_fact": "As a child, Kalpana Chawla loved visiting a local flying club in Karnal just to watch aircraft take off and land.",
     "achievement": "Became the first woman of Indian origin to travel to space, flying two Space Shuttle missions.",
     "quote": "The path from dreams to success does exist.",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "era": "modern"
   },
   {
     "id": "ganguly",
@@ -156,7 +167,8 @@
     "fun_fact": "Kadambini Ganguly had to overcome years of formal objections just to be permitted to sit her medical college entrance exam.",
     "achievement": "Became one of the first women in India to qualify and practice as a physician.",
     "quote": "No rule written by men could stop me from becoming a doctor.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "era": "modern"
   },
   {
     "id": "saha",
@@ -169,7 +181,8 @@
     "fun_fact": "Saha's 1920 equation is still used today by astronomers to calculate the temperature of stars from their light.",
     "achievement": "Developed the Saha ionization equation, a foundational tool of modern astrophysics.",
     "quote": "Science is not just about discoveries; it is about serving society.",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "era": "modern"
   },
   {
     "id": "pcray",
@@ -182,7 +195,8 @@
     "fun_fact": "Despite becoming famous and successful, Ray lived simply his whole life and gave away almost all his earnings to support poor students.",
     "achievement": "Founded Bengal Chemical and Pharmaceutical Works, India's first pharmaceutical company.",
     "quote": "Service to mankind is the best form of worship.",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "era": "modern"
   },
   {
     "id": "salimali",
@@ -195,7 +209,8 @@
     "fun_fact": "Salim Ali's lifelong passion for birds began the day he examined a sparrow he had shot with a toy air gun as a boy.",
     "achievement": "Pioneered the scientific study of birds in India and championed the conservation of Silent Valley forest.",
     "quote": "Birds are among the best indicators of the health of our environment.",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "era": "modern"
   },
   {
     "id": "shakuntala",
@@ -208,7 +223,8 @@
     "fun_fact": "In 1980, Shakuntala Devi multiplied two 13-digit numbers in her head in just 28 seconds, faster than many computers of that era.",
     "achievement": "Set a world record for mental calculation and popularized mathematics for the public through her books.",
     "quote": "Numbers have life; they are not just symbols on paper.",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "era": "modern"
   },
   {
     "id": "annamani",
@@ -221,7 +237,8 @@
     "fun_fact": "As a child, Anna Mani asked for a full set of encyclopedias instead of jewelry for her birthday.",
     "achievement": "Led the standardization of weather and solar radiation instruments across India.",
     "quote": "I would rather have a good book than jewelry.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "era": "modern"
   },
   {
     "id": "janaki",
@@ -234,7 +251,8 @@
     "fun_fact": "A magnolia flower variety, 'Magnolia kobus Janaki Ammal,' is named in her honor.",
     "achievement": "Helped develop higher-yield sugarcane hybrids for India and became the first woman director of the Botanical Survey of India.",
     "quote": "Plants, like people, have their own stories to tell.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "era": "modern"
   },
   {
     "id": "kurien",
@@ -247,7 +265,8 @@
     "fun_fact": "Kurien almost quit his very first assignment in Anand, the small town where he would go on to build Amul.",
     "achievement": "Led Operation Flood, making India the world's largest producer of milk through farmer cooperatives.",
     "quote": "Farmers need not live in perpetual poverty; they can determine their own future if they are organised.",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "era": "modern"
   },
   {
     "id": "venki",
@@ -261,7 +280,8 @@
     "achievement": "Determined the atomic structure of the ribosome, sharing the 2009 Nobel Prize in Chemistry.",
     "quote": "Curiosity, not ambition, is what drives good science.",
     "difficulty": "hard",
-    "nobel": true
+    "nobel": true,
+    "era": "modern"
   },
   {
     "id": "subbarow",
@@ -274,7 +294,8 @@
     "fun_fact": "Before he became a biochemist, Subbarow worked as a hospital ward boy in India, and later washed dishes at Harvard to pay for his education.",
     "achievement": "Co-developed methotrexate, a cancer chemotherapy drug still used to save lives today.",
     "quote": "It does not matter who gets the credit, as long as the work helps people.",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "era": "modern"
   },
   {
     "id": "shiva",
@@ -287,7 +308,8 @@
     "fun_fact": "Before becoming a globally known environmental activist, Vandana Shiva trained as a quantum physicist.",
     "achievement": "Founded Navdanya, a movement protecting India's seed diversity, winning the 1993 Right Livelihood Award.",
     "quote": "Seeds carry the memory of the earth, and protecting them means protecting our future.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "era": "modern"
   },
   {
     "id": "qasim",
@@ -300,7 +322,8 @@
     "fun_fact": "Because of the expedition Qasim led in 1981, India became one of the few nations in the world with its own permanent Antarctic research station.",
     "achievement": "Led India's first scientific expedition to Antarctica in 1981, launching India's permanent polar research program.",
     "quote": "The oceans and the ice at the ends of our planet hold answers we have barely begun to ask.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "era": "modern"
   },
   {
     "id": "aryabhata",
@@ -313,7 +336,8 @@
     "fun_fact": "India named its first satellite, launched in 1975, 'Aryabhata' in honor of the ancient mathematician.",
     "achievement": "Wrote the Aryabhatiya, calculating an accurate value of pi and proposing that the Earth rotates on its axis.",
     "quote": "Just as a person in a moving boat sees the still trees on the bank as if they were moving backward, so too do the stationary stars seem to move westward to someone on the turning Earth.",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "era": "ancient"
   },
   {
     "id": "sushruta",
@@ -326,7 +350,8 @@
     "fun_fact": "Sushruta described a technique for reconstructing a patient's nose using skin from their own cheek, a method that influenced plastic surgery centuries later.",
     "achievement": "Authored the Sushruta Samhita, one of the world's earliest systematic texts on surgery.",
     "quote": "There is no limit at all to the science of medicine, and so it should be studied with diligence.",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "era": "ancient"
   },
   {
     "id": "brahmachari",
@@ -339,7 +364,8 @@
     "fun_fact": "Brahmachari was nominated for the Nobel Prize in Medicine several times for his kala-azar treatment, though he never won it.",
     "achievement": "Developed urea stibamate, a life-saving treatment for kala-azar that became a medical standard for decades.",
     "quote": "A disease that has claimed so many lives deserves our fullest effort to defeat it.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "era": "modern"
   },
   {
     "id": "khush",
@@ -352,7 +378,8 @@
     "fun_fact": "Rice varieties bred by Khush and his colleagues have been planted across tens of millions of hectares of farmland throughout Asia.",
     "achievement": "Bred over a hundred high-yield rice varieties, sharing the 1996 World Food Prize for advancing global food security.",
     "quote": "Feeding the world starts with a single seed bred a little better than the last.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "era": "modern"
   },
   {
     "id": "bhargava",
@@ -365,7 +392,8 @@
     "fun_fact": "Even in his 80s, Bhargava remained one of India's most outspoken voices for scientific integrity, publicly challenging government science policies he disagreed with.",
     "achievement": "Founded India's Centre for Cellular and Molecular Biology (CCMB), shaping the country's modern biotechnology research.",
     "quote": "Science must always keep its independence, or it stops being science.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "era": "modern"
   },
   {
     "id": "harishchandra",
@@ -378,7 +406,8 @@
     "fun_fact": "Before becoming one of the twentieth century's most important mathematicians, Harish-Chandra briefly worked as a research assistant to physicist Paul Dirac.",
     "achievement": "Pioneered representation theory of Lie groups, later foundational to the Langlands program in modern mathematics.",
     "quote": "There is an unexplainable feeling of harmony when a difficult piece of mathematics finally falls into place.",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "era": "modern"
   },
   {
     "id": "silas",
@@ -391,6 +420,161 @@
     "fun_fact": "Silas researched everything from microscopic plankton to giant whale sharks during his career studying India's marine life.",
     "achievement": "Led the Central Marine Fisheries Research Institute, advancing India's marine biodiversity research and conservation.",
     "quote": "The sea keeps its secrets well, but patient study always reveals a little more.",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "era": "modern"
+  },
+  {
+    "id": "ramanna",
+    "name": "Raja Ramanna",
+    "field": "physics",
+    "years": "1925–2004",
+    "region": "Karnataka",
+    "tagline": "A nuclear physicist who was also a concert-level pianist.",
+    "story": "Raja Ramanna grew up near Bangalore in what was then the princely state of Mysore, showing an early gift for both science and Western classical music, a rare pairing he carried with him his entire life. He trained as a nuclear physicist and eventually rose to lead the Bhabha Atomic Research Centre (BARC), India's premier nuclear research institution, following in the footsteps of Homi Bhabha's original vision of using atomic science to strengthen India's independence and development. In 1974, Ramanna led the team of scientists and engineers responsible for designing and conducting India's first nuclear test, code-named 'Smiling Buddha,' carried out at Pokhran in the Rajasthan desert, a landmark moment that established India's technical capability in nuclear science on the world stage. The test was accomplished under difficult conditions, with limited resources and immense secrecy, requiring Ramanna and his colleagues to solve extraordinarily complex engineering problems largely on their own. He later served in several senior leadership roles, including as Chairman of the Atomic Energy Commission and even as India's Minister of State for Defence, shaping national science and defence policy for decades. Yet throughout his scientific career, Ramanna never set aside his other passion: he was a genuinely accomplished pianist, performing Western classical music at a serious level and even composing his own pieces, and he wrote thoughtfully about the deep connections he saw between scientific creativity and artistic expression. He believed that discipline, patience, and imagination were just as essential to music as they were to physics.",
+    "fun_fact": "Alongside his nuclear physics career, Ramanna was a genuinely skilled Western classical pianist who composed his own music.",
+    "achievement": "Led the scientific team behind India's first nuclear test, Pokhran-I, in 1974.",
+    "quote": "Science and music are not so different — both begin with curiosity and end in creation.",
+    "difficulty": "hard",
+    "era": "modern"
+  },
+  {
+    "id": "cnrrao",
+    "name": "C.N.R. Rao",
+    "field": "chemistry",
+    "years": "1934–",
+    "region": "Karnataka",
+    "tagline": "One of the most published chemists alive, still discovering at 90.",
+    "story": "Chintamani Nagesa Ramachandra Rao grew up in Bangalore and became fascinated with chemistry at a young age, going on to build one of the most prolific and influential scientific careers of any Indian researcher. Rao focused much of his work on solid-state and materials chemistry, the study of how atoms arrange themselves inside solid materials and how that arrangement determines properties like electrical conductivity, magnetism, and strength. His research spanned an enormous range of materials, from oxides and nanomaterials to graphene-like two-dimensional sheets and high-temperature superconductors, materials that lose electrical resistance and conduct electricity perfectly under certain conditions, a discovery with major implications for energy technology. Over his career, Rao published more than 1,500 scientific papers and dozens of books, making him one of the most cited chemists in the world, and he trained generations of Indian scientists who went on to lead research labs of their own. He founded and led the Jawaharlal Nehru Centre for Advanced Scientific Research in Bangalore, building it into a major hub for materials research in India, and advised multiple Indian Prime Ministers on national science policy over several decades. In 2014, Rao was awarded the Bharat Ratna, India's highest civilian honor, only the third scientist ever to receive it. Even well into his eighties and nineties, Rao continued publishing new research, a testament to a curiosity that never slowed down.",
+    "fun_fact": "C.N.R. Rao has published more than 1,500 scientific papers over his career, making him one of the most prolific chemists in the world.",
+    "achievement": "Pioneered modern solid-state and materials chemistry research in India, earning the Bharat Ratna in 2014.",
+    "quote": "Chase excellence, and success will follow.",
+    "difficulty": "medium",
+    "era": "modern"
+  },
+  {
+    "id": "narlikar",
+    "name": "Jayant Narlikar",
+    "field": "space",
+    "years": "1938–",
+    "region": "Maharashtra",
+    "tagline": "He questioned the Big Bang — and helped build India's astronomy institute.",
+    "story": "Jayant Narlikar grew up in Kolhapur, Maharashtra, in a family of mathematicians, and went on to study at Cambridge University under the renowned astrophysicist Fred Hoyle. Together, Narlikar and Hoyle developed what became known as the Hoyle-Narlikar theory of gravity, an alternative framework to explain the origin and structure of the universe that challenged some assumptions of the standard Big Bang model, sparking serious scientific debate and pushing the entire field of cosmology to sharpen its evidence and reasoning. Returning to India, Narlikar became determined to build world-class infrastructure for astronomy research at home rather than only abroad, and in 1988 he founded the Inter-University Centre for Astronomy and Astrophysics (IUCAA) in Pune, which he directed for many years, turning it into one of India's leading centres for astrophysics research and training for university students across the country. Beyond his technical research, Narlikar became one of India's most beloved science communicators, writing accessible popular science books and even science-fiction stories for children in both English and Marathi, believing strongly that curiosity about the universe should not be limited to professional scientists. He also spent years publicly campaigning against superstition and pseudoscience in India, arguing that a scientifically literate public was essential for the country's progress, and he served on numerous national committees promoting science education.",
+    "fun_fact": "Narlikar wrote popular science fiction stories for children in English and Marathi to make astronomy fun and accessible.",
+    "achievement": "Co-developed the Hoyle-Narlikar theory of gravity and founded India's Inter-University Centre for Astronomy and Astrophysics.",
+    "quote": "A superstition-free society is a scientifically literate society.",
+    "difficulty": "hard",
+    "era": "modern"
+  },
+  {
+    "id": "ramachandran",
+    "name": "G.N. Ramachandran",
+    "field": "biotechnology",
+    "years": "1922–2001",
+    "region": "Kerala",
+    "tagline": "He drew the map every biology student still uses to study proteins.",
+    "story": "Gopalasamudram Narayanan Ramachandran grew up in Ernakulam, Kerala, and trained as a physicist before turning his attention to one of biology's central mysteries: how do long chains of amino acids fold into the precise three-dimensional shapes that let proteins do their work inside living cells? Working at the University of Madras and later the Indian Institute of Science in Bangalore, Ramachandran used X-ray diffraction, a technique that reveals the atomic structure of materials, to study collagen, the protein that gives structure to skin, bone, and connective tissue, and helped work out its distinctive triple-helix shape. His most famous and lasting contribution came from a deceptively simple question: out of all the countless ways a protein's backbone could theoretically twist and turn, which combinations of angles are actually physically possible without atoms crashing into each other? Ramachandran's answer, a diagram now known worldwide as the Ramachandran plot, mapped out exactly which angle combinations are allowed, instantly becoming an essential tool for understanding and predicting protein shapes. Remarkably, this diagram, first published in 1963, is still taught in nearly every college biochemistry and structural biology course today and remains a standard tool used by researchers determining new protein structures, even in the era of powerful computers and artificial intelligence. Ramachandran mentored many students who went on to become leading structural biologists themselves, and he continued researching protein and collagen structure throughout his long career.",
+    "fun_fact": "The 'Ramachandran plot' he invented in 1963 is still taught in college biology courses worldwide today, over sixty years later.",
+    "achievement": "Created the Ramachandran plot, a foundational tool in structural biology still used by scientists worldwide today.",
+    "quote": "Structure reveals function — you only need to look carefully enough.",
+    "difficulty": "hard",
+    "era": "modern"
+  },
+  {
+    "id": "tessythomas",
+    "name": "Tessy Thomas",
+    "field": "engineering",
+    "years": "1963–",
+    "region": "Kerala",
+    "tagline": "The first woman to lead a missile project in India.",
+    "story": "Tessy Thomas grew up in Alappuzha, Kerala, the daughter of a school headmaster, and developed an early fascination with rockets after watching news coverage of India's early space launches as a child. She studied engineering and went on to join India's Defence Research and Development Organisation (DRDO), joining the elite and, at the time, almost entirely male world of missile design. Thomas rose steadily through the ranks of India's long-range missile programs, eventually becoming Project Director for the Agni-IV and then Agni-V missiles, some of the most advanced long-range ballistic missiles developed by India, capable of reaching targets thousands of kilometres away with high precision. Leading such a large, technically demanding, and strategically sensitive project made her the first woman in India to head a missile development program, a significant milestone in a field that had for decades been dominated entirely by men. Her work required mastering an enormous range of engineering challenges, from propulsion and guidance systems to materials that could survive extreme heat and stress during flight. For her leadership and technical contributions, Thomas earned the nickname 'Missile Woman of India' in the Indian press and public imagination. She later became the first woman to serve as Director-General of DRDO's Aeronautical Systems, overseeing multiple advanced defence technology programs and continuing to mentor young engineers, especially women, entering India's aerospace and defence research fields.",
+    "fun_fact": "Tessy Thomas earned the nickname 'Missile Woman of India' for leading development of the advanced Agni-V long-range missile.",
+    "achievement": "Became the first woman to lead a missile development project in India, directing the Agni-V program.",
+    "quote": "There is no limit to what you can achieve if you keep working hard and stay focused.",
+    "difficulty": "medium",
+    "era": "modern"
+  },
+  {
+    "id": "asimachatterjee",
+    "name": "Asima Chatterjee",
+    "field": "chemistry",
+    "years": "1917–2006",
+    "region": "West Bengal",
+    "tagline": "The first Indian woman to earn a Doctor of Science degree.",
+    "story": "Asima Chatterjee grew up in Bengal at a time when very few women in India were encouraged to pursue advanced science, but she persisted through her studies in chemistry at a period when the field was almost entirely closed to women. In 1944, she became the first woman in India to be awarded a Doctor of Science degree, from Calcutta University, breaking a barrier that had stood since the university's founding and opening a path for the generations of Indian women scientists who followed her. Chatterjee dedicated much of her research career to studying the chemistry of medicinal plants, carefully extracting and analyzing the natural compounds, called alkaloids, found in Indian flora that had long been used in traditional medicine. Her work led directly to the development of effective anti-epileptic and anti-malarial drugs derived from these plant compounds, medicines that helped treat patients suffering from seizures and malaria, one of the most persistent diseases in India at the time. Chatterjee also researched anti-cancer compounds from plants and contributed to the broader field of natural product chemistry in India. Beyond her own laboratory work, she became the first woman to be elected General President of the Indian Science Congress, one of the country's most prominent scientific bodies, and was honored with the Padma Bhushan for her contributions to Indian chemistry. Chatterjee spent her later career mentoring young chemists, especially women, at the University of Calcutta.",
+    "fun_fact": "Asima Chatterjee was the first woman in India to receive a Doctor of Science degree, awarded by Calcutta University in 1944.",
+    "achievement": "Developed important anti-epileptic and anti-malarial drugs derived from Indian medicinal plants.",
+    "quote": "Nature's plants hold secrets that can heal, if only we take the time to study them.",
+    "difficulty": "medium",
+    "era": "modern"
+  },
+  {
+    "id": "birbalsahni",
+    "name": "Birbal Sahni",
+    "field": "life",
+    "years": "1891–1949",
+    "region": "Punjab",
+    "tagline": "He read the story of ancient India written in fossilized plants.",
+    "story": "Birbal Sahni was born in Punjab and developed an early fascination with the natural world, eventually studying botany and geology at Cambridge University in England before returning to India to build an entirely new field of scientific study: palaeobotany, the study of fossilized plants. Sahni spent decades collecting and analyzing plant fossils from across India, some of them hundreds of millions of years old, painstakingly reconstructing what ancient forests and plant life looked like long before humans existed. This research was far more than a historical curiosity: by carefully studying which ancient plants grew where, and comparing them to plant fossils found in other parts of the world, Sahni contributed important evidence to the then-developing scientific understanding of how continents had drifted across the planet over deep geological time, helping confirm that India's landmass had a long and dramatic journey before settling into its current position and climate. Sahni became a professor at Lucknow University and built a globally respected research program in palaeobotany from what had been, before him, essentially unstudied ground in India. He also took a serious interest in archaeology and ancient Indian history, applying scientific methods to studying the past more broadly. Sahni passed away in 1949, and shortly after his death, the Indian government established the Birbal Sahni Institute of Palaeobotany in Lucknow in his honor, which remains India's leading centre for the study of fossil plants and ancient environments today.",
+    "fun_fact": "By studying plant fossils hundreds of millions of years old, Sahni helped confirm how India's landmass drifted across the planet over deep geological time.",
+    "achievement": "Founded the field of palaeobotany in India; the Birbal Sahni Institute of Palaeobotany was established in his honor.",
+    "quote": "The past leaves its story written in stone, if we learn to read it.",
+    "difficulty": "medium",
+    "era": "modern"
+  },
+  {
+    "id": "mahalanobis",
+    "name": "P.C. Mahalanobis",
+    "field": "math",
+    "years": "1893–1972",
+    "region": "West Bengal",
+    "tagline": "He built the science of statistics that still shapes how India plans its future.",
+    "story": "Prasanta Chandra Mahalanobis grew up in Calcutta in a family committed to education and social reform, and studied physics before becoming captivated by the young and largely undeveloped field of statistics, the mathematics of collecting, analyzing, and drawing reliable conclusions from data. In 1931, Mahalanobis founded the Indian Statistical Institute (ISI) in Kolkata, building it from a small research group into one of the world's leading centres for statistical research and training, an institution that continues to shape statistical science globally today. Mahalanobis developed an important mathematical tool now called the 'Mahalanobis distance,' a way of measuring how different or similar a data point is compared to a whole group of other data points, accounting for how the different variables relate to one another. Decades later, this method is still used across an enormous range of fields, from anthropology and genetics to modern facial recognition and machine learning systems. Mahalanobis also pioneered large-scale sample survey methods, techniques for gathering reliable information about an entire population by carefully studying only a smaller representative sample, an approach now used by governments and researchers worldwide to conduct everything from economic surveys to public health studies. After India's independence, Mahalanobis played a central role in designing the country's early Five-Year Plans, applying statistical thinking directly to the enormous challenge of national economic planning, and he served as a close scientific advisor to Prime Minister Jawaharlal Nehru.",
+    "fun_fact": "The 'Mahalanobis distance' he invented is used today in fields as varied as anthropology, genetics, and facial recognition technology.",
+    "achievement": "Founded the Indian Statistical Institute and developed the Mahalanobis distance, a statistical tool still used worldwide.",
+    "quote": "Statistics must have a clear purpose, one that serves the larger goal of human welfare.",
+    "difficulty": "hard",
+    "era": "modern"
+  },
+  {
+    "id": "darshanranganathan",
+    "name": "Darshan Ranganathan",
+    "field": "chemistry",
+    "years": "1941–2001",
+    "region": "Delhi",
+    "tagline": "She tried to recreate, in a test tube, the tricks nature uses to build proteins.",
+    "story": "Darshan Ranganathan studied chemistry in Delhi at a time when very few Indian women pursued research careers in the physical sciences, and went on to become one of India's most creative organic chemists, specializing in an unusual and demanding area called biomimetic chemistry, chemistry that tries to imitate the clever tricks living cells use to build complex molecules. Ranganathan was especially fascinated by how proteins, long chains of amino acids, spontaneously fold and assemble themselves into precise three-dimensional shapes without any outside instructions, a process central to how all living things function. In her laboratory, she designed and synthesized new, simplified molecules from scratch specifically to test whether they too could self-assemble in protein-like ways, work that helped scientists better understand the fundamental chemical rules governing how biological structures form. This research placed her at the leading edge of what became known as supramolecular chemistry, the study of how molecules organize themselves into larger structures through weak, cooperative interactions rather than strong chemical bonds. Ranganathan worked at institutions including the Indian Institute of Science in Bangalore and the Regional Research Laboratory in Hyderabad, publishing extensively despite the added obstacles women scientists of her generation often faced in Indian research institutions. She became one of the relatively few Indian women elected to the country's top scientific academies during her era, and her research continues to be cited by chemists working on protein folding and molecular self-assembly today.",
+    "fun_fact": "Ranganathan designed brand-new molecules in her lab specifically to test whether they could fold and self-assemble the way natural proteins do.",
+    "achievement": "Pioneered biomimetic chemistry research in India, studying how molecules self-assemble like natural proteins.",
+    "quote": "Chemistry is nature's own language, and every molecule has a story to tell.",
+    "difficulty": "hard",
+    "era": "modern"
+  },
+  {
+    "id": "nambinarayanan",
+    "name": "Nambi Narayanan",
+    "field": "space",
+    "years": "1941–",
+    "region": "Tamil Nadu",
+    "tagline": "He helped build India's rocket engines, then had to fight to clear his name.",
+    "story": "Nambi Narayanan grew up in Nagercoil, Tamil Nadu, and trained as an aerospace engineer, eventually studying at Princeton University in the United States before returning to India to join the Indian Space Research Organisation (ISRO). There, he became a key figure in developing liquid propulsion rocket engine technology for India, playing a central role in bringing the Vikas engine into use, a liquid-fuelled engine that became a core component of India's PSLV and GSLV rockets, the workhorse vehicles that continue to launch Indian and international satellites into orbit today. His technical leadership helped India build independent capability in a highly complex area of rocket technology that few countries had mastered at the time. In 1994, Narayanan's career and life were derailed when he was wrongly accused in an espionage case alleging he had leaked confidential rocket technology to foreign agents, accusations that were sensationalized in the press and led to his arrest and public disgrace, even though no credible evidence was ever found against him. He spent years fighting to clear his name through the Indian legal system, enduring the destruction of his reputation and career during what should have been the most productive years of his professional life. In 2018, the Supreme Court of India fully exonerated him, ruling that he had been wrongly prosecuted, and later awarded him compensation for the ordeal. In 2019, Narayanan was awarded the Padma Bhushan in recognition of both his scientific contributions to India's space program and as a measure of vindication after his long struggle for justice.",
+    "fun_fact": "After being wrongly accused and cleared decades later by the Supreme Court, Narayanan's story inspired a major Indian film about perseverance and justice.",
+    "achievement": "Helped develop the Vikas liquid propulsion rocket engine, essential to India's PSLV and GSLV space launch vehicles.",
+    "quote": "Even after everything, I never stopped believing in India's dream to reach space.",
+    "difficulty": "medium",
+    "era": "modern"
+  },
+  {
+    "id": "brahmagupta",
+    "name": "Brahmagupta",
+    "field": "math",
+    "years": "598–668 CE",
+    "region": "Rajasthan",
+    "tagline": "He gave the world rules for zero, over a thousand years before Europe caught on.",
+    "story": "Brahmagupta lived in the 7th century in Bhillamala, a city in what is now Rajasthan, and became one of the most important mathematicians and astronomers of the ancient world. In 628 CE, at the age of thirty, he completed a major astronomical and mathematical text called the Brahmasphutasiddhanta, meaning 'the correctly established doctrine of Brahma,' which contained groundbreaking mathematical ideas centuries ahead of their time. Most famously, Brahmagupta was among the first mathematicians anywhere in the world to treat zero not just as a placeholder in writing numbers, but as a true number in its own right, one that could be added, subtracted, and multiplied according to clear rules, laying essential groundwork for all of modern arithmetic and algebra. He also worked out rules for calculating with negative numbers, describing them as 'debts' in contrast to positive numbers as 'fortunes,' a practical framework that made abstract negative quantities easier to understand and use. Brahmagupta developed a general method for solving a type of equation now known as the Pell equation, and formulated what is still called 'Brahmagupta's formula,' an elegant method for calculating the area of a four-sided shape whose corners all touch a single circle. His astronomical work included calculations of eclipses and planetary positions. Brahmagupta's writings eventually traveled through the Islamic world, where scholars translated and built upon his mathematics, and from there his ideas about zero and negative numbers gradually made their way into European mathematics many centuries later, quietly shaping the number system the entire world now uses.",
+    "fun_fact": "Brahmagupta was one of the first mathematicians in the world to give clear rules for treating zero as an actual number.",
+    "achievement": "Wrote foundational rules for arithmetic with zero and negative numbers in his 628 CE text, the Brahmasphutasiddhanta.",
+    "quote": "Zero is not nothing — it is the foundation upon which all numbers stand.",
+    "difficulty": "hard",
+    "era": "ancient"
   }
 ]

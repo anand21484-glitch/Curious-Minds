@@ -4,6 +4,7 @@ export type Scientist = {
   id: string;
   name: string;
   field: string;
+  era: 'ancient' | 'modern';
   years: string;
   region: string;
   tagline: string;
@@ -27,4 +28,12 @@ export function getScientistsByField(fieldId: string): Scientist[] {
 
 export function getNobelLaureates(): Scientist[] {
   return scientists.filter((s) => s.nobel);
+}
+
+export function getAncientScientists(): Scientist[] {
+  return scientists.filter((s) => s.era === 'ancient');
+}
+
+export function getModernScientistsByField(fieldId: string): Scientist[] {
+  return scientists.filter((s) => s.field === fieldId && s.era === 'modern');
 }
