@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import ScientistAvatar from '../../src/components/ScientistAvatar';
 import ScreenHeader from '../../src/components/ScreenHeader';
@@ -21,9 +21,6 @@ const BANNERS = [
   { id: 'nobel', name: 'Nobel Laureates', mono: 'Nb', color: '#7CD9FF', rgb: '124,217,255' },
 ] as const;
 
-const BROWSE_MODES = ['By Field', 'By State'] as const;
-type BrowseMode = (typeof BROWSE_MODES)[number];
-
 type Drill = { type: 'root' } | { type: 'modernGrid' } | { type: 'field'; fieldId: string } | { type: 'nobel' };
 
 function ScientistRow({ scientistId }: { scientistId: string }) {
@@ -41,12 +38,7 @@ function ScientistRow({ scientistId }: { scientistId: string }) {
 }
 
 export default function ExploreScreen() {
-  const [browseMode, setBrowseMode] = useState<BrowseMode>('By Field');
-  const [selectedState, setSelectedState] = useState<string | null>(null);
   const [drill, setDrill] = useState<Drill>({ type: 'root' });
-
-  const states = useMemo(() => Array.from(new Set(scientists.map((s) => s.region))).sort(), []);
-  const stateScientists = selectedState ? scientists.filter((s) => s.region === selectedState) : [];
 
   const modernCount = MODERN_FIELD_IDS.reduce((sum, id) => sum + getModernScientistsByField(id).length, 0);
   const ancientCount = getAncientScientists().length;
@@ -135,72 +127,29 @@ export default function ExploreScreen() {
     );
   }
 
-  // ── Root: 3 category banners, or the By-State browser ──
+  // ── Root: 3 category banners ──
   return (
     <View style={styles.container}>
       <ScreenHeader title="Explore Fields" />
       <ScrollView contentContainerStyle={styles.scroll}>
-        <View style={styles.modeToggle}>
-          {BROWSE_MODES.map((mode) => {
-            const active = mode === browseMode;
-            return (
-              <Pressable
-                key={mode}
-                onPress={() => setBrowseMode(mode)}
-                style={[styles.modePill, active && styles.modePillActive]}
-              >
-                <Text style={[styles.modePillText, active && styles.modePillTextActive]}>{mode}</Text>
-              </Pressable>
-            );
-          })}
-        </View>
-
-        {browseMode === 'By Field' &&
-          BANNERS.map((b) => (
-            <Pressable
-              key={b.id}
-              style={[styles.categoryRow, { borderColor: softColor(b.rgb, 0.4) }]}
-              onPress={() =>
-                setDrill(b.id === 'modern' ? { type: 'modernGrid' } : b.id === 'nobel' ? { type: 'nobel' } : { type: 'field', fieldId: 'ancient' })
-              }
-            >
-              <View style={[styles.categoryIcon, { backgroundColor: softColor(b.rgb, 0.18) }]}>
-                <Text style={[styles.categoryIconText, { color: b.color }]}>{b.mono}</Text>
-              </View>
-              <View style={styles.categoryText}>
-                <Text style={styles.categoryName}>{b.name}</Text>
-                <Text style={styles.categoryCount}>{bannerCount(b.id)} scientists</Text>
-              </View>
-              <Text style={styles.chevron}>›</Text>
-            </Pressable>
-          ))}
-
-        {browseMode === 'By State' && (
-          <View>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.stateChipRow}>
-              {states.map((state) => {
-                const active = state === selectedState;
-                return (
-                  <Pressable
-                    key={state}
-                    onPress={() => setSelectedState(active ? null : state)}
-                    style={[styles.stateChip, active && styles.stateChipActive]}
-                  >
-                    <Text style={[styles.stateChipText, active && styles.stateChipTextActive]}>
-                      {state}
-                    </Text>
-                  </Pressable>
-                );
-              })}
-            </ScrollView>
-
-            {selectedState ? (
-              stateScientists.map((s) => <ScientistRow key={s.id} scientistId={s.id} />)
-            ) : (
-              <Text style={styles.emptyText}>Pick a state above to see its scientists.</Text>
-            )}
-          </View>
-        )}
+        {BANNERS.map((b) => (
+          <Pressable
+            key={b.id}
+            style={[styles.categoryRow, { borderColor: softColor(b.rgb, 0.4) }]}
+            onPress={() =>
+              setDrill(b.id === 'modern' ? { type: 'modernGrid' } : b.id === 'nobel' ? { type: 'nobel' } : { type: 'field', fieldId: 'ancient' })
+            }
+          >
+            <View style={[styles.categoryIcon, { backgroundColor: softColor(b.rgb, 0.18) }]}>
+              <Text style={[styles.categoryIconText, { color: b.color }]}>{b.mono}</Text>
+            </View>
+            <View style={styles.categoryText}>
+              <Text style={styles.categoryName}>{b.name}</Text>
+              <Text style={styles.categoryCount}>{bannerCount(b.id)} scientists</Text>
+            </View>
+            <Text style={styles.chevron}>›</Text>
+          </Pressable>
+        ))}
       </ScrollView>
     </View>
   );
@@ -214,32 +163,6 @@ const styles = StyleSheet.create({
   scroll: {
     padding: spacing.lg,
     gap: spacing.sm,
-  },
-  modeToggle: {
-    flexDirection: 'row',
-    gap: spacing.xs,
-    marginBottom: spacing.sm,
-  },
-  modePill: {
-    flex: 1,
-    borderRadius: radii.pill,
-    paddingVertical: spacing.xs,
-    alignItems: 'center',
-    backgroundColor: colors.surface,
-    borderWidth: 1,
-    borderColor: colors.hairlineStrong,
-  },
-  modePillActive: {
-    backgroundColor: colors.gold,
-    borderColor: colors.gold,
-  },
-  modePillText: {
-    fontFamily: typography.fontFamily.bodyBold,
-    fontSize: typography.size.bodySmall,
-    color: colors.textSecondary,
-  },
-  modePillTextActive: {
-    color: colors.onGold,
   },
   categoryRow: {
     flexDirection: 'row',
@@ -367,29 +290,5 @@ const styles = StyleSheet.create({
     fontFamily: typography.fontFamily.bodyRegular,
     fontSize: typography.size.body,
     color: colors.textSecondary,
-  },
-  stateChipRow: {
-    marginBottom: spacing.md,
-  },
-  stateChip: {
-    borderRadius: radii.pill,
-    paddingVertical: spacing.xs,
-    paddingHorizontal: spacing.md,
-    marginRight: spacing.xs,
-    backgroundColor: colors.surface,
-    borderWidth: 1,
-    borderColor: colors.hairlineStrong,
-  },
-  stateChipActive: {
-    backgroundColor: colors.purple,
-    borderColor: colors.purple,
-  },
-  stateChipText: {
-    fontFamily: typography.fontFamily.bodySemiBold,
-    fontSize: typography.size.bodySmall,
-    color: colors.textSecondary,
-  },
-  stateChipTextActive: {
-    color: colors.textPrimary,
   },
 });
