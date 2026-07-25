@@ -17,7 +17,7 @@ type Props = {
   size?: number;
   // 'solid': field-color fill + dark text (Home's featured story avatar).
   // 'soft': field-color-tinted fill (0.18 alpha) + field-color text (Explore/
-  // Stories/Quiz list rows and the Profile hero) — the design's default badge.
+  // Quiz list rows and the Profile hero) — the design's default badge.
   variant?: 'solid' | 'soft';
 };
 

@@ -69,14 +69,6 @@ export default function TabsLayout() {
           tabBarIcon: ({ color }) => <TabDot color={color} />,
         }}
       />
-      <Tabs.Screen
-        name="stories"
-        options={{
-          title: 'Stories',
-          tabBarActiveTintColor: tabBar.stories,
-          tabBarIcon: ({ color }) => <TabDot color={color} />,
-        }}
-      />
     </Tabs>
   );
 }

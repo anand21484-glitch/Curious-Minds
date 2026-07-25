@@ -6,10 +6,6 @@ function dayOfYear(date: Date): number {
   return Math.floor(diff / (1000 * 60 * 60 * 24));
 }
 
-export function scientistOfTheDay(date: Date = new Date()) {
-  return scientists[dayOfYear(date) % scientists.length];
-}
-
 export function factOfTheDay(date: Date = new Date()) {
   const scientist = scientists[(dayOfYear(date) + 7) % scientists.length];
   return { scientist, fact: scientist.fun_fact };

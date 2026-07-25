@@ -58,8 +58,8 @@ export const fields = [
   { id: 'nobel', name: 'Nobel Laureates', mono: 'Nb', color: '#7CD9FF', rgb: '124,217,255' },
 ] as const;
 
-// Decorative emoji per field, used by Stories and Think Fast Challenge (the
-// design uses actual emoji here, not the mono badge).
+// Decorative emoji per field, used by Think Fast Challenge (the design uses
+// actual emoji here, not the mono badge).
 export const fieldEmoji: Record<string, string> = {
   math: '🔢',
   physics: '⚛️',
@@ -90,7 +90,6 @@ export const tabBar = {
   explore: '#4EA8FF',
   quiz: '#8B7BFF',
   rank: '#2FD9A0',
-  stories: '#FF9F45',
 } as const;
 
 // Font families assume @expo-google-fonts/poppins + @expo-google-fonts/inter are installed and loaded via useFonts.
@@ -105,7 +104,7 @@ export const typography = {
   size: {
     hero: 26,
     sectionTitle: 20,
-    headerLg: 18, // "Explore Fields", "Quiz Zone", "Featured Stories" header titles
+    headerLg: 18, // "Explore Fields", "Quiz Zone" header titles
     headerMd: 17, // "Hi, {name}", field/profile header titles
     headerSm: 16, // "The Curiosity Dashboard" (long title)
     headerXs: 15, // header titles that share space with progress text

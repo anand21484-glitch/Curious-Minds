@@ -3,9 +3,7 @@ import { router } from 'expo-router';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Card from '../../src/components/Card';
 import PillButton from '../../src/components/PillButton';
-import ScientistAvatar from '../../src/components/ScientistAvatar';
-import { factOfTheDay, scientistOfTheDay } from '../../src/data/dailyContent';
-import { fields } from '../../src/theme';
+import { factOfTheDay } from '../../src/data/dailyContent';
 import { useAppState } from '../../src/state/AppState';
 import { colors, radii, spacing, typography } from '../../src/theme';
 
@@ -19,9 +17,7 @@ function greeting(): string {
 export default function HomeScreen() {
   const { userName, streakDays, streakCelebration, dismissStreakCelebration, addXp } =
     useAppState();
-  const scientist = scientistOfTheDay();
   const { fact } = factOfTheDay();
-  const scientistField = fields.find((f) => f.id === scientist.field);
 
   return (
     <View style={styles.container}>
@@ -72,27 +68,6 @@ export default function HomeScreen() {
           <Text style={styles.greetingSub}>One question can change the world.</Text>
           <Pressable onPress={() => addXp(10)} style={styles.continueButton}>
             <Text style={styles.continueButtonText}>▶ Continue Learning</Text>
-          </Pressable>
-        </View>
-
-        <View>
-          <Text style={styles.eyebrow}>Story of the day</Text>
-          <Pressable onPress={() => router.push(`/scientist/${scientist.id}`)} style={styles.storyCard}>
-            <LinearGradient colors={colors.storyGradient} style={StyleSheet.absoluteFill} />
-            <View style={styles.storyGlow} />
-            <View style={styles.storyHeaderRow}>
-              <ScientistAvatar scientist={scientist} size={46} variant="solid" />
-              <View style={styles.storyHeaderText}>
-                <Text style={styles.storyName}>{scientist.name}</Text>
-                <Text style={styles.storyMeta}>
-                  {scientist.years} · {scientistField?.name}
-                </Text>
-              </View>
-            </View>
-            <Text style={styles.storyTagline}>{scientist.tagline}</Text>
-            <View style={styles.storyCta}>
-              <Text style={styles.storyCtaText}>Read the story →</Text>
-            </View>
           </Pressable>
         </View>
 
@@ -292,60 +267,6 @@ const styles = StyleSheet.create({
     fontFamily: typography.fontFamily.headingRegular,
     fontSize: typography.size.cardTitleSm,
     color: colors.textPrimary,
-  },
-  storyCard: {
-    borderRadius: radii.cardHero,
-    padding: 20,
-    overflow: 'hidden',
-    gap: spacing.sm,
-    borderWidth: 1,
-    borderColor: colors.hairlineStrong,
-  },
-  storyGlow: {
-    position: 'absolute',
-    top: -30,
-    right: -30,
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    backgroundColor: 'rgba(255,255,255,0.06)',
-  },
-  storyHeaderRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.sm,
-  },
-  storyHeaderText: {
-    flex: 1,
-  },
-  storyName: {
-    fontFamily: typography.fontFamily.headingRegular,
-    fontSize: typography.size.cardTitle,
-    color: colors.textPrimary,
-  },
-  storyMeta: {
-    fontFamily: typography.fontFamily.bodyRegular,
-    fontSize: typography.size.micro,
-    color: colors.textSecondary,
-  },
-  storyTagline: {
-    fontFamily: typography.fontFamily.bodySemiBold,
-    fontSize: typography.size.body,
-    color: colors.textOnDark,
-    lineHeight: 21,
-  },
-  storyCta: {
-    alignSelf: 'flex-start',
-    backgroundColor: colors.gold,
-    borderRadius: radii.pill,
-    paddingVertical: spacing.xs,
-    paddingHorizontal: spacing.md,
-    marginTop: 4,
-  },
-  storyCtaText: {
-    fontFamily: typography.fontFamily.bodyBold,
-    fontSize: typography.size.micro,
-    color: colors.onGold,
   },
   discoveryCard: {
     borderRadius: radii.cardHero,
