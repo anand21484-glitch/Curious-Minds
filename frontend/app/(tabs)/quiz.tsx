@@ -272,9 +272,6 @@ function QuizSession({
             </Text>
           </View>
           <View style={styles.metaPill}>
-            <Text style={styles.metaPillText}>Multiple Choice</Text>
-          </View>
-          <View style={styles.metaPill}>
             <Text style={styles.metaPillText}>+{XP_FOR_DIFFICULTY[question.difficulty] ?? 10} XP</Text>
           </View>
           <View style={styles.metaPill}>
