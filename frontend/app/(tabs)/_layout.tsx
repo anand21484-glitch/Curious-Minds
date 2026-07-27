@@ -26,7 +26,8 @@ export default function TabsLayout() {
           fontSize: typography.size.microLabel,
         },
         tabBarStyle: {
-          height: 64,
+          height: 60,
+          paddingBottom: 8,
           backgroundColor: colors.background,
           borderTopWidth: 1,
           borderTopColor: colors.hairline,

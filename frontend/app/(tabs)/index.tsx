@@ -1,6 +1,7 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Card from '../../src/components/Card';
 import PillButton from '../../src/components/PillButton';
 import { factOfTheDay } from '../../src/data/dailyContent';
@@ -21,20 +22,22 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.headerLeft}>
-          <View style={styles.logoMark}>
-            <Text style={styles.logoText}>CM</Text>
+      <SafeAreaView edges={['top']} style={styles.headerSafeArea}>
+        <View style={styles.header}>
+          <View style={styles.headerLeft}>
+            <View style={styles.logoMark}>
+              <Text style={styles.logoText}>CM</Text>
+            </View>
+            <Text style={styles.headerTitle}>Hi, {userName}</Text>
           </View>
-          <Text style={styles.headerTitle}>Hi, {userName}</Text>
+          {streakDays > 0 && (
+            <View style={styles.streakPill}>
+              <View style={styles.streakDot} />
+              <Text style={styles.streakPillText}>{streakDays}-day streak</Text>
+            </View>
+          )}
         </View>
-        {streakDays > 0 && (
-          <View style={styles.streakPill}>
-            <View style={styles.streakDot} />
-            <Text style={styles.streakPillText}>{streakDays}-day streak</Text>
-          </View>
-        )}
-      </View>
+      </SafeAreaView>
 
       <ScrollView contentContainerStyle={styles.scroll}>
         <View style={[styles.heroCard, styles.cardGradientBorder]}>
@@ -106,6 +109,9 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.background,
+  },
+  headerSafeArea: {
     backgroundColor: colors.background,
   },
   header: {

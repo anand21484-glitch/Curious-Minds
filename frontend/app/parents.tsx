@@ -1,6 +1,7 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import AtomWatermark from '../src/components/AtomWatermark';
 import PillButton from '../src/components/PillButton';
 import { colors, spacing, typography } from '../src/theme';
@@ -26,37 +27,42 @@ export default function ParentsScreen() {
       <AtomWatermark size={260} style={styles.watermarkTop} />
       <AtomWatermark size={180} style={styles.watermarkBottom} />
 
-      <ScrollView contentContainerStyle={styles.scroll}>
-        <Pressable onPress={() => router.back()} style={styles.backButton}>
-          <Text style={styles.backButtonText}>← Back</Text>
-        </Pressable>
+      <SafeAreaView edges={['top']} style={styles.safeArea}>
+        <ScrollView contentContainerStyle={styles.scroll}>
+          <Pressable onPress={() => router.back()} style={styles.backButton}>
+            <Text style={styles.backButtonText}>← Back</Text>
+          </Pressable>
 
-        <Text style={styles.heading}>Message for Parents</Text>
-        <Text style={styles.opening}>
-          Every child is born curious. But curiosity needs fuel.
-        </Text>
+          <Text style={styles.heading}>Message for Parents</Text>
+          <Text style={styles.opening}>
+            Every child is born curious. But curiosity needs fuel.
+          </Text>
 
-        {SECTIONS.map((section) => (
-          <View key={section.title} style={styles.section}>
-            <Text style={styles.sectionTitle}>{section.title}</Text>
-            <Text style={styles.sectionBody}>{section.body}</Text>
-          </View>
-        ))}
+          {SECTIONS.map((section) => (
+            <View key={section.title} style={styles.section}>
+              <Text style={styles.sectionTitle}>{section.title}</Text>
+              <Text style={styles.sectionBody}>{section.body}</Text>
+            </View>
+          ))}
 
-        <Text style={styles.closing}>10 Minutes a Day.{'\n'}A Lifetime of Curiosity.</Text>
+          <Text style={styles.closing}>10 Minutes a Day.{'\n'}A Lifetime of Curiosity.</Text>
 
-        <PillButton
-          label="Start Exploring 🔬"
-          onPress={() => router.replace('/')}
-          style={styles.cta}
-        />
-      </ScrollView>
+          <PillButton
+            label="Start Exploring 🔬"
+            onPress={() => router.replace('/')}
+            style={styles.cta}
+          />
+        </ScrollView>
+      </SafeAreaView>
     </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+  },
+  safeArea: {
     flex: 1,
   },
   watermarkTop: {

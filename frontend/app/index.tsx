@@ -9,6 +9,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import PillButton from '../src/components/PillButton';
 import { useAppState } from '../src/state/AppState';
 import { colors, radii, spacing, typography } from '../src/theme';
@@ -34,45 +35,51 @@ export default function OnboardingScreen() {
   };
 
   return (
-    <KeyboardAvoidingView
-      style={styles.container}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-    >
-      <View style={styles.brainCircle}>
-        <Text style={styles.brainEmoji}>🧠</Text>
-      </View>
+    <SafeAreaView edges={['top', 'bottom']} style={styles.safeArea}>
+      <KeyboardAvoidingView
+        style={styles.container}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+      >
+        <View style={styles.brainCircle}>
+          <Text style={styles.brainEmoji}>🧠</Text>
+        </View>
 
-      <View style={styles.titleBlock}>
-        <Text style={styles.title}>Curious Minds</Text>
-        <Text style={styles.tagline}>Discover India's greatest scientists</Text>
-      </View>
+        <View style={styles.titleBlock}>
+          <Text style={styles.title}>Curious Minds</Text>
+          <Text style={styles.tagline}>Discover India's greatest scientists</Text>
+        </View>
 
-      <View style={styles.inputBlock}>
-        <Text style={styles.inputLabel}>What's your name?</Text>
-        <TextInput
-          value={name}
-          onChangeText={setName}
-          placeholder="Type your name"
-          placeholderTextColor={colors.textSecondary}
-          style={styles.input}
-          returnKeyType="go"
-          onSubmitEditing={submit}
-          autoCapitalize="words"
-          maxLength={20}
-        />
-      </View>
+        <View style={styles.inputBlock}>
+          <Text style={styles.inputLabel}>What's your name?</Text>
+          <TextInput
+            value={name}
+            onChangeText={setName}
+            placeholder="Type your name"
+            placeholderTextColor={colors.textSecondary}
+            style={styles.input}
+            returnKeyType="go"
+            onSubmitEditing={submit}
+            autoCapitalize="words"
+            maxLength={20}
+          />
+        </View>
 
-      <PillButton label="Let's Go →" onPress={submit} style={styles.button} />
-      <Text style={styles.hint}>Press Enter or tap "Let's Go" to start exploring</Text>
+        <PillButton label="Let's Go →" onPress={submit} style={styles.button} />
+        <Text style={styles.hint}>Press Enter or tap "Let's Go" to start exploring</Text>
 
-      <Pressable onPress={() => router.push('/parents')} style={styles.parentsLink}>
-        <Text style={styles.parentsLinkText}>Message for Parents</Text>
-      </Pressable>
-    </KeyboardAvoidingView>
+        <Pressable onPress={() => router.push('/parents')} style={styles.parentsLink}>
+          <Text style={styles.parentsLinkText}>Message for Parents</Text>
+        </Pressable>
+      </KeyboardAvoidingView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: colors.background,
+  },
   container: {
     flex: 1,
     backgroundColor: colors.background,
