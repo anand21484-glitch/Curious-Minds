@@ -32,6 +32,7 @@ export default function QuizScreen() {
     }
     return (
       <QuizSession
+        key={activeScientistId}
         scientistId={activeScientistId}
         quizName={quiz.name}
         badgeName={quiz.badgeName}
