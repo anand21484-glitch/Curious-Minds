@@ -1,7 +1,7 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import PillButton from '../../src/components/PillButton';
 import ScreenHeader from '../../src/components/ScreenHeader';
 import { computeBadges } from '../../src/data/badges';
@@ -261,7 +261,12 @@ function QuizSession({
           </Text>
         }
       />
-      <View style={styles.scroll}>
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={styles.scroll}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
+      >
         <View style={styles.progressTrack}>
           <View style={[styles.progressFill, { width: `${progressPct}%` }]} />
         </View>
@@ -343,7 +348,7 @@ function QuizSession({
             />
           </View>
         )}
-      </View>
+      </ScrollView>
     </View>
   );
 }
