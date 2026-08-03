@@ -69,7 +69,13 @@ export default function HomeScreen() {
             </View>
           </View>
           <Text style={styles.greetingSub}>One question can change the world.</Text>
-          <Pressable onPress={() => addXp(10)} style={styles.continueButton}>
+          <Pressable
+            onPress={() => {
+              addXp(10);
+              router.push('/(tabs)/explore');
+            }}
+            style={styles.continueButton}
+          >
             <Text style={styles.continueButtonText}>▶ Continue Learning</Text>
           </Pressable>
         </View>
