@@ -82,3 +82,13 @@ export async function setTfStats(stats: TfStats): Promise<void> {
 export async function clearAll(): Promise<void> {
   await AsyncStorage.multiRemove(Object.values(KEYS));
 }
+
+export async function clearProgress(): Promise<void> {
+  await AsyncStorage.multiRemove([
+    KEYS.xpTotal,
+    KEYS.streakDays,
+    KEYS.lastActiveDate,
+    KEYS.completedQuizzes,
+    KEYS.tfStats,
+  ]);
+}

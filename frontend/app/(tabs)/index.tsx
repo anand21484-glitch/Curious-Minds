@@ -1,6 +1,6 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
-import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Card from '../../src/components/Card';
 import PillButton from '../../src/components/PillButton';
@@ -16,35 +16,17 @@ function greeting(): string {
 }
 
 export default function HomeScreen() {
-  const { userName, streakDays, streakCelebration, dismissStreakCelebration, addXp, resetProgress } =
-    useAppState();
+  const { userName, streakDays, streakCelebration, dismissStreakCelebration, addXp } = useAppState();
   const { fact } = factOfTheDay();
-
-  const handleLogout = () => {
-    Alert.alert(
-      'Start Over?',
-      'This will clear your name and progress. Are you sure?',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Yes, Start Over',
-          style: 'destructive',
-          onPress: () => {
-            resetProgress();
-          },
-        },
-      ],
-    );
-  };
 
   return (
     <View style={styles.container}>
       <SafeAreaView edges={['top']} style={styles.headerSafeArea}>
         <View style={styles.header}>
           <View style={styles.headerLeft}>
-            <Pressable onLongPress={handleLogout} delayLongPress={1000} style={styles.logoMark}>
+            <View style={styles.logoMark}>
               <Text style={styles.logoText}>CM</Text>
-            </Pressable>
+            </View>
             <Text style={styles.headerTitle}>Hi, {userName}</Text>
           </View>
           {streakDays > 0 && (

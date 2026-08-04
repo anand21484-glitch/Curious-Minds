@@ -66,6 +66,14 @@ export default function TabsLayout() {
           tabBarIcon: ({ color }) => <TabDot color={color} />,
         }}
       />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
+          tabBarActiveTintColor: tabBar.profile,
+          tabBarIcon: ({ color }) => <TabDot color={color} />,
+        }}
+      />
     </Tabs>
   );
 }

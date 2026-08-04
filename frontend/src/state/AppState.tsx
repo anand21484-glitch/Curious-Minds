@@ -4,6 +4,7 @@ import {
   Friend,
   TfStats,
   clearAll,
+  clearProgress,
   getCompletedQuizzes,
   getFriends,
   getLastActiveDate,
@@ -40,6 +41,7 @@ type AppStateValue = {
   dismissStreakCelebration: () => void;
   login: (name: string) => Promise<void>;
   resetProgress: () => Promise<void>;
+  resetStats: () => Promise<void>;
   addXp: (amount: number) => Promise<void>;
   completedQuizzes: CompletedQuizzes;
   recordQuizCompletion: (scientistId: string, correctCount: number, total: number) => Promise<void>;
@@ -131,6 +133,14 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
         setStreakCelebration(false);
         setCompletedQuizzesState({});
         setFriendsState([]);
+        setTfStatsState(DEFAULT_TF_STATS);
+      },
+      resetStats: async () => {
+        await clearProgress();
+        setXpTotalState(0);
+        setStreakDaysState(0);
+        setStreakCelebration(false);
+        setCompletedQuizzesState({});
         setTfStatsState(DEFAULT_TF_STATS);
       },
       addXp: async (amount: number) => {

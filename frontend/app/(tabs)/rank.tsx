@@ -21,21 +21,21 @@ function Eyebrow({ children }: { children: string }) {
 }
 
 export default function RankScreen() {
-  const { xpTotal, streakDays, completedQuizzes, friends, inviteFriend, removeFriend, tfStats, resetProgress } =
+  const { xpTotal, streakDays, completedQuizzes, friends, inviteFriend, removeFriend, tfStats, resetStats } =
     useAppState();
   const [inviteName, setInviteName] = useState('');
 
-  const handleLogout = () => {
+  const handleReset = () => {
     Alert.alert(
-      'Start Over?',
-      'This will clear your name and progress. Are you sure?',
+      'Reset Progress',
+      'This will clear all your XP, badges and progress. Your name will be kept. Are you sure?',
       [
         { text: 'Cancel', style: 'cancel' },
         {
-          text: 'Yes, Start Over',
+          text: 'Reset',
           style: 'destructive',
           onPress: () => {
-            resetProgress();
+            resetStats();
           },
         },
       ],
@@ -281,7 +281,7 @@ export default function RankScreen() {
           </View>
         </View>
 
-        <Pressable onPress={handleLogout} style={styles.resetButton}>
+        <Pressable onPress={handleReset} style={styles.resetButton}>
           <Text style={styles.resetText}>🔄 Reset Progress</Text>
         </Pressable>
       </ScrollView>
