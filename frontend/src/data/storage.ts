@@ -78,3 +78,7 @@ export async function getTfStats(): Promise<TfStats> {
 export async function setTfStats(stats: TfStats): Promise<void> {
   await AsyncStorage.setItem(KEYS.tfStats, JSON.stringify(stats));
 }
+
+export async function clearAll(): Promise<void> {
+  await AsyncStorage.multiRemove(Object.values(KEYS));
+}

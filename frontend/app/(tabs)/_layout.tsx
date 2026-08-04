@@ -1,6 +1,5 @@
-import { Redirect, Tabs } from 'expo-router';
+import { Tabs } from 'expo-router';
 import { ColorValue, View } from 'react-native';
-import { useAppState } from '../../src/state/AppState';
 import { colors, tabBar, typography } from '../../src/theme';
 
 function TabDot({ color }: { color: ColorValue }) {
@@ -12,9 +11,6 @@ function TabDot({ color }: { color: ColorValue }) {
 }
 
 export default function TabsLayout() {
-  const { loading, userName } = useAppState();
-  if (!loading && !userName) return <Redirect href="/" />;
-
   return (
     <Tabs
       screenOptions={{
