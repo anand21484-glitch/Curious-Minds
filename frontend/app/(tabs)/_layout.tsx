@@ -1,5 +1,6 @@
 import { Tabs } from 'expo-router';
 import { ColorValue, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors, tabBar, typography } from '../../src/theme';
 
 function TabDot({ color }: { color: ColorValue }) {
@@ -11,6 +12,7 @@ function TabDot({ color }: { color: ColorValue }) {
 }
 
 export default function TabsLayout() {
+  const insets = useSafeAreaInsets();
   return (
     <Tabs
       screenOptions={{
@@ -22,8 +24,9 @@ export default function TabsLayout() {
           fontSize: typography.size.microLabel,
         },
         tabBarStyle: {
-          height: 60,
-          paddingBottom: 8,
+          height: 60 + (insets.bottom || 0),
+          paddingBottom: insets.bottom || 8,
+          elevation: 8,
           backgroundColor: colors.background,
           borderTopWidth: 1,
           borderTopColor: colors.hairline,
