@@ -53,7 +53,6 @@ export default function OnboardingScreen() {
 />
 
         <View style={styles.titleBlock}>
-          <Text style={styles.title}>Curious Minds</Text>
           <Text style={styles.tagline}>Discover India's greatest scientists</Text>
         </View>
 
