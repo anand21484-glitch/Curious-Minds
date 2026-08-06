@@ -44,9 +44,9 @@ export default function OnboardingScreen() {
         <Image
           source={require('../assets/images/curious-minds-logo.png')}
           style={{
-          width: 120,
-          height: 120,
-          borderRadius: 60,
+          width: 180,
+          height: 180,
+          borderRadius: 90,
           marginBottom: 24,
        }}
        resizeMode="cover"
