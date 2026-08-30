@@ -29,6 +29,7 @@ function RootNavigator() {
       <Stack.Screen name="scientist/[id]" />
       <Stack.Screen name="think-fast" />
       <Stack.Screen name="parents" />
+      <Stack.Screen name="experiment" />
     </Stack>
   );
 }

@@ -1,6 +1,6 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
-import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Card from '../../src/components/Card';
 import PillButton from '../../src/components/PillButton';
@@ -79,16 +79,7 @@ export default function HomeScreen() {
           </Pressable>
         </View>
 
-        <Pressable
-          style={styles.experimentBanner}
-          onPress={() =>
-            Alert.alert(
-              '🧪 Coming Soon!',
-              'Experiment Explorer — Hands-On Challenges for Curious Minds is coming soon!',
-              [{ text: "Can't Wait! 🎉", style: 'default' }],
-            )
-          }
-        >
+        <Pressable style={styles.experimentBanner} onPress={() => router.push('/experiment')}>
           <View style={styles.experimentIconWrap}>
             <Text style={{ fontSize: 28 }}>🧪</Text>
           </View>
