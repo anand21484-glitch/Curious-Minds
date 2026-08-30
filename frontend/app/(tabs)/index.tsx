@@ -1,6 +1,6 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
-import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Alert, Modal, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Card from '../../src/components/Card';
 import PillButton from '../../src/components/PillButton';
@@ -73,6 +73,27 @@ export default function HomeScreen() {
             <Text style={styles.continueButtonText}>▶ Continue Learning</Text>
           </Pressable>
         </View>
+
+        <Pressable
+          style={styles.experimentBanner}
+          onPress={() =>
+            Alert.alert(
+              '🧪 Coming Soon!',
+              'Experiment Explorer — Hands-On Challenges for Curious Minds is coming soon!',
+              [{ text: "Can't Wait! 🎉", style: 'default' }],
+            )
+          }
+        >
+          <View style={styles.experimentIconWrap}>
+            <Text style={{ fontSize: 28 }}>🧪</Text>
+          </View>
+          <View style={styles.experimentContent}>
+            <Text style={styles.experimentTag}>NEW ✨</Text>
+            <Text style={styles.experimentTitle}>Experiment Explorer</Text>
+            <Text style={styles.experimentTagline}>Hands-On Challenges for Curious Minds</Text>
+          </View>
+          <Text style={styles.experimentChevron}>›</Text>
+        </Pressable>
 
         <View>
           <Text style={styles.eyebrow}>Daily Discovery</Text>
@@ -273,6 +294,49 @@ const styles = StyleSheet.create({
     fontFamily: typography.fontFamily.headingRegular,
     fontSize: typography.size.cardTitleSm,
     color: colors.textPrimary,
+  },
+  experimentBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#1A0A3E',
+    borderRadius: radii.card,
+    padding: 16,
+    borderWidth: 1,
+    borderColor: '#7C3AED',
+    gap: spacing.sm,
+  },
+  experimentIconWrap: {
+    width: 52,
+    height: 52,
+    borderRadius: 26,
+    backgroundColor: '#2D1B69',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  experimentContent: {
+    flex: 1,
+    gap: 2,
+  },
+  experimentTag: {
+    fontSize: typography.size.microLabel,
+    fontFamily: typography.fontFamily.headingBold,
+    color: '#A78BFA',
+    letterSpacing: 1,
+  },
+  experimentTitle: {
+    fontSize: typography.size.cardTitle,
+    fontFamily: typography.fontFamily.headingBold,
+    color: '#FFFFFF',
+  },
+  experimentTagline: {
+    fontSize: typography.size.micro,
+    fontFamily: typography.fontFamily.bodyRegular,
+    color: '#C4B5FD',
+  },
+  experimentChevron: {
+    fontSize: 24,
+    fontFamily: typography.fontFamily.bodyBold,
+    color: '#7C3AED',
   },
   discoveryCard: {
     borderRadius: radii.cardHero,
