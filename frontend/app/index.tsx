@@ -1,6 +1,7 @@
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
 import {
+  Image,
   KeyboardAvoidingView,
   Platform,
   Pressable,
@@ -40,12 +41,18 @@ export default function OnboardingScreen() {
         style={styles.container}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       >
-        <View style={styles.brainCircle}>
-          <Text style={styles.brainEmoji}>🧠</Text>
-        </View>
+        <Image
+          source={require('../assets/images/curious-minds-logo.png')}
+          style={{
+          width: 180,
+          height: 180,
+          borderRadius: 90,
+          marginBottom: 24,
+       }}
+       resizeMode="cover"
+/>
 
         <View style={styles.titleBlock}>
-          <Text style={styles.title}>Curious Minds</Text>
           <Text style={styles.tagline}>Discover India's greatest scientists</Text>
         </View>
 

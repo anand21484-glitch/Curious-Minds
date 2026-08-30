@@ -1,6 +1,6 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import ScreenHeader from '../../src/components/ScreenHeader';
 import { computeBadges } from '../../src/data/badges';
 import { computeCuriosityStats } from '../../src/data/curiosity';
@@ -21,8 +21,26 @@ function Eyebrow({ children }: { children: string }) {
 }
 
 export default function RankScreen() {
-  const { xpTotal, streakDays, completedQuizzes, friends, inviteFriend, removeFriend, tfStats } = useAppState();
+  const { xpTotal, streakDays, completedQuizzes, friends, inviteFriend, removeFriend, tfStats, resetStats } =
+    useAppState();
   const [inviteName, setInviteName] = useState('');
+
+  const handleReset = () => {
+    Alert.alert(
+      'Reset Progress',
+      'This will clear all your XP, badges and progress. Your name will be kept. Are you sure?',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Reset',
+          style: 'destructive',
+          onPress: () => {
+            resetStats();
+          },
+        },
+      ],
+    );
+  };
 
   const { current, stars, next, progress } = levelForXp(xpTotal);
   const stats = computeCuriosityStats({ completedQuizzes, streakDays, tfStats });
@@ -262,6 +280,10 @@ export default function RankScreen() {
             ))}
           </View>
         </View>
+
+        <Pressable onPress={handleReset} style={styles.resetButton}>
+          <Text style={styles.resetText}>🔄 Reset Progress</Text>
+        </Pressable>
       </ScrollView>
     </View>
   );
@@ -586,5 +608,17 @@ const styles = StyleSheet.create({
     fontFamily: typography.fontFamily.bodySemiBold,
     fontSize: typography.size.microLabel,
     color: colors.textOnDark,
+  },
+  resetButton: {
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: colors.hairlineStrong,
+    borderRadius: radii.pill,
+    paddingVertical: spacing.sm,
+  },
+  resetText: {
+    fontFamily: typography.fontFamily.bodyBold,
+    fontSize: typography.size.bodySmall,
+    color: colors.textSecondary,
   },
 });

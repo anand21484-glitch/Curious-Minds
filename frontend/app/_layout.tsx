@@ -6,7 +6,32 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { colors } from '../src/theme';
-import { AppStateProvider } from '../src/state/AppState';
+import { AppStateProvider, useAppState } from '../src/state/AppState';
+
+function RootNavigator() {
+  const { loading, userName } = useAppState();
+  if (loading) return null;
+
+  return (
+    <Stack
+      screenOptions={{
+        headerShown: false,
+        contentStyle: { backgroundColor: colors.background },
+      }}
+    >
+      <Stack.Protected guard={!!userName}>
+        <Stack.Screen name="(tabs)" />
+      </Stack.Protected>
+      <Stack.Protected guard={!userName}>
+        <Stack.Screen name="index" />
+      </Stack.Protected>
+      <Stack.Screen name="mission" />
+      <Stack.Screen name="scientist/[id]" />
+      <Stack.Screen name="think-fast" />
+      <Stack.Screen name="parents" />
+    </Stack>
+  );
+}
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
@@ -28,12 +53,7 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
       <AppStateProvider>
-        <Stack
-          screenOptions={{
-            headerShown: false,
-            contentStyle: { backgroundColor: colors.background },
-          }}
-        />
+        <RootNavigator />
       </AppStateProvider>
     </SafeAreaProvider>
   );

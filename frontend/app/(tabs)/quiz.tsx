@@ -334,12 +334,7 @@ function QuizSession({
             <View style={styles.explanationCard}>
               <Text style={styles.explanationText}>{question.explanation}</Text>
             </View>
-            {scientist && (
-              <View style={styles.factCard}>
-                <Text style={styles.factTitle}>💡 Did You Know?</Text>
-                <Text style={styles.factText}>{scientist.fun_fact}</Text>
-              </View>
-            )}
+            
             <Text style={styles.goalText}>Learning objective: Learn about {quizName}</Text>
             <PillButton
               label={index + 1 < questions.length ? 'Next Question' : 'See Results'}

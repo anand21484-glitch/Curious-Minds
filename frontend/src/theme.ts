@@ -90,6 +90,7 @@ export const tabBar = {
   explore: '#4EA8FF',
   quiz: '#8B7BFF',
   rank: '#2FD9A0',
+  profile: '#FF9F45',
 } as const;
 
 // Font families assume @expo-google-fonts/poppins + @expo-google-fonts/inter are installed and loaded via useFonts.
