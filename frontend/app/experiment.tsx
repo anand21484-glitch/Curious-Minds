@@ -270,9 +270,7 @@ export default function ExperimentExplorerScreen() {
               }
               Alert.alert(
                 `${exp.emoji} ${exp.title}`,
-                `📚 Concept: ${exp.concept}\n\n🔬 Scientist: ${exp.scientist}\n\n🛒 Materials:\n${exp.materials
-                  .map((m) => `• ${m}`)
-                  .join('\n')}${exp.safety ? `\n\n${exp.safety}` : ''}`,
+                `📖 ${exp.description}\n\n💡 Concept: ${exp.concept}\n\n🔬 Scientist: ${exp.scientist}\n\n🛒 Materials:\n${exp.materials.map(m => `• ${m}`).join('\n')}${exp.safety ? `\n\n${exp.safety}` : ''}`,
                 [{ text: 'Got it! 🔬', style: 'default' }],
               );
             }}
