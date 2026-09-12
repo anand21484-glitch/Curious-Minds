@@ -232,19 +232,109 @@ const EXPERIMENTS = [
     emoji: '🥚',
     safety: '⚠️ Adult supervision and a safe testing area are required.' as string | null,
   },
-  // Keep experiments 18-25 as placeholders
-  ...Array.from({ length: 8 }, (_, i) => ({
-    id: i + 18,
-    title: `Experiment ${i + 18}`,
-    description: 'Coming soon...',
-    materials: [] as string[],
-    difficulty: 'Hard',
+  {
+    id: 18,
+    title: 'Build a Rain Gauge',
+    description:
+      'Make a simple rain gauge from a transparent bottle and record how much rain falls over several days.',
+    materials: ['Clear plastic bottle', 'Ruler', 'Marker', 'Small stones'],
+    difficulty: 'Easy',
     duration: '15-20 mins',
-    scientist: '',
-    concept: '',
-    emoji: '🧪',
+    scientist: 'Luke Howard',
+    concept: 'Rainfall Measurement & Weather Science',
+    emoji: '🌧️',
     safety: null as string | null,
-  })),
+  },
+  {
+    id: 19,
+    title: 'Soil Detective',
+    description:
+      'Mix soil and water in a transparent jar, allow it to settle and observe different layers forming.',
+    materials: ['Transparent jar', 'Soil', 'Water'],
+    difficulty: 'Easy',
+    duration: '15-20 mins',
+    scientist: 'Justus von Liebig',
+    concept: 'Soil Composition, Sedimentation & Particle Size',
+    emoji: '🪱',
+    safety: null as string | null,
+  },
+  {
+    id: 20,
+    title: 'Seed Germination Investigation',
+    description: 'Place beans on wet cotton and observe how roots and shoots develop over several days.',
+    materials: ['Beans', 'Cotton', 'Transparent glass/jar', 'Water'],
+    difficulty: 'Easy',
+    duration: '5-7 days observation',
+    scientist: 'Gregor Mendel',
+    concept: 'Seed Germination & Plant Growth',
+    emoji: '🌱',
+    safety: null as string | null,
+  },
+  {
+    id: 21,
+    title: 'Build a Simple Electromagnet',
+    description:
+      'Wrap insulated copper wire around an iron nail and briefly connect it to a small battery. Test whether the nail can pick up paper clips.',
+    materials: ['Iron nail', 'Insulated copper wire', 'Small battery', 'Paper clips'],
+    difficulty: 'Medium',
+    duration: '20-25 mins',
+    scientist: 'Michael Faraday',
+    concept: 'Electricity Creating Magnetism',
+    emoji: '🧲',
+    safety: '⚠️ Use only a small battery. Disconnect promptly if the wire becomes warm.' as string | null,
+  },
+  {
+    id: 22,
+    title: 'Which Material Keeps Heat In?',
+    description:
+      'Wrap cups of warm water with different materials and measure the temperature over time to discover which material provides better insulation.',
+    materials: ['Several cups', 'Warm water', 'Thermometer', 'Cotton', 'Paper', 'Cloth', 'Aluminium foil'],
+    difficulty: 'Medium',
+    duration: '30-40 mins',
+    scientist: 'James Prescott Joule',
+    concept: 'Thermal Insulation & Heat Transfer',
+    emoji: '🌡️',
+    safety: null as string | null,
+  },
+  {
+    id: 23,
+    title: 'Make a Mini Ecosystem',
+    description:
+      'Create a small planted environment in a transparent container and observe moisture, condensation, plants and soil over several days.',
+    materials: ['Transparent container', 'Soil', 'Small plant/moss', 'Pebbles', 'Water'],
+    difficulty: 'Medium',
+    duration: '3-5 days observation',
+    scientist: 'Alexander von Humboldt',
+    concept: 'Ecosystems, Water Cycle & Interdependence',
+    emoji: '🌿',
+    safety: null as string | null,
+  },
+  {
+    id: 24,
+    title: 'Make Your Own Crater',
+    description:
+      'Drop balls of different sizes from different heights onto a layer of flour or sand and measure the craters they create.',
+    materials: ['Tray', 'Flour or sand', 'Cocoa powder', 'Small balls of different sizes', 'Ruler'],
+    difficulty: 'Medium',
+    duration: '20-25 mins',
+    scientist: 'Eugene Shoemaker',
+    concept: 'Impact Forces, Energy & Planetary Surfaces',
+    emoji: '🌑',
+    safety: null as string | null,
+  },
+  {
+    id: 25,
+    title: 'Build a Solar Oven',
+    description:
+      'Build a simple solar oven using a cardboard box, foil and insulating materials and investigate how sunlight can be converted into heat.',
+    materials: ['Cardboard box', 'Aluminium foil', 'Transparent plastic wrap', 'Black paper', 'Tape'],
+    difficulty: 'Medium',
+    duration: '30-40 mins',
+    scientist: 'Augustin Mouchot',
+    concept: 'Solar Energy, Heat Absorption, Reflection & Insulation',
+    emoji: '☀️',
+    safety: '⚠️ Adult supervision required. Do not look directly at concentrated sunlight.' as string | null,
+  },
 ];
 
 export default function ExperimentExplorerScreen() {
@@ -284,6 +374,7 @@ export default function ExperimentExplorerScreen() {
                 {exp.description}
               </Text>
               {exp.concept ? <Text style={styles.conceptText}>💡 {exp.concept}</Text> : null}
+              {exp.id >= 21 && <Text style={styles.explorerBadge}>🔵 Explorer Level</Text>}
               <View style={styles.tagRow}>
                 <View style={styles.difficultyTag}>
                   <Text style={styles.tagText}>{exp.difficulty}</Text>
@@ -360,6 +451,13 @@ const styles = StyleSheet.create({
     fontFamily: typography.fontFamily.bodyRegular,
     color: '#A78BFA',
     marginTop: 2,
+  },
+  explorerBadge: {
+    fontSize: 10,
+    fontFamily: typography.fontFamily.headingBold,
+    color: '#60A5FA',
+    marginTop: 2,
+    letterSpacing: 0.5,
   },
   tagRow: { flexDirection: 'row', gap: 8, marginTop: 4 },
   difficultyTag: {
