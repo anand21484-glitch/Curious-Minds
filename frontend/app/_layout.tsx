@@ -30,6 +30,7 @@ function RootNavigator() {
       <Stack.Screen name="think-fast" />
       <Stack.Screen name="parents" />
       <Stack.Screen name="experiment" />
+      <Stack.Screen name="experiment-detail" />
     </Stack>
   );
 }

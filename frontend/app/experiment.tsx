@@ -354,6 +354,10 @@ export default function ExperimentExplorerScreen() {
             key={exp.id}
             style={[styles.experimentCard, exp.description === 'Coming soon...' && styles.comingSoonCard]}
             onPress={() => {
+              if (exp.id === 1) {
+                router.push('/experiment-detail');
+                return;
+              }
               if (exp.description === 'Coming soon...') {
                 Alert.alert('🧪 Coming Soon!', 'This experiment is coming soon!');
                 return;
