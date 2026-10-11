@@ -354,8 +354,8 @@ export default function ExperimentExplorerScreen() {
             key={exp.id}
             style={[styles.experimentCard, exp.description === 'Coming soon...' && styles.comingSoonCard]}
             onPress={() => {
-              if (exp.id === 1) {
-                router.push('/experiment-detail');
+              if (exp.id <= 25) {
+                router.push({ pathname: '/experiment-detail', params: { id: exp.id } });
                 return;
               }
               if (exp.description === 'Coming soon...') {
