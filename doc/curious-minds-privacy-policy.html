@@ -1,0 +1,368 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Curious Minds Privacy Policy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap">
+
+<style>
+  /* Layout: single-column document with accent band header, section cards */
+  :root {
+    --bg: #F8F7FF;
+    --bg-card: #FFFFFF;
+    --fg: #1A1040;
+    --fg-muted: #5C5480;
+    --accent: #6D3AE8;
+    --accent-light: #EDE8FD;
+    --accent-mid: #A580F0;
+    --border: #E2DEFA;
+    --tag-bg: #F0EBFD;
+    --tag-fg: #5B2EC9;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F0B1E;
+      --bg-card: #1A1435;
+      --fg: #EDE8FD;
+      --fg-muted: #A99DC4;
+      --accent: #9D6EF5;
+      --accent-light: #1F1540;
+      --accent-mid: #7C4FD6;
+      --border: #2D2455;
+      --tag-bg: #1F1540;
+      --tag-fg: #C4A2FA;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F0B1E;
+    --bg-card: #1A1435;
+    --fg: #EDE8FD;
+    --fg-muted: #A99DC4;
+    --accent: #9D6EF5;
+    --accent-light: #1F1540;
+    --accent-mid: #7C4FD6;
+    --border: #2D2455;
+    --tag-bg: #1F1540;
+    --tag-fg: #C4A2FA;
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Nunito Sans', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .header {
+    background: var(--accent);
+    padding-block: 3rem 2.5rem;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 60%, rgba(255,255,255,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .header-icon {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .header h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.6rem, 5vw, 2.5rem);
+    color: #FFFFFF;
+    margin: 0 0 0.25rem;
+    text-wrap: balance;
+  }
+  .header .brand {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.75);
+    margin: 0 0 1.25rem;
+    letter-spacing: 0.02em;
+  }
+  .header-meta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .chip {
+    background: rgba(255,255,255,0.15);
+    color: #FFFFFF;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    letter-spacing: 0.03em;
+  }
+
+  .main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding-block: 2.5rem 4rem;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .callout {
+    background: var(--accent-light);
+    border: 1.5px solid var(--accent-mid);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .callout-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1.4; }
+  .callout p { margin: 0; color: var(--fg); font-weight: 600; font-size: 0.95rem; }
+
+  .section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--accent-light);
+  }
+  .section-icon { font-size: 1.25rem; }
+  .section-header h2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    margin: 0;
+    color: var(--accent);
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+  .section-body {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .section-body p { margin: 0; font-size: 0.95rem; color: var(--fg); }
+  .section-body p:not(:last-child) { padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+  .tag {
+    background: var(--tag-bg);
+    color: var(--tag-fg);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.2rem 0.65rem;
+    border-radius: 100px;
+  }
+
+  .contact-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .contact-box h3 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    margin: 0;
+    color: var(--fg);
+  }
+  .contact-box p { margin: 0; font-size: 0.9rem; color: var(--fg-muted); }
+  .contact-email {
+    background: var(--accent-light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.6rem 1.25rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--accent);
+    word-break: break-all;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--fg-muted);
+    padding-block: 0 1rem;
+  }
+
+  @media (max-width: 520px) {
+    .section-body { padding: 1rem 1.125rem; }
+    .section-header { padding: 1rem 1.125rem; }
+    .contact-box { padding: 1.25rem 1rem; }
+  }
+</style>
+
+<header class="header">
+  <div class="header-icon">🔭</div>
+  <h1>Privacy Policy</h1>
+  <p class="brand">Curious Minds · by The Young Legends</p>
+  <div class="header-meta">
+    <span class="chip">📦 com.theyounglegends.curiousminds</span>
+    <span class="chip">🗓 Effective: October 2024</span>
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="callout">
+    <span class="callout-icon">🛡️</span>
+    <p>Curious Minds is designed for children aged 5–14. We take privacy seriously. This app does <strong>not collect, store, or share any personal data</strong> — not even names, email addresses, or device identifiers.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📋</span>
+      <h2>About This Policy</h2>
+    </div>
+    <div class="section-body">
+      <p>This Privacy Policy describes how <strong>The Young Legends</strong> ("we", "us", or "our") handles information in connection with the mobile application <strong>Curious Minds</strong> ("the App"). The App is designed for children aged 5–14 and is made available on the Google Play Store (Android) and the Apple App Store (iOS).</p>
+      <p>By downloading or using the App, you agree to the terms described in this policy. If you are a parent or guardian, please read this policy carefully before allowing your child to use the App.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🚫</span>
+      <h2>Information We Do Not Collect</h2>
+    </div>
+    <div class="section-body">
+      <p>We do not collect any personal information from users of this App. Specifically, we do not collect:</p>
+      <div class="tag-list">
+        <span class="tag">Names</span>
+        <span class="tag">Email addresses</span>
+        <span class="tag">Phone numbers</span>
+        <span class="tag">Device identifiers</span>
+        <span class="tag">IP addresses</span>
+        <span class="tag">Location data</span>
+        <span class="tag">Usage analytics</span>
+        <span class="tag">Crash reports</span>
+        <span class="tag">Photos or camera data</span>
+        <span class="tag">Contacts</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📱</span>
+      <h2>Local Device Storage</h2>
+    </div>
+    <div class="section-body">
+      <p>The App saves certain non-personal information <strong>locally on the user's device only</strong>. This data never leaves the device and is not transmitted to us or any third party. This local data includes:</p>
+      <div class="tag-list">
+        <span class="tag">Quiz scores</span>
+        <span class="tag">XP points</span>
+        <span class="tag">Earned badges</span>
+        <span class="tag">Think Fast scores</span>
+        <span class="tag">App preferences</span>
+      </div>
+      <p>This data exists solely to provide a personalised in-app experience and is fully controlled by the user. It can be erased at any time by uninstalling the App.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🌐</span>
+      <h2>Internet & Third-Party Services</h2>
+    </div>
+    <div class="section-body">
+      <p>Curious Minds is a <strong>fully offline app</strong>. It does not require an internet connection to function and does not communicate with any external servers, APIs, or cloud services during normal use.</p>
+      <p>We do <strong>not</strong> use any of the following in this App:</p>
+      <div class="tag-list">
+        <span class="tag">Google Analytics</span>
+        <span class="tag">Firebase</span>
+        <span class="tag">Facebook SDK</span>
+        <span class="tag">Advertising networks</span>
+        <span class="tag">Crash reporting tools</span>
+        <span class="tag">Social media integrations</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">👶</span>
+      <h2>Children's Privacy (COPPA Compliance)</h2>
+    </div>
+    <div class="section-body">
+      <p>Curious Minds is specifically designed for children aged 5 to 14. We are fully compliant with the <strong>Children's Online Privacy Protection Act (COPPA)</strong> and applicable data protection laws in India and internationally.</p>
+      <p>Because we do not collect any personal data whatsoever, there is nothing to disclose, share, or delete. No account creation is required. No parental consent is needed beyond allowing the child to use the App.</p>
+      <p>Parents and guardians can contact us at any time with questions about their child's use of the App.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📢</span>
+      <h2>Advertisements</h2>
+    </div>
+    <div class="section-body">
+      <p>This App does <strong>not display any advertisements</strong>. There are no banner ads, interstitial ads, video ads, or in-app purchases. The App is a clean, ad-free learning experience for children.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🔄</span>
+      <h2>Changes to This Policy</h2>
+    </div>
+    <div class="section-body">
+      <p>We may update this Privacy Policy from time to time to reflect changes to our App or for legal, operational, or regulatory reasons. When we do, we will revise the "Effective Date" at the top of this page.</p>
+      <p>We encourage parents and guardians to review this policy periodically. Continued use of the App after any changes constitutes acceptance of the updated policy.</p>
+    </div>
+  </div>
+
+  <div class="contact-box">
+    <div style="font-size:2rem">💌</div>
+    <h3>Questions or Concerns?</h3>
+    <p>We're a small independent studio and we're happy to hear from you. If you have any questions about this Privacy Policy or your child's experience with Curious Minds, please reach out:</p>
+    <div class="contact-email">support@theyounglegends.co.in</div>
+    <p style="font-size:0.82rem">We aim to respond within 48 hours on working days.</p>
+  </div>
+
+  <p class="footer">
+    © 2024 The Young Legends. All rights reserved.<br>
+    Curious Minds · Package: com.theyounglegends.curiousminds
+  </p>
+
+</main>
+
+</body></html>
